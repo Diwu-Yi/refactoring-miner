@@ -1,0 +1,460 @@
+jsoup, Refactorings at fcab98cdd311deb3dd4fd63fef2bc6c4c397f186
+jsoup, Refactorings at a97672ad240f679f0071e046a119edb6d7dcbb1c
+Inline Method	private select() : Elements inlined to public select(evaluator Evaluator, root Element) : Elements in class org.jsoup.select.Selector
+Move Attribute	private root : Element from class org.jsoup.select.Selector to private root : Element from class org.jsoup.select.Collector.FirstFinder
+jsoup, Refactorings at c3f8caa7c16c08b803b0f34bfffdf9777c7e382c
+jsoup, Refactorings at 2cce405d1eed3536b222f830220ef32f5a2937d7
+jsoup, Refactorings at ea1fb65e9ff8eee82c4e379dc3236d09a5ab02e1
+Change Attribute Access Modifier	private to package in attribute package padding : String[] from class org.jsoup.helper.StringUtil
+Extract Method	protected html(key String, val String, accum Appendable, out Document.OutputSettings) : void extracted from protected html(accum Appendable, out Document.OutputSettings) : void in class org.jsoup.nodes.Attribute
+Extract Method	protected isDataAttribute(key String) : boolean extracted from protected isDataAttribute() : boolean in class org.jsoup.nodes.Attribute
+Extract Method	protected shouldCollapseAttribute(key String, val String, out Document.OutputSettings) : boolean extracted from protected shouldCollapseAttribute(out Document.OutputSettings) : boolean in class org.jsoup.nodes.Attribute
+Rename Parameter	value : String to val : String in method public setValue(val String) : String from class org.jsoup.nodes.Attribute
+Parameterize Attribute	value : String to val : String in method protected shouldCollapseAttribute(key String, val String, out Document.OutputSettings) : boolean from class org.jsoup.nodes.Attribute
+Rename Attribute	value : String to val : String in class org.jsoup.nodes.Attribute
+Add Class Modifier	static in class org.jsoup.nodes.Attributes.Dataset
+Inline Variable	attr : Attribute in method public put(key String, value String) : String from class org.jsoup.nodes.Attributes.Dataset
+Extract Attribute	private size : int in class org.jsoup.nodes.Attributes
+Change Variable Type	list : List<Attribute> to list : ArrayList<Attribute> in method public asList() : List<Attribute> from class org.jsoup.nodes.Attributes
+Add Parameter Modifier	final in parameter accum : Appendable in method package html(accum Appendable, out Document.OutputSettings) : void from class org.jsoup.nodes.Attributes
+Add Parameter Modifier	final in parameter out : Document.OutputSettings in method package html(accum Appendable, out Document.OutputSettings) : void from class org.jsoup.nodes.Attributes
+Add Method Modifier	final in method package html(accum Appendable, out Document.OutputSettings) : void from class org.jsoup.nodes.Attributes
+Change Attribute Type	encoder : ThreadLocal<CharsetEncoder> to encoder : CharsetEncoder in class org.jsoup.nodes.Document.OutputSettings
+Change Attribute Access Modifier	private to package in attribute package encoder : CharsetEncoder from class org.jsoup.nodes.Document.OutputSettings
+Remove Attribute Modifier	final in attribute private encoder : ThreadLocal<CharsetEncoder> from class org.jsoup.nodes.Document.OutputSettings
+Add Parameter Modifier	final in parameter accum : Appendable in method package outerHtmlHead(accum Appendable, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.Element
+Add Parameter Modifier	final in parameter out : Document.OutputSettings in method package outerHtmlHead(accum Appendable, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.Element
+Change Class Access Modifier	private to package in class org.jsoup.nodes.Entities.CoreCharset
+Add Parameter Modifier	final in parameter name : String in method package byName(name String) : CoreCharset from class org.jsoup.nodes.Entities.CoreCharset
+Change Method Access Modifier	private to package in method package byName(name String) : CoreCharset from class org.jsoup.nodes.Entities.CoreCharset
+Add Parameter Modifier	final in parameter accum : Appendable in method package abstract outerHtmlHead(accum Appendable, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.Node
+Add Parameter Modifier	final in parameter out : Document.OutputSettings in method package abstract outerHtmlHead(accum Appendable, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.Node
+Add Parameter Modifier	final in parameter accum : Appendable in method package abstract outerHtmlTail(accum Appendable, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.Node
+Add Parameter Modifier	final in parameter out : Document.OutputSettings in method package abstract outerHtmlTail(accum Appendable, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.Node
+Extract Variable	dataset : Map<String,String> in method public html() : void from class org.jsoup.nodes.AttributesTest
+jsoup, Refactorings at 8749726a79c22451b1f01b14fb2137f734e926b4
+Change Variable Type	inStream : InputStream to inStream : FileInputStream in method public load(in File, charsetName String, baseUri String) : Document from class org.jsoup.helper.DataUtil
+Change Variable Type	remainder : Element to remainder : Node in method public wrap(html String) : Node from class org.jsoup.nodes.Node
+Change Variable Type	wrapChildren : Elements to wrapChildren : List<Node> in method public wrap(html String) : Node from class org.jsoup.nodes.Node
+Rename Method	public emptyOnNoKey() : void renamed to public canStartWithEq() : void in class org.jsoup.parser.AttributeParseTest
+Rename Method	public parsesUnterminatedTag() : void renamed to public dropsUnterminatedTag() : void in class org.jsoup.parser.ParserTest
+Rename Method	public parsesUnterminatedAttribute() : void renamed to public dropsUnterminatedAttribute() : void in class org.jsoup.parser.ParserTest
+Rename Method	public createsImplicitLists() : void renamed to public doesNotCreateImplicitLists() : void in class org.jsoup.parser.ParserTest
+Rename Method	public createsImplicitTable() : void renamed to public discardsNakedTds() : void in class org.jsoup.parser.ParserTest
+Rename Method	public handlesEmptyBlocks() : void renamed to public handlesKnownEmptyBlocks() : void in class org.jsoup.parser.ParserTest
+Rename Method	public testAllowsImageInNoScriptInHead() : void renamed to public testNoImagesInNoScriptInHead() : void in class org.jsoup.parser.ParserTest
+Extract Class	org.jsoup.parser.TreeBuilder from class org.jsoup.parser.Parser
+Move Attribute	private doc : Document from class org.jsoup.parser.Parser to private doc : Document from class org.jsoup.parser.TreeBuilder
+Remove Attribute Modifier	final in attribute private doc : Document from class org.jsoup.parser.Parser
+Move Attribute	private stack : LinkedList<Element> from class org.jsoup.parser.Parser to private stack : LinkedList<Element> from class org.jsoup.parser.TreeBuilder
+Remove Attribute Modifier	final in attribute private stack : LinkedList<Element> from class org.jsoup.parser.Parser
+Move Attribute	private baseUri : String from class org.jsoup.parser.Parser to private baseUri : String from class org.jsoup.parser.TreeBuilder
+Change Method Access Modifier	private to package in method package currentElement() : Element from class org.jsoup.parser.TreeBuilder
+Move And Rename Method	private last() : Element from class org.jsoup.parser.Parser to package currentElement() : Element from class org.jsoup.parser.TreeBuilder
+jsoup, Refactorings at 4eb4f2b2e88a2f9e6c5c1e8d0477060954f24218
+Extract Method	private validateCharset(cs String) : String extracted from package getCharsetFromContentType(contentType String) : String in class org.jsoup.helper.DataUtil
+Extract Method	private detectCharsetFromBom(byteData ByteBuffer, charsetName String) : String extracted from package parseByteData(byteData ByteBuffer, charsetName String, baseUri String, parser Parser) : Document in class org.jsoup.helper.DataUtil
+Parameterize Variable	charset : String to cs : String in method private validateCharset(cs String) : String from class org.jsoup.helper.DataUtil
+Rename Parameter	data : String to name : String in method public XmlDeclaration(name String, baseUri String, isProcessingInstruction boolean) from class org.jsoup.nodes.XmlDeclaration
+jsoup, Refactorings at f71712ba5d28df09c9a5b6e3c8a37f05f5e3372d
+Move Class	org.jsoup.nodes.Node.NodeList moved to org.jsoup.nodes.Element.NodeList
+Change Return Type	void to Attributes in method public put(key String, value String) : Attributes from class org.jsoup.nodes.Attributes
+Change Return Type	void to Attributes in method public put(key String, value boolean) : Attributes from class org.jsoup.nodes.Attributes
+Change Return Type	void to Attributes in method public put(attribute Attribute) : Attributes from class org.jsoup.nodes.Attributes
+Change Variable Type	children : List<Node> to children : ArrayList<Node> in method public childNodesCopy() : List<Node> from class org.jsoup.nodes.Node
+Add Variable Modifier	final in variable children : ArrayList<Node> in method public childNodesCopy() : List<Node> from class org.jsoup.nodes.Node
+Add Variable Modifier	final in variable nodesToProcess : LinkedList<Node> in method public clone() : Node from class org.jsoup.nodes.Node
+Replace Attribute With Variable	childNodes : List<Node> to nodes : List<Node> in method public childNodesCopy() : List<Node> from class org.jsoup.nodes.Node
+Replace Attribute With Variable	childNodes : List<Node> to nodes : List<Node> in method protected addChildren(children Node...) : void from class org.jsoup.nodes.Node
+Replace Attribute With Variable	childNodes : List<Node> to nodes : List<Node> in method protected addChildren(index int, children Node...) : void from class org.jsoup.nodes.Node
+Extract Method	private getWholeDeclaration(accum Appendable, out Document.OutputSettings) : void extracted from package outerHtmlHead(accum Appendable, depth int, out Document.OutputSettings) : void in class org.jsoup.nodes.XmlDeclaration
+Extract Superclass	org.jsoup.nodes.LeafNode from classes [org.jsoup.nodes.Comment, org.jsoup.nodes.DataNode, org.jsoup.nodes.DocumentType, org.jsoup.nodes.TextNode, org.jsoup.nodes.XmlDeclaration]
+Extract Subclass	org.jsoup.nodes.LeafNode from class org.jsoup.nodes.Node
+Push Down Attribute	private EMPTY_NODES : List<Node> from class org.jsoup.nodes.Node to private EMPTY_NODES : List<Node> from class org.jsoup.nodes.Element
+Push Down Attribute	package childNodes : List<Node> from class org.jsoup.nodes.Node to package childNodes : List<Node> from class org.jsoup.nodes.Element
+Push Down Attribute	package attributes : Attributes from class org.jsoup.nodes.Node to private attributes : Attributes from class org.jsoup.nodes.Element
+Push Down Attribute	package baseUri : String from class org.jsoup.nodes.Node to private baseUri : String from class org.jsoup.nodes.Element
+Change Attribute Access Modifier	package to private in attribute private attributes : Attributes from class org.jsoup.nodes.Element
+Change Attribute Access Modifier	package to private in attribute private baseUri : String from class org.jsoup.nodes.Element
+Pull Up Method	public attributes() : Attributes from class org.jsoup.nodes.TextNode to public attributes() : Attributes from class org.jsoup.nodes.LeafNode
+Add Method Modifier	final in method public attributes() : Attributes from class org.jsoup.nodes.LeafNode
+Add Method Modifier	final in method public attributes() : Attributes from class org.jsoup.nodes.LeafNode
+Pull Up Method	private ensureAttributes() : void from class org.jsoup.nodes.TextNode to private ensureAttributes() : void from class org.jsoup.nodes.LeafNode
+Pull Up Method	public attr(attributeKey String) : String from class org.jsoup.nodes.TextNode to public attr(key String) : String from class org.jsoup.nodes.LeafNode
+Rename Parameter	attributeKey : String to key : String in method public attr(key String) : String from class org.jsoup.nodes.LeafNode
+Pull Up Method	public attr(attributeKey String, attributeValue String) : Node from class org.jsoup.nodes.TextNode to public attr(key String, value String) : Node from class org.jsoup.nodes.LeafNode
+Rename Parameter	attributeKey : String to key : String in method public attr(key String, value String) : Node from class org.jsoup.nodes.LeafNode
+Rename Parameter	attributeValue : String to value : String in method public attr(key String, value String) : Node from class org.jsoup.nodes.LeafNode
+Pull Up Method	public hasAttr(attributeKey String) : boolean from class org.jsoup.nodes.TextNode to public hasAttr(key String) : boolean from class org.jsoup.nodes.LeafNode
+Rename Parameter	attributeKey : String to key : String in method public hasAttr(key String) : boolean from class org.jsoup.nodes.LeafNode
+Pull Up Method	public removeAttr(attributeKey String) : Node from class org.jsoup.nodes.TextNode to public removeAttr(key String) : Node from class org.jsoup.nodes.LeafNode
+Rename Parameter	attributeKey : String to key : String in method public removeAttr(key String) : Node from class org.jsoup.nodes.LeafNode
+Pull Up Method	public absUrl(attributeKey String) : String from class org.jsoup.nodes.TextNode to public absUrl(key String) : String from class org.jsoup.nodes.LeafNode
+Rename Parameter	attributeKey : String to key : String in method public absUrl(key String) : String from class org.jsoup.nodes.LeafNode
+Push Down Method	public attributes() : Attributes from class org.jsoup.nodes.Node to public attributes() : Attributes from class org.jsoup.nodes.LeafNode
+Add Method Annotation	@Override in method public attributes() : Attributes from class org.jsoup.nodes.LeafNode
+Push Down Method	public baseUri() : String from class org.jsoup.nodes.Node to public baseUri() : String from class org.jsoup.nodes.LeafNode
+Add Method Annotation	@Override in method public baseUri() : String from class org.jsoup.nodes.LeafNode
+Push Down Method	public childNodeSize() : int from class org.jsoup.nodes.Node to public childNodeSize() : int from class org.jsoup.nodes.LeafNode
+Add Method Annotation	@Override in method public childNodeSize() : int from class org.jsoup.nodes.LeafNode
+Remove Method Modifier	final in method public childNodeSize() : int from class org.jsoup.nodes.Node
+Rename Parameter	baseUri : String to name : String in method public XmlDeclaration(name String, isProcessingInstruction boolean) from class org.jsoup.nodes.XmlDeclaration
+Change Method Access Modifier	protected to public in method public XmlDeclaration(name String, isProcessingInstruction boolean) from class org.jsoup.nodes.XmlDeclaration
+Push Down Method	protected Node(baseUri String, attributes Attributes) from class org.jsoup.nodes.Node to public XmlDeclaration(name String, isProcessingInstruction boolean) from class org.jsoup.nodes.XmlDeclaration
+Extract And Move Method	protected doSetBaseUri(baseUri String) : void extracted from public setBaseUri(baseUri String) : void in class org.jsoup.nodes.Node & moved to class org.jsoup.nodes.Element
+jsoup, Refactorings at ea1fb65e9ff8eee82c4e379dc3236d09a5ab02e1
+Change Attribute Access Modifier	private to package in attribute package padding : String[] from class org.jsoup.helper.StringUtil
+Extract Method	protected html(key String, val String, accum Appendable, out Document.OutputSettings) : void extracted from protected html(accum Appendable, out Document.OutputSettings) : void in class org.jsoup.nodes.Attribute
+Extract Method	protected isDataAttribute(key String) : boolean extracted from protected isDataAttribute() : boolean in class org.jsoup.nodes.Attribute
+Extract Method	protected shouldCollapseAttribute(key String, val String, out Document.OutputSettings) : boolean extracted from protected shouldCollapseAttribute(out Document.OutputSettings) : boolean in class org.jsoup.nodes.Attribute
+Rename Parameter	value : String to val : String in method public setValue(val String) : String from class org.jsoup.nodes.Attribute
+Parameterize Attribute	value : String to val : String in method protected shouldCollapseAttribute(key String, val String, out Document.OutputSettings) : boolean from class org.jsoup.nodes.Attribute
+Rename Attribute	value : String to val : String in class org.jsoup.nodes.Attribute
+Add Class Modifier	static in class org.jsoup.nodes.Attributes.Dataset
+Inline Variable	attr : Attribute in method public put(key String, value String) : String from class org.jsoup.nodes.Attributes.Dataset
+Extract Attribute	private size : int in class org.jsoup.nodes.Attributes
+Change Variable Type	list : List<Attribute> to list : ArrayList<Attribute> in method public asList() : List<Attribute> from class org.jsoup.nodes.Attributes
+Add Parameter Modifier	final in parameter accum : Appendable in method package html(accum Appendable, out Document.OutputSettings) : void from class org.jsoup.nodes.Attributes
+Add Parameter Modifier	final in parameter out : Document.OutputSettings in method package html(accum Appendable, out Document.OutputSettings) : void from class org.jsoup.nodes.Attributes
+Add Method Modifier	final in method package html(accum Appendable, out Document.OutputSettings) : void from class org.jsoup.nodes.Attributes
+Change Attribute Type	encoder : ThreadLocal<CharsetEncoder> to encoder : CharsetEncoder in class org.jsoup.nodes.Document.OutputSettings
+Change Attribute Access Modifier	private to package in attribute package encoder : CharsetEncoder from class org.jsoup.nodes.Document.OutputSettings
+Remove Attribute Modifier	final in attribute private encoder : ThreadLocal<CharsetEncoder> from class org.jsoup.nodes.Document.OutputSettings
+Add Parameter Modifier	final in parameter accum : Appendable in method package outerHtmlHead(accum Appendable, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.Element
+Add Parameter Modifier	final in parameter out : Document.OutputSettings in method package outerHtmlHead(accum Appendable, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.Element
+Change Class Access Modifier	private to package in class org.jsoup.nodes.Entities.CoreCharset
+Add Parameter Modifier	final in parameter name : String in method package byName(name String) : CoreCharset from class org.jsoup.nodes.Entities.CoreCharset
+Change Method Access Modifier	private to package in method package byName(name String) : CoreCharset from class org.jsoup.nodes.Entities.CoreCharset
+Add Parameter Modifier	final in parameter accum : Appendable in method package abstract outerHtmlHead(accum Appendable, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.Node
+Add Parameter Modifier	final in parameter out : Document.OutputSettings in method package abstract outerHtmlHead(accum Appendable, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.Node
+Add Parameter Modifier	final in parameter accum : Appendable in method package abstract outerHtmlTail(accum Appendable, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.Node
+Add Parameter Modifier	final in parameter out : Document.OutputSettings in method package abstract outerHtmlTail(accum Appendable, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.Node
+Extract Variable	dataset : Map<String,String> in method public html() : void from class org.jsoup.nodes.AttributesTest
+jsoup, Refactorings at 654bc6f981587bd4b39b66702550bad33e1eacc9
+Rename Method	package parseByteData(byteData ByteBuffer, charsetName String, baseUri String, parser Parser) : Document renamed to package parseInputStream(input InputStream, charsetName String, baseUri String, parser Parser) : Document in class org.jsoup.helper.DataUtil
+Change Attribute Access Modifier	private to package in attribute package bufferSize : int from class org.jsoup.helper.DataUtil
+Add Variable Modifier	final in variable buffer : byte[] in method public readToByteBuffer(inStream InputStream, maxSize int) : ByteBuffer from class org.jsoup.helper.DataUtil
+Add Variable Modifier	final in variable outStream : ByteArrayOutputStream in method public readToByteBuffer(inStream InputStream, maxSize int) : ByteBuffer from class org.jsoup.helper.DataUtil
+Add Parameter Modifier	final in parameter byteData : ByteBuffer in method private detectCharsetFromBom(byteData ByteBuffer, charsetName String) : BomCharset from class org.jsoup.helper.DataUtil
+Add Parameter Modifier	final in parameter charsetName : String in method private detectCharsetFromBom(byteData ByteBuffer, charsetName String) : BomCharset from class org.jsoup.helper.DataUtil
+Change Return Type	String to BomCharset in method private detectCharsetFromBom(byteData ByteBuffer, charsetName String) : BomCharset from class org.jsoup.helper.DataUtil
+Remove Parameter	byteData : ByteBuffer in method package parseByteData(byteData ByteBuffer, charsetName String, baseUri String, parser Parser) : Document from class org.jsoup.helper.DataUtil
+Add Parameter	input : InputStream in method package parseInputStream(input InputStream, charsetName String, baseUri String, parser Parser) : Document from class org.jsoup.helper.DataUtil
+Add Thrown Exception Type	IOException in method package parseInputStream(input InputStream, charsetName String, baseUri String, parser Parser) : Document from class org.jsoup.helper.DataUtil
+Extract Method	private prepareByteData() : void extracted from public body() : String in class org.jsoup.helper.HttpConnection.Response
+Extract Method	private prepareByteData() : void extracted from public bodyAsBytes() : byte[] in class org.jsoup.helper.HttpConnection.Response
+Extract Variable	urlS : String in method package encodeUrl(u URL) : URL from class org.jsoup.helper.HttpConnection
+Change Method Access Modifier	private to package in method package encodeUrl(u URL) : URL from class org.jsoup.helper.HttpConnection
+Extract Method	package rangeEquals(charBuf char[], start int, count int, cached String) : boolean extracted from package rangeEquals(start int, count int, cached String) : boolean in class org.jsoup.parser.CharacterReader
+Add Parameter Modifier	final in parameter charBuf : char[] in method package rangeEquals(charBuf char[], start int, count int, cached String) : boolean from class org.jsoup.parser.CharacterReader
+Parameterize Variable	one : char[] to charBuf : char[] in method package rangeEquals(charBuf char[], start int, count int, cached String) : boolean from class org.jsoup.parser.CharacterReader
+Add Parameter Modifier	final in parameter count : int in method package rangeEquals(start int, count int, cached String) : boolean from class org.jsoup.parser.CharacterReader
+Inline Variable	cache : String[] in method private cacheString(start int, count int) : String from class org.jsoup.parser.CharacterReader
+Parameterize Variable	val : char[] to charBuf : char[] in method private cacheString(charBuf char[], stringCache String[], start int, count int) : String from class org.jsoup.parser.CharacterReader
+Add Parameter	stringCache : String[] in method private cacheString(charBuf char[], stringCache String[], start int, count int) : String from class org.jsoup.parser.CharacterReader
+Add Method Modifier	static in method private cacheString(charBuf char[], stringCache String[], start int, count int) : String from class org.jsoup.parser.CharacterReader
+Rename Attribute	pos : int to bufPos : int in class org.jsoup.parser.CharacterReader
+Rename Attribute	length : int to bufLength : int in class org.jsoup.parser.CharacterReader
+Remove Attribute Modifier	final in attribute private length : int from class org.jsoup.parser.CharacterReader
+Rename Attribute	mark : int to bufMark : int in class org.jsoup.parser.CharacterReader
+Rename Attribute	input : char[] to charBuf : char[] in class org.jsoup.parser.CharacterReader
+Rename Attribute	maxCacheLen : int to maxStringCacheLen : int in class org.jsoup.parser.CharacterReader
+Change Parameter Type	input : String to input : Reader in method protected initialiseParse(input Reader, baseUri String, errors ParseErrorList, settings ParseSettings) : void from class org.jsoup.parser.HtmlTreeBuilder
+Change Parameter Type	input : String to input : Reader in method protected initialiseParse(input Reader, baseUri String, errors ParseErrorList, settings ParseSettings) : void from class org.jsoup.parser.TreeBuilder
+Change Parameter Type	input : String to input : Reader in method package parse(input Reader, baseUri String, errors ParseErrorList, settings ParseSettings) : Document from class org.jsoup.parser.TreeBuilder
+Change Parameter Type	input : String to input : Reader in method protected initialiseParse(input Reader, baseUri String, errors ParseErrorList, settings ParseSettings) : void from class org.jsoup.parser.XmlTreeBuilder
+Add Thrown Exception Type	IOException in method public discardsSpuriousByteOrderMark() : void from class org.jsoup.helper.DataUtilTest
+Add Thrown Exception Type	IOException in method public discardsSpuriousByteOrderMarkWhenNoCharsetSet() : void from class org.jsoup.helper.DataUtilTest
+Add Thrown Exception Type	IOException in method public wrongMetaCharsetFallback() : void from class org.jsoup.helper.DataUtilTest
+Rename Method	public canInterruptRead() : void renamed to public canInterruptBodyStringRead() : void in class org.jsoup.integration.UrlConnectTest
+jsoup, Refactorings at 472c7e55ee9d5cc7e7771696092c6eeca5a91b4d
+jsoup, Refactorings at fb8b60b4d3d202c6fa708f60b8b4a5a53836af24
+Add Parameter Modifier	final in parameter needle : String in method public in(needle String, haystack String...) : boolean from class org.jsoup.helper.StringUtil
+Add Parameter Modifier	final in parameter haystack : String... in method public in(needle String, haystack String...) : boolean from class org.jsoup.helper.StringUtil
+jsoup, Refactorings at 38049ce2808cafce3884c25c4613aaaff9f2d0d8
+Extract Method	private childElementsList() : List<Element> extracted from public children() : Elements in class org.jsoup.nodes.Element
+Rename Variable	elements : List<Element> to children : List<Element> in method private childElementsList() : List<Element> from class org.jsoup.nodes.Element
+Add Method Annotation	@Test in method public testChildrenElements() : void from class org.jsoup.nodes.ElementTest
+jsoup, Refactorings at b934c5d3e30917de86796c89fcb7cd000f642a80
+jsoup, Refactorings at e38b916ba1ebd3f5c00a6b6b8e77a4cdfea2800f
+Add Parameter	settings : ParseSettings in method package parse(input String, baseUri String, errors ParseErrorList, settings ParseSettings) : Document from class org.jsoup.parser.HtmlTreeBuilder
+Add Parameter	settings : ParseSettings in method package parseFragment(inputFragment String, context Element, baseUri String, errors ParseErrorList, settings ParseSettings) : List<Node> from class org.jsoup.parser.HtmlTreeBuilder
+Extract Method	public valueOf(tagName String, settings ParseSettings) : Tag extracted from public valueOf(tagName String) : Tag in class org.jsoup.parser.Tag
+Add Attribute Modifier	final in attribute private reader : CharacterReader from class org.jsoup.parser.Tokeniser
+Add Attribute Modifier	final in attribute private errors : ParseErrorList from class org.jsoup.parser.Tokeniser
+Add Parameter	settings : ParseSettings in method protected initialiseParse(input String, baseUri String, errors ParseErrorList, settings ParseSettings) : void from class org.jsoup.parser.TreeBuilder
+Add Parameter	settings : ParseSettings in method package parse(input String, baseUri String, errors ParseErrorList, settings ParseSettings) : Document from class org.jsoup.parser.TreeBuilder
+Add Parameter	settings : ParseSettings in method protected initialiseParse(input String, baseUri String, errors ParseErrorList, settings ParseSettings) : void from class org.jsoup.parser.XmlTreeBuilder
+Add Parameter	settings : ParseSettings in method package parseFragment(inputFragment String, baseUri String, errors ParseErrorList, settings ParseSettings) : List<Node> from class org.jsoup.parser.XmlTreeBuilder
+Rename Method	public testFragement() : void renamed to public testFragment() : void in class org.jsoup.parser.HtmlParserTest
+Rename Method	public isCaseInsensitive() : void renamed to public canBeInsensitive() : void in class org.jsoup.parser.TagTest
+Push Down Method	package parse(input String, baseUri String) : Document from class org.jsoup.parser.TreeBuilder to package parse(input String, baseUri String) : Document from class org.jsoup.parser.XmlTreeBuilder
+jsoup, Refactorings at 433d2f180058b8b73e1951c6cfbb986714e68b0f
+Add Parameter	parser : Parser in method package parseByteData(byteData ByteBuffer, charsetName String, baseUri String, parser Parser) : Document from class org.jsoup.helper.DataUtil
+Change Method Access Modifier	package to protected in method protected process(token Token) : boolean from class org.jsoup.parser.HtmlTreeBuilder
+Add Parameter	trackErrors : boolean in method package parse(input String, baseUri String, trackErrors boolean) : Document from class org.jsoup.parser.HtmlTreeBuilder
+Add Parameter	trackErrors : boolean in method package parseFragment(inputFragment String, context Element, baseUri String, trackErrors boolean) : List<Node> from class org.jsoup.parser.HtmlTreeBuilder
+Encapsulate Attribute	protected errors : List<ParseError> from class org.jsoup.parser.TreeBuilder
+Extract Method	package parse(input String, baseUri String, trackErrors boolean) : Document extracted from package parse(input String, baseUri String) : Document in class org.jsoup.parser.TreeBuilder
+Change Method Access Modifier	package to protected in method protected abstract process(token Token) : boolean from class org.jsoup.parser.TreeBuilder
+Change Method Access Modifier	package to protected in method protected currentElement() : Element from class org.jsoup.parser.TreeBuilder
+Add Parameter	trackErrors : boolean in method protected initialiseParse(input String, baseUri String, trackErrors boolean) : void from class org.jsoup.parser.TreeBuilder
+Change Method Access Modifier	package to protected in method protected process(token Token) : boolean from class org.jsoup.parser.XmlTreeBuilder
+Add Parameter	trackErrors : boolean in method protected initialiseParse(input String, baseUri String, trackErrors boolean) : void from class org.jsoup.parser.XmlTreeBuilder
+jsoup, Refactorings at e38b916ba1ebd3f5c00a6b6b8e77a4cdfea2800f
+Add Parameter	settings : ParseSettings in method package parse(input String, baseUri String, errors ParseErrorList, settings ParseSettings) : Document from class org.jsoup.parser.HtmlTreeBuilder
+Add Parameter	settings : ParseSettings in method package parseFragment(inputFragment String, context Element, baseUri String, errors ParseErrorList, settings ParseSettings) : List<Node> from class org.jsoup.parser.HtmlTreeBuilder
+Extract Method	public valueOf(tagName String, settings ParseSettings) : Tag extracted from public valueOf(tagName String) : Tag in class org.jsoup.parser.Tag
+Add Attribute Modifier	final in attribute private reader : CharacterReader from class org.jsoup.parser.Tokeniser
+Add Attribute Modifier	final in attribute private errors : ParseErrorList from class org.jsoup.parser.Tokeniser
+Add Parameter	settings : ParseSettings in method protected initialiseParse(input String, baseUri String, errors ParseErrorList, settings ParseSettings) : void from class org.jsoup.parser.TreeBuilder
+Add Parameter	settings : ParseSettings in method package parse(input String, baseUri String, errors ParseErrorList, settings ParseSettings) : Document from class org.jsoup.parser.TreeBuilder
+Add Parameter	settings : ParseSettings in method protected initialiseParse(input String, baseUri String, errors ParseErrorList, settings ParseSettings) : void from class org.jsoup.parser.XmlTreeBuilder
+Add Parameter	settings : ParseSettings in method package parseFragment(inputFragment String, baseUri String, errors ParseErrorList, settings ParseSettings) : List<Node> from class org.jsoup.parser.XmlTreeBuilder
+Rename Method	public testFragement() : void renamed to public testFragment() : void in class org.jsoup.parser.HtmlParserTest
+Rename Method	public isCaseInsensitive() : void renamed to public canBeInsensitive() : void in class org.jsoup.parser.TagTest
+Push Down Method	package parse(input String, baseUri String) : Document from class org.jsoup.parser.TreeBuilder to package parse(input String, baseUri String) : Document from class org.jsoup.parser.XmlTreeBuilder
+jsoup, Refactorings at 472c7e55ee9d5cc7e7771696092c6eeca5a91b4d
+jsoup, Refactorings at e38b916ba1ebd3f5c00a6b6b8e77a4cdfea2800f
+Add Parameter	settings : ParseSettings in method package parse(input String, baseUri String, errors ParseErrorList, settings ParseSettings) : Document from class org.jsoup.parser.HtmlTreeBuilder
+Add Parameter	settings : ParseSettings in method package parseFragment(inputFragment String, context Element, baseUri String, errors ParseErrorList, settings ParseSettings) : List<Node> from class org.jsoup.parser.HtmlTreeBuilder
+Extract Method	public valueOf(tagName String, settings ParseSettings) : Tag extracted from public valueOf(tagName String) : Tag in class org.jsoup.parser.Tag
+Add Attribute Modifier	final in attribute private reader : CharacterReader from class org.jsoup.parser.Tokeniser
+Add Attribute Modifier	final in attribute private errors : ParseErrorList from class org.jsoup.parser.Tokeniser
+Add Parameter	settings : ParseSettings in method protected initialiseParse(input String, baseUri String, errors ParseErrorList, settings ParseSettings) : void from class org.jsoup.parser.TreeBuilder
+Add Parameter	settings : ParseSettings in method package parse(input String, baseUri String, errors ParseErrorList, settings ParseSettings) : Document from class org.jsoup.parser.TreeBuilder
+Add Parameter	settings : ParseSettings in method protected initialiseParse(input String, baseUri String, errors ParseErrorList, settings ParseSettings) : void from class org.jsoup.parser.XmlTreeBuilder
+Add Parameter	settings : ParseSettings in method package parseFragment(inputFragment String, baseUri String, errors ParseErrorList, settings ParseSettings) : List<Node> from class org.jsoup.parser.XmlTreeBuilder
+Rename Method	public testFragement() : void renamed to public testFragment() : void in class org.jsoup.parser.HtmlParserTest
+Rename Method	public isCaseInsensitive() : void renamed to public canBeInsensitive() : void in class org.jsoup.parser.TagTest
+Push Down Method	package parse(input String, baseUri String) : Document from class org.jsoup.parser.TreeBuilder to package parse(input String, baseUri String) : Document from class org.jsoup.parser.XmlTreeBuilder
+jsoup, Refactorings at 8749726a79c22451b1f01b14fb2137f734e926b4
+Change Variable Type	inStream : InputStream to inStream : FileInputStream in method public load(in File, charsetName String, baseUri String) : Document from class org.jsoup.helper.DataUtil
+Change Variable Type	remainder : Element to remainder : Node in method public wrap(html String) : Node from class org.jsoup.nodes.Node
+Change Variable Type	wrapChildren : Elements to wrapChildren : List<Node> in method public wrap(html String) : Node from class org.jsoup.nodes.Node
+Rename Method	public emptyOnNoKey() : void renamed to public canStartWithEq() : void in class org.jsoup.parser.AttributeParseTest
+Rename Method	public parsesUnterminatedTag() : void renamed to public dropsUnterminatedTag() : void in class org.jsoup.parser.ParserTest
+Rename Method	public parsesUnterminatedAttribute() : void renamed to public dropsUnterminatedAttribute() : void in class org.jsoup.parser.ParserTest
+Rename Method	public createsImplicitLists() : void renamed to public doesNotCreateImplicitLists() : void in class org.jsoup.parser.ParserTest
+Rename Method	public createsImplicitTable() : void renamed to public discardsNakedTds() : void in class org.jsoup.parser.ParserTest
+Rename Method	public handlesEmptyBlocks() : void renamed to public handlesKnownEmptyBlocks() : void in class org.jsoup.parser.ParserTest
+Rename Method	public testAllowsImageInNoScriptInHead() : void renamed to public testNoImagesInNoScriptInHead() : void in class org.jsoup.parser.ParserTest
+Extract Class	org.jsoup.parser.TreeBuilder from class org.jsoup.parser.Parser
+Move Attribute	private doc : Document from class org.jsoup.parser.Parser to private doc : Document from class org.jsoup.parser.TreeBuilder
+Remove Attribute Modifier	final in attribute private doc : Document from class org.jsoup.parser.Parser
+Move Attribute	private stack : LinkedList<Element> from class org.jsoup.parser.Parser to private stack : LinkedList<Element> from class org.jsoup.parser.TreeBuilder
+Remove Attribute Modifier	final in attribute private stack : LinkedList<Element> from class org.jsoup.parser.Parser
+Move Attribute	private baseUri : String from class org.jsoup.parser.Parser to private baseUri : String from class org.jsoup.parser.TreeBuilder
+Change Method Access Modifier	private to package in method package currentElement() : Element from class org.jsoup.parser.TreeBuilder
+Move And Rename Method	private last() : Element from class org.jsoup.parser.Parser to package currentElement() : Element from class org.jsoup.parser.TreeBuilder
+jsoup, Refactorings at f548940dd8be5f8c93ef17a8896b2807aa2a08bc
+Remove Attribute Modifier	final in attribute package childNodes : List<Node> from class org.jsoup.nodes.Node
+Remove Attribute Modifier	final in attribute package attributes : Attributes from class org.jsoup.nodes.Node
+jsoup, Refactorings at 8391b7231a2519557d41209d728acc4f422af381
+jsoup, Refactorings at 8749726a79c22451b1f01b14fb2137f734e926b4
+Change Variable Type	inStream : InputStream to inStream : FileInputStream in method public load(in File, charsetName String, baseUri String) : Document from class org.jsoup.helper.DataUtil
+Change Variable Type	remainder : Element to remainder : Node in method public wrap(html String) : Node from class org.jsoup.nodes.Node
+Change Variable Type	wrapChildren : Elements to wrapChildren : List<Node> in method public wrap(html String) : Node from class org.jsoup.nodes.Node
+Rename Method	public emptyOnNoKey() : void renamed to public canStartWithEq() : void in class org.jsoup.parser.AttributeParseTest
+Rename Method	public parsesUnterminatedTag() : void renamed to public dropsUnterminatedTag() : void in class org.jsoup.parser.ParserTest
+Rename Method	public parsesUnterminatedAttribute() : void renamed to public dropsUnterminatedAttribute() : void in class org.jsoup.parser.ParserTest
+Rename Method	public createsImplicitLists() : void renamed to public doesNotCreateImplicitLists() : void in class org.jsoup.parser.ParserTest
+Rename Method	public createsImplicitTable() : void renamed to public discardsNakedTds() : void in class org.jsoup.parser.ParserTest
+Rename Method	public handlesEmptyBlocks() : void renamed to public handlesKnownEmptyBlocks() : void in class org.jsoup.parser.ParserTest
+Rename Method	public testAllowsImageInNoScriptInHead() : void renamed to public testNoImagesInNoScriptInHead() : void in class org.jsoup.parser.ParserTest
+Extract Class	org.jsoup.parser.TreeBuilder from class org.jsoup.parser.Parser
+Move Attribute	private doc : Document from class org.jsoup.parser.Parser to private doc : Document from class org.jsoup.parser.TreeBuilder
+Remove Attribute Modifier	final in attribute private doc : Document from class org.jsoup.parser.Parser
+Move Attribute	private stack : LinkedList<Element> from class org.jsoup.parser.Parser to private stack : LinkedList<Element> from class org.jsoup.parser.TreeBuilder
+Remove Attribute Modifier	final in attribute private stack : LinkedList<Element> from class org.jsoup.parser.Parser
+Move Attribute	private baseUri : String from class org.jsoup.parser.Parser to private baseUri : String from class org.jsoup.parser.TreeBuilder
+Change Method Access Modifier	private to package in method package currentElement() : Element from class org.jsoup.parser.TreeBuilder
+Move And Rename Method	private last() : Element from class org.jsoup.parser.Parser to package currentElement() : Element from class org.jsoup.parser.TreeBuilder
+jsoup, Refactorings at 8391b7231a2519557d41209d728acc4f422af381
+jsoup, Refactorings at dfac9ce465ff9c988904d05014d2be2715aa1d2b
+Rename Method	public preservesRelatedLinksIfConfigured() : void renamed to public preservesRelativeLinksIfConfigured() : void in class org.jsoup.safety.CleanerTest
+jsoup, Refactorings at f36b950de16f6db134bd98969cd8fbe578d37480
+jsoup, Refactorings at dfac9ce465ff9c988904d05014d2be2715aa1d2b
+Rename Method	public preservesRelatedLinksIfConfigured() : void renamed to public preservesRelativeLinksIfConfigured() : void in class org.jsoup.safety.CleanerTest
+jsoup, Refactorings at 8749726a79c22451b1f01b14fb2137f734e926b4
+Change Variable Type	inStream : InputStream to inStream : FileInputStream in method public load(in File, charsetName String, baseUri String) : Document from class org.jsoup.helper.DataUtil
+Change Variable Type	remainder : Element to remainder : Node in method public wrap(html String) : Node from class org.jsoup.nodes.Node
+Change Variable Type	wrapChildren : Elements to wrapChildren : List<Node> in method public wrap(html String) : Node from class org.jsoup.nodes.Node
+Rename Method	public emptyOnNoKey() : void renamed to public canStartWithEq() : void in class org.jsoup.parser.AttributeParseTest
+Rename Method	public parsesUnterminatedTag() : void renamed to public dropsUnterminatedTag() : void in class org.jsoup.parser.ParserTest
+Rename Method	public parsesUnterminatedAttribute() : void renamed to public dropsUnterminatedAttribute() : void in class org.jsoup.parser.ParserTest
+Rename Method	public createsImplicitLists() : void renamed to public doesNotCreateImplicitLists() : void in class org.jsoup.parser.ParserTest
+Rename Method	public createsImplicitTable() : void renamed to public discardsNakedTds() : void in class org.jsoup.parser.ParserTest
+Rename Method	public handlesEmptyBlocks() : void renamed to public handlesKnownEmptyBlocks() : void in class org.jsoup.parser.ParserTest
+Rename Method	public testAllowsImageInNoScriptInHead() : void renamed to public testNoImagesInNoScriptInHead() : void in class org.jsoup.parser.ParserTest
+Extract Class	org.jsoup.parser.TreeBuilder from class org.jsoup.parser.Parser
+Move Attribute	private doc : Document from class org.jsoup.parser.Parser to private doc : Document from class org.jsoup.parser.TreeBuilder
+Remove Attribute Modifier	final in attribute private doc : Document from class org.jsoup.parser.Parser
+Move Attribute	private stack : LinkedList<Element> from class org.jsoup.parser.Parser to private stack : LinkedList<Element> from class org.jsoup.parser.TreeBuilder
+Remove Attribute Modifier	final in attribute private stack : LinkedList<Element> from class org.jsoup.parser.Parser
+Move Attribute	private baseUri : String from class org.jsoup.parser.Parser to private baseUri : String from class org.jsoup.parser.TreeBuilder
+Change Method Access Modifier	private to package in method package currentElement() : Element from class org.jsoup.parser.TreeBuilder
+Move And Rename Method	private last() : Element from class org.jsoup.parser.Parser to package currentElement() : Element from class org.jsoup.parser.TreeBuilder
+jsoup, Refactorings at 8749726a79c22451b1f01b14fb2137f734e926b4
+Change Variable Type	inStream : InputStream to inStream : FileInputStream in method public load(in File, charsetName String, baseUri String) : Document from class org.jsoup.helper.DataUtil
+Change Variable Type	remainder : Element to remainder : Node in method public wrap(html String) : Node from class org.jsoup.nodes.Node
+Change Variable Type	wrapChildren : Elements to wrapChildren : List<Node> in method public wrap(html String) : Node from class org.jsoup.nodes.Node
+Rename Method	public emptyOnNoKey() : void renamed to public canStartWithEq() : void in class org.jsoup.parser.AttributeParseTest
+Rename Method	public parsesUnterminatedTag() : void renamed to public dropsUnterminatedTag() : void in class org.jsoup.parser.ParserTest
+Rename Method	public parsesUnterminatedAttribute() : void renamed to public dropsUnterminatedAttribute() : void in class org.jsoup.parser.ParserTest
+Rename Method	public createsImplicitLists() : void renamed to public doesNotCreateImplicitLists() : void in class org.jsoup.parser.ParserTest
+Rename Method	public createsImplicitTable() : void renamed to public discardsNakedTds() : void in class org.jsoup.parser.ParserTest
+Rename Method	public handlesEmptyBlocks() : void renamed to public handlesKnownEmptyBlocks() : void in class org.jsoup.parser.ParserTest
+Rename Method	public testAllowsImageInNoScriptInHead() : void renamed to public testNoImagesInNoScriptInHead() : void in class org.jsoup.parser.ParserTest
+Extract Class	org.jsoup.parser.TreeBuilder from class org.jsoup.parser.Parser
+Move Attribute	private doc : Document from class org.jsoup.parser.Parser to private doc : Document from class org.jsoup.parser.TreeBuilder
+Remove Attribute Modifier	final in attribute private doc : Document from class org.jsoup.parser.Parser
+Move Attribute	private stack : LinkedList<Element> from class org.jsoup.parser.Parser to private stack : LinkedList<Element> from class org.jsoup.parser.TreeBuilder
+Remove Attribute Modifier	final in attribute private stack : LinkedList<Element> from class org.jsoup.parser.Parser
+Move Attribute	private baseUri : String from class org.jsoup.parser.Parser to private baseUri : String from class org.jsoup.parser.TreeBuilder
+Change Method Access Modifier	private to package in method package currentElement() : Element from class org.jsoup.parser.TreeBuilder
+Move And Rename Method	private last() : Element from class org.jsoup.parser.Parser to package currentElement() : Element from class org.jsoup.parser.TreeBuilder
+jsoup, Refactorings at 8749726a79c22451b1f01b14fb2137f734e926b4
+Change Variable Type	inStream : InputStream to inStream : FileInputStream in method public load(in File, charsetName String, baseUri String) : Document from class org.jsoup.helper.DataUtil
+Change Variable Type	remainder : Element to remainder : Node in method public wrap(html String) : Node from class org.jsoup.nodes.Node
+Change Variable Type	wrapChildren : Elements to wrapChildren : List<Node> in method public wrap(html String) : Node from class org.jsoup.nodes.Node
+Rename Method	public emptyOnNoKey() : void renamed to public canStartWithEq() : void in class org.jsoup.parser.AttributeParseTest
+Rename Method	public parsesUnterminatedTag() : void renamed to public dropsUnterminatedTag() : void in class org.jsoup.parser.ParserTest
+Rename Method	public parsesUnterminatedAttribute() : void renamed to public dropsUnterminatedAttribute() : void in class org.jsoup.parser.ParserTest
+Rename Method	public createsImplicitLists() : void renamed to public doesNotCreateImplicitLists() : void in class org.jsoup.parser.ParserTest
+Rename Method	public createsImplicitTable() : void renamed to public discardsNakedTds() : void in class org.jsoup.parser.ParserTest
+Rename Method	public handlesEmptyBlocks() : void renamed to public handlesKnownEmptyBlocks() : void in class org.jsoup.parser.ParserTest
+Rename Method	public testAllowsImageInNoScriptInHead() : void renamed to public testNoImagesInNoScriptInHead() : void in class org.jsoup.parser.ParserTest
+Extract Class	org.jsoup.parser.TreeBuilder from class org.jsoup.parser.Parser
+Move Attribute	private doc : Document from class org.jsoup.parser.Parser to private doc : Document from class org.jsoup.parser.TreeBuilder
+Remove Attribute Modifier	final in attribute private doc : Document from class org.jsoup.parser.Parser
+Move Attribute	private stack : LinkedList<Element> from class org.jsoup.parser.Parser to private stack : LinkedList<Element> from class org.jsoup.parser.TreeBuilder
+Remove Attribute Modifier	final in attribute private stack : LinkedList<Element> from class org.jsoup.parser.Parser
+Move Attribute	private baseUri : String from class org.jsoup.parser.Parser to private baseUri : String from class org.jsoup.parser.TreeBuilder
+Change Method Access Modifier	private to package in method package currentElement() : Element from class org.jsoup.parser.TreeBuilder
+Move And Rename Method	private last() : Element from class org.jsoup.parser.Parser to package currentElement() : Element from class org.jsoup.parser.TreeBuilder
+jsoup, Refactorings at 8749726a79c22451b1f01b14fb2137f734e926b4
+Change Variable Type	inStream : InputStream to inStream : FileInputStream in method public load(in File, charsetName String, baseUri String) : Document from class org.jsoup.helper.DataUtil
+Change Variable Type	remainder : Element to remainder : Node in method public wrap(html String) : Node from class org.jsoup.nodes.Node
+Change Variable Type	wrapChildren : Elements to wrapChildren : List<Node> in method public wrap(html String) : Node from class org.jsoup.nodes.Node
+Rename Method	public emptyOnNoKey() : void renamed to public canStartWithEq() : void in class org.jsoup.parser.AttributeParseTest
+Rename Method	public parsesUnterminatedTag() : void renamed to public dropsUnterminatedTag() : void in class org.jsoup.parser.ParserTest
+Rename Method	public parsesUnterminatedAttribute() : void renamed to public dropsUnterminatedAttribute() : void in class org.jsoup.parser.ParserTest
+Rename Method	public createsImplicitLists() : void renamed to public doesNotCreateImplicitLists() : void in class org.jsoup.parser.ParserTest
+Rename Method	public createsImplicitTable() : void renamed to public discardsNakedTds() : void in class org.jsoup.parser.ParserTest
+Rename Method	public handlesEmptyBlocks() : void renamed to public handlesKnownEmptyBlocks() : void in class org.jsoup.parser.ParserTest
+Rename Method	public testAllowsImageInNoScriptInHead() : void renamed to public testNoImagesInNoScriptInHead() : void in class org.jsoup.parser.ParserTest
+Extract Class	org.jsoup.parser.TreeBuilder from class org.jsoup.parser.Parser
+Move Attribute	private doc : Document from class org.jsoup.parser.Parser to private doc : Document from class org.jsoup.parser.TreeBuilder
+Remove Attribute Modifier	final in attribute private doc : Document from class org.jsoup.parser.Parser
+Move Attribute	private stack : LinkedList<Element> from class org.jsoup.parser.Parser to private stack : LinkedList<Element> from class org.jsoup.parser.TreeBuilder
+Remove Attribute Modifier	final in attribute private stack : LinkedList<Element> from class org.jsoup.parser.Parser
+Move Attribute	private baseUri : String from class org.jsoup.parser.Parser to private baseUri : String from class org.jsoup.parser.TreeBuilder
+Change Method Access Modifier	private to package in method package currentElement() : Element from class org.jsoup.parser.TreeBuilder
+Move And Rename Method	private last() : Element from class org.jsoup.parser.Parser to package currentElement() : Element from class org.jsoup.parser.TreeBuilder
+jsoup, Refactorings at 13c2af3f24fceda5b44776a5257112ac7218d038
+jsoup, Refactorings at 8749726a79c22451b1f01b14fb2137f734e926b4
+Change Variable Type	inStream : InputStream to inStream : FileInputStream in method public load(in File, charsetName String, baseUri String) : Document from class org.jsoup.helper.DataUtil
+Change Variable Type	remainder : Element to remainder : Node in method public wrap(html String) : Node from class org.jsoup.nodes.Node
+Change Variable Type	wrapChildren : Elements to wrapChildren : List<Node> in method public wrap(html String) : Node from class org.jsoup.nodes.Node
+Rename Method	public emptyOnNoKey() : void renamed to public canStartWithEq() : void in class org.jsoup.parser.AttributeParseTest
+Rename Method	public parsesUnterminatedTag() : void renamed to public dropsUnterminatedTag() : void in class org.jsoup.parser.ParserTest
+Rename Method	public parsesUnterminatedAttribute() : void renamed to public dropsUnterminatedAttribute() : void in class org.jsoup.parser.ParserTest
+Rename Method	public createsImplicitLists() : void renamed to public doesNotCreateImplicitLists() : void in class org.jsoup.parser.ParserTest
+Rename Method	public createsImplicitTable() : void renamed to public discardsNakedTds() : void in class org.jsoup.parser.ParserTest
+Rename Method	public handlesEmptyBlocks() : void renamed to public handlesKnownEmptyBlocks() : void in class org.jsoup.parser.ParserTest
+Rename Method	public testAllowsImageInNoScriptInHead() : void renamed to public testNoImagesInNoScriptInHead() : void in class org.jsoup.parser.ParserTest
+Extract Class	org.jsoup.parser.TreeBuilder from class org.jsoup.parser.Parser
+Move Attribute	private doc : Document from class org.jsoup.parser.Parser to private doc : Document from class org.jsoup.parser.TreeBuilder
+Remove Attribute Modifier	final in attribute private doc : Document from class org.jsoup.parser.Parser
+Move Attribute	private stack : LinkedList<Element> from class org.jsoup.parser.Parser to private stack : LinkedList<Element> from class org.jsoup.parser.TreeBuilder
+Remove Attribute Modifier	final in attribute private stack : LinkedList<Element> from class org.jsoup.parser.Parser
+Move Attribute	private baseUri : String from class org.jsoup.parser.Parser to private baseUri : String from class org.jsoup.parser.TreeBuilder
+Change Method Access Modifier	private to package in method package currentElement() : Element from class org.jsoup.parser.TreeBuilder
+Move And Rename Method	private last() : Element from class org.jsoup.parser.Parser to package currentElement() : Element from class org.jsoup.parser.TreeBuilder
+jsoup, Refactorings at 13c2af3f24fceda5b44776a5257112ac7218d038
+jsoup, Refactorings at 8749726a79c22451b1f01b14fb2137f734e926b4
+Change Variable Type	inStream : InputStream to inStream : FileInputStream in method public load(in File, charsetName String, baseUri String) : Document from class org.jsoup.helper.DataUtil
+Change Variable Type	remainder : Element to remainder : Node in method public wrap(html String) : Node from class org.jsoup.nodes.Node
+Change Variable Type	wrapChildren : Elements to wrapChildren : List<Node> in method public wrap(html String) : Node from class org.jsoup.nodes.Node
+Rename Method	public emptyOnNoKey() : void renamed to public canStartWithEq() : void in class org.jsoup.parser.AttributeParseTest
+Rename Method	public parsesUnterminatedTag() : void renamed to public dropsUnterminatedTag() : void in class org.jsoup.parser.ParserTest
+Rename Method	public parsesUnterminatedAttribute() : void renamed to public dropsUnterminatedAttribute() : void in class org.jsoup.parser.ParserTest
+Rename Method	public createsImplicitLists() : void renamed to public doesNotCreateImplicitLists() : void in class org.jsoup.parser.ParserTest
+Rename Method	public createsImplicitTable() : void renamed to public discardsNakedTds() : void in class org.jsoup.parser.ParserTest
+Rename Method	public handlesEmptyBlocks() : void renamed to public handlesKnownEmptyBlocks() : void in class org.jsoup.parser.ParserTest
+Rename Method	public testAllowsImageInNoScriptInHead() : void renamed to public testNoImagesInNoScriptInHead() : void in class org.jsoup.parser.ParserTest
+Extract Class	org.jsoup.parser.TreeBuilder from class org.jsoup.parser.Parser
+Move Attribute	private doc : Document from class org.jsoup.parser.Parser to private doc : Document from class org.jsoup.parser.TreeBuilder
+Remove Attribute Modifier	final in attribute private doc : Document from class org.jsoup.parser.Parser
+Move Attribute	private stack : LinkedList<Element> from class org.jsoup.parser.Parser to private stack : LinkedList<Element> from class org.jsoup.parser.TreeBuilder
+Remove Attribute Modifier	final in attribute private stack : LinkedList<Element> from class org.jsoup.parser.Parser
+Move Attribute	private baseUri : String from class org.jsoup.parser.Parser to private baseUri : String from class org.jsoup.parser.TreeBuilder
+Change Method Access Modifier	private to package in method package currentElement() : Element from class org.jsoup.parser.TreeBuilder
+Move And Rename Method	private last() : Element from class org.jsoup.parser.Parser to package currentElement() : Element from class org.jsoup.parser.TreeBuilder
+jsoup, Refactorings at 8749726a79c22451b1f01b14fb2137f734e926b4
+Change Variable Type	inStream : InputStream to inStream : FileInputStream in method public load(in File, charsetName String, baseUri String) : Document from class org.jsoup.helper.DataUtil
+Change Variable Type	remainder : Element to remainder : Node in method public wrap(html String) : Node from class org.jsoup.nodes.Node
+Change Variable Type	wrapChildren : Elements to wrapChildren : List<Node> in method public wrap(html String) : Node from class org.jsoup.nodes.Node
+Rename Method	public emptyOnNoKey() : void renamed to public canStartWithEq() : void in class org.jsoup.parser.AttributeParseTest
+Rename Method	public parsesUnterminatedTag() : void renamed to public dropsUnterminatedTag() : void in class org.jsoup.parser.ParserTest
+Rename Method	public parsesUnterminatedAttribute() : void renamed to public dropsUnterminatedAttribute() : void in class org.jsoup.parser.ParserTest
+Rename Method	public createsImplicitLists() : void renamed to public doesNotCreateImplicitLists() : void in class org.jsoup.parser.ParserTest
+Rename Method	public createsImplicitTable() : void renamed to public discardsNakedTds() : void in class org.jsoup.parser.ParserTest
+Rename Method	public handlesEmptyBlocks() : void renamed to public handlesKnownEmptyBlocks() : void in class org.jsoup.parser.ParserTest
+Rename Method	public testAllowsImageInNoScriptInHead() : void renamed to public testNoImagesInNoScriptInHead() : void in class org.jsoup.parser.ParserTest
+Extract Class	org.jsoup.parser.TreeBuilder from class org.jsoup.parser.Parser
+Move Attribute	private doc : Document from class org.jsoup.parser.Parser to private doc : Document from class org.jsoup.parser.TreeBuilder
+Remove Attribute Modifier	final in attribute private doc : Document from class org.jsoup.parser.Parser
+Move Attribute	private stack : LinkedList<Element> from class org.jsoup.parser.Parser to private stack : LinkedList<Element> from class org.jsoup.parser.TreeBuilder
+Remove Attribute Modifier	final in attribute private stack : LinkedList<Element> from class org.jsoup.parser.Parser
+Move Attribute	private baseUri : String from class org.jsoup.parser.Parser to private baseUri : String from class org.jsoup.parser.TreeBuilder
+Change Method Access Modifier	private to package in method package currentElement() : Element from class org.jsoup.parser.TreeBuilder
+Move And Rename Method	private last() : Element from class org.jsoup.parser.Parser to package currentElement() : Element from class org.jsoup.parser.TreeBuilder
+jsoup, Refactorings at 13c2af3f24fceda5b44776a5257112ac7218d038
+jsoup, Refactorings at 45e787d054b2851e0f3607bab47e2c41496efe76
+jsoup, Refactorings at dbbe693c9fbeef94d663c963b57ea379c75806a1
+Add Parameter	tag : Tag in method private parseAttribute(tag Tag) : Attribute from class org.jsoup.parser.Parser
+jsoup, Refactorings at b87be0c0384503d832a34d363800441b94b8fed9
+jsoup, Refactorings at 57bce6dc8424637621f6b660855f23e72a08c4b3
+Change Variable Type	data : String to doc : Document in method package load(url URL, timeoutMillis int) : Document from class org.jsoup.DataUtil
+Rename Variable	data : String to doc : Document in method package load(url URL, timeoutMillis int) : Document from class org.jsoup.DataUtil
+Change Return Type	String to Document in method package load(url URL, timeoutMillis int) : Document from class org.jsoup.DataUtil
+Change Variable Type	data : String to doc : Document in method package load(in File, charsetName String, baseUri String) : Document from class org.jsoup.DataUtil
+Rename Variable	data : String to doc : Document in method package load(in File, charsetName String, baseUri String) : Document from class org.jsoup.DataUtil
+Change Return Type	String to Document in method package load(in File, charsetName String, baseUri String) : Document from class org.jsoup.DataUtil
+Add Parameter	baseUri : String in method package load(in File, charsetName String, baseUri String) : Document from class org.jsoup.DataUtil
+Change Return Type	String to Document in method private readInputStream(inStream InputStream, charsetName String, baseUri String) : Document from class org.jsoup.DataUtil
+Add Parameter	baseUri : String in method private readInputStream(inStream InputStream, charsetName String, baseUri String) : Document from class org.jsoup.DataUtil
+Add Parameter	out : Document.OutputSettings in method protected html(accum StringBuilder, out Document.OutputSettings) : void from class org.jsoup.nodes.Attribute
+Add Parameter	out : Document.OutputSettings in method package html(accum StringBuilder, out Document.OutputSettings) : void from class org.jsoup.nodes.Attributes
+Add Parameter	out : Document.OutputSettings in method package outerHtmlTail(accum StringBuilder, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.Comment
+Add Parameter	out : Document.OutputSettings in method package outerHtmlHead(accum StringBuilder, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.DataNode
+Add Parameter	out : Document.OutputSettings in method package outerHtmlTail(accum StringBuilder, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.DataNode
+Remove Class Modifier	static in class org.jsoup.nodes.Document.OutputSettings
+Add Parameter	out : Document.OutputSettings in method package outerHtmlHead(accum StringBuilder, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.Element
+Add Parameter	out : Document.OutputSettings in method package outerHtmlTail(accum StringBuilder, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.Element
+Change Class Access Modifier	package to public in class org.jsoup.nodes.Entities
+Add Parameter	out : Document.OutputSettings in method package OuterHtmlVisitor(accum StringBuilder, out Document.OutputSettings) from class org.jsoup.nodes.Node.OuterHtmlVisitor
+Add Parameter	out : Document.OutputSettings in method package outerHtmlHead(accum StringBuilder, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.TextNode
+Add Parameter	out : Document.OutputSettings in method package outerHtmlTail(accum StringBuilder, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.TextNode
+Add Parameter	out : Document.OutputSettings in method package outerHtmlTail(accum StringBuilder, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.XmlDeclaration
+Extract And Move Method	public outputSettings() : OutputSettings extracted from private readInputStream(inStream InputStream, charsetName String) : String in class org.jsoup.DataUtil & moved to class org.jsoup.nodes.Document
+Add Parameter	out : Document.OutputSettings in method package outerHtmlHead(accum StringBuilder, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.Comment
+Add Parameter	out : Document.OutputSettings in method package abstract outerHtmlHead(accum StringBuilder, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.Node
+Add Parameter	out : Document.OutputSettings in method package abstract outerHtmlTail(accum StringBuilder, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.Node
+Add Parameter	out : Document.OutputSettings in method package outerHtmlHead(accum StringBuilder, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.XmlDeclaration
+jsoup, Refactorings at 57bce6dc8424637621f6b660855f23e72a08c4b3
+Change Variable Type	data : String to doc : Document in method package load(url URL, timeoutMillis int) : Document from class org.jsoup.DataUtil
+Rename Variable	data : String to doc : Document in method package load(url URL, timeoutMillis int) : Document from class org.jsoup.DataUtil
+Change Return Type	String to Document in method package load(url URL, timeoutMillis int) : Document from class org.jsoup.DataUtil
+Change Variable Type	data : String to doc : Document in method package load(in File, charsetName String, baseUri String) : Document from class org.jsoup.DataUtil
+Rename Variable	data : String to doc : Document in method package load(in File, charsetName String, baseUri String) : Document from class org.jsoup.DataUtil
+Change Return Type	String to Document in method package load(in File, charsetName String, baseUri String) : Document from class org.jsoup.DataUtil
+Add Parameter	baseUri : String in method package load(in File, charsetName String, baseUri String) : Document from class org.jsoup.DataUtil
+Change Return Type	String to Document in method private readInputStream(inStream InputStream, charsetName String, baseUri String) : Document from class org.jsoup.DataUtil
+Add Parameter	baseUri : String in method private readInputStream(inStream InputStream, charsetName String, baseUri String) : Document from class org.jsoup.DataUtil
+Add Parameter	out : Document.OutputSettings in method protected html(accum StringBuilder, out Document.OutputSettings) : void from class org.jsoup.nodes.Attribute
+Add Parameter	out : Document.OutputSettings in method package html(accum StringBuilder, out Document.OutputSettings) : void from class org.jsoup.nodes.Attributes
+Add Parameter	out : Document.OutputSettings in method package outerHtmlTail(accum StringBuilder, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.Comment
+Add Parameter	out : Document.OutputSettings in method package outerHtmlHead(accum StringBuilder, depth int, out Document.OutputSettings) : voi
