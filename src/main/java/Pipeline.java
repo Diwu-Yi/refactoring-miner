@@ -172,8 +172,9 @@ public class Pipeline {
         // 覆盖率：同时走过 fixing 的地方，
         System.out.println("Working Directory = " + System.getProperty("user.dir"));
         String[] arguments = new String[] {"/bin/bash", "-c", "java -jar evosuite-1.0.6.jar -regressionSuite -projectCP jsoup-1.13.1-SNAPSHOT_correct.jar -Dregressioncp=\"jsoup-1.11.3-SNAPSHOT.jar\" -class org.jsoup.parser.CharacterReader"};
-        // 调evosuite 的api 接口
+        // 调evosuite 的 api 接口
         //
+
         Process process = new ProcessBuilder(arguments).start();
         BufferedReader procReader = new BufferedReader(new InputStreamReader(process.getInputStream()));
         String ln = "";
@@ -184,5 +185,6 @@ public class Pipeline {
         Runtime.getRuntime().exec("/bin/bash -c java -jar evosuite-1.0.6.jar -Dtools_jar_location=/Library/Java/JavaVirtualMachines/jdk1.8.0_333.jdk/Contents/Home/lib/tools.jar -regressionSuite -projectCP jsoup-1.13.1-SNAPSHOT_correct.jar -Dregressioncp=\"jsoup-1.11.3-SNAPSHOT.jar\" -class org.jsoup.parser.CharacterReader");
         //process.waitFor();
         System.out.println("Execution of differential testing is done");
+
     }
 }
