@@ -30,8 +30,8 @@ public class Pipeline {
     // Assembly of pipeline steps to mine regression bugs based on refactoring changes on the benchmark of Res4j
     public static void main(String[] args) throws Exception {
 
-        //Step 1: Setting up and Obtaining entries from Res4j
-        String storageFile = "/Users/diwuyi/Documents/GitHub/refactoring-miner/src/benchmarkEntry.txt";
+        //Step 1: Setting up and Obtaining cleaned and verified entries from Res4j
+        String storageFile = "/Users/diwuyi/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/refactoring-miner/src/benchmarkEntry.txt";
         File file = new File(storageFile);
         BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
         String str;
@@ -48,7 +48,7 @@ public class Pipeline {
             }
         }
 
-        //Step 2: Applying Refactoring Miner
+        //Step 2: Applying Refactoring Miner for all ric commits to identify refactoring changes
         GitService gitService = new GitServiceImpl();
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
 
@@ -80,7 +80,7 @@ public class Pipeline {
             repo = gitService.openRepository(key);
             System.out.println(key);
             List<String> rics = relevantProjectWithRic.get(key);
-            FileWriter myWriter = new FileWriter("/Users/diwuyi/Documents/GitHub/refactoring-miner/src/refactoring.txt");
+            FileWriter myWriter = new FileWriter("/Users/diwuyi/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/refactoring-miner/src/refactoring.txt");
             for (String ric : rics) {
                 miner.detectAtCommit(repo, ric, new RefactoringHandler() {
                     @Override
@@ -105,11 +105,13 @@ public class Pipeline {
         }
 
         //Step 3: Construct of Call Graph with SootUp library --> code
+        // for handling of cases where the method containing the refactoring change is not directly testable
+        // for example, if the method is a private method
         System.out.println("start construction of call graph");
         System.out.println(System.getProperty("java.home"));
         AnalysisInputLocation<JavaSootClass> inputLocation =
                 new JavaClassPathAnalysisInputLocation(
-                        "/Users/diwuyi/Documents/GitHub/refactoring-miner/src/main/resources");
+                        "/Users/diwuyi/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/refactoring-miner/src/main/resources");
 
         JavaLanguage language = new JavaLanguage(8);
 
@@ -165,26 +167,30 @@ public class Pipeline {
 //                relevantProjectWithRic.put(proj, new ArrayList<>(10));
 //            }
 //        }
+
         //Step 3.5 refactoring miner 报出来的 refactor 是否包含target method (引起 bug 的修改)
+
         //Step 4: Differential Testing with evosuite
         // Experiment : target method identification -->
         // Differential test case 报了一个错 , 看跟 ric 是不是也是一样的 bug
         // 覆盖率：同时走过 fixing 的地方，
-        System.out.println("Working Directory = " + System.getProperty("user.dir"));
-        String[] arguments = new String[] {"/bin/bash", "-c", "java -jar evosuite-1.0.6.jar -regressionSuite -projectCP jsoup-1.13.1-SNAPSHOT_correct.jar -Dregressioncp=\"jsoup-1.11.3-SNAPSHOT.jar\" -class org.jsoup.parser.CharacterReader"};
-        // 调evosuite 的 api 接口
-        //
+//        System.out.println("Working Directory = " + System.getProperty("user.dir"));
+//        String[] arguments = new String[] {"/bin/bash", "-c", "java -jar evosuite-1.0.6.jar -regressionSuite -projectCP jsoup-1.13.1-SNAPSHOT_correct.jar -Dregressioncp=\"jsoup-1.11.3-SNAPSHOT.jar\" -class org.jsoup.parser.CharacterReader"};
+//        // 调evosuite 的 api 接口
+//
+//        Process process = new ProcessBuilder(arguments).start();
+//        BufferedReader procReader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+//        String ln = "";
+//        while ((ln = procReader.readLine()) != null) {
+//            System.out.println(ln + "\n");
+//        }
+//        process.waitFor();
+//        Runtime.getRuntime().exec("/bin/bash -c java -jar evosuite-1.0.6.jar -Dtools_jar_location=/Library/Java/JavaVirtualMachines/jdk1.8.0_333.jdk/Contents/Home/lib/tools.jar -regressionSuite -projectCP jsoup-1.13.1-SNAPSHOT_correct.jar -Dregressioncp=\"jsoup-1.11.3-SNAPSHOT.jar\" -class org.jsoup.parser.CharacterReader");
+//        //process.waitFor();
+//        System.out.println("Execution of differential testing is done");
 
-        Process process = new ProcessBuilder(arguments).start();
-        BufferedReader procReader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-        String ln = "";
-        while ((ln = procReader.readLine()) != null) {
-            System.out.println(ln + "\n");
-        }
-        process.waitFor();
-        Runtime.getRuntime().exec("/bin/bash -c java -jar evosuite-1.0.6.jar -Dtools_jar_location=/Library/Java/JavaVirtualMachines/jdk1.8.0_333.jdk/Contents/Home/lib/tools.jar -regressionSuite -projectCP jsoup-1.13.1-SNAPSHOT_correct.jar -Dregressioncp=\"jsoup-1.11.3-SNAPSHOT.jar\" -class org.jsoup.parser.CharacterReader");
-        //process.waitFor();
-        System.out.println("Execution of differential testing is done");
+        // Step 4: the differential testing step is performed in the evosuite-plus-plus repository
+        // This pipeline module ends here and performs the task up to the generation of call graphs
 
     }
 }

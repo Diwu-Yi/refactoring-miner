@@ -4,6 +4,7 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/apache/commons-jexl" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/fastjson" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/jhy/jsoup" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/jsoup" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tmp/refactoring-toy-example" vcs="Git" />
   </component>

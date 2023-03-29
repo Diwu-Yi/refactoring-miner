@@ -8,12 +8,11 @@ jsoup, Refactorings at ea1fb65e9ff8eee82c4e379dc3236d09a5ab02e1
 Change Attribute Access Modifier	private to package in attribute package padding : String[] from class org.jsoup.helper.StringUtil
 Extract Method	protected html(key String, val String, accum Appendable, out Document.OutputSettings) : void extracted from protected html(accum Appendable, out Document.OutputSettings) : void in class org.jsoup.nodes.Attribute
 Extract Method	protected isDataAttribute(key String) : boolean extracted from protected isDataAttribute() : boolean in class org.jsoup.nodes.Attribute
-Extract Method	protected shouldCollapseAttribute(key String, val String, out Document.OutputSettings) : boolean extracted from protected shouldCollapseAttribute(out Document.OutputSettings) : boolean in class org.jsoup.nodes.Attribute
 Rename Parameter	value : String to val : String in method public setValue(val String) : String from class org.jsoup.nodes.Attribute
-Parameterize Attribute	value : String to val : String in method protected shouldCollapseAttribute(key String, val String, out Document.OutputSettings) : boolean from class org.jsoup.nodes.Attribute
 Rename Attribute	value : String to val : String in class org.jsoup.nodes.Attribute
 Add Class Modifier	static in class org.jsoup.nodes.Attributes.Dataset
 Inline Variable	attr : Attribute in method public put(key String, value String) : String from class org.jsoup.nodes.Attributes.Dataset
+Extract Method	package indexOfKey(key String) : int extracted from public get(key String) : String in class org.jsoup.nodes.Attributes
 Extract Attribute	private size : int in class org.jsoup.nodes.Attributes
 Change Variable Type	list : List<Attribute> to list : ArrayList<Attribute> in method public asList() : List<Attribute> from class org.jsoup.nodes.Attributes
 Add Parameter Modifier	final in parameter accum : Appendable in method package html(accum Appendable, out Document.OutputSettings) : void from class org.jsoup.nodes.Attributes
@@ -52,8 +51,8 @@ Move Attribute	private baseUri : String from class org.jsoup.parser.Parser to pr
 Change Method Access Modifier	private to package in method package currentElement() : Element from class org.jsoup.parser.TreeBuilder
 Move And Rename Method	private last() : Element from class org.jsoup.parser.Parser to package currentElement() : Element from class org.jsoup.parser.TreeBuilder
 jsoup, Refactorings at 4eb4f2b2e88a2f9e6c5c1e8d0477060954f24218
-Extract Method	private validateCharset(cs String) : String extracted from package getCharsetFromContentType(contentType String) : String in class org.jsoup.helper.DataUtil
 Extract Method	private detectCharsetFromBom(byteData ByteBuffer, charsetName String) : String extracted from package parseByteData(byteData ByteBuffer, charsetName String, baseUri String, parser Parser) : Document in class org.jsoup.helper.DataUtil
+Extract Method	private validateCharset(cs String) : String extracted from package getCharsetFromContentType(contentType String) : String in class org.jsoup.helper.DataUtil
 Parameterize Variable	charset : String to cs : String in method private validateCharset(cs String) : String from class org.jsoup.helper.DataUtil
 Rename Parameter	data : String to name : String in method public XmlDeclaration(name String, baseUri String, isProcessingInstruction boolean) from class org.jsoup.nodes.XmlDeclaration
 jsoup, Refactorings at f71712ba5d28df09c9a5b6e3c8a37f05f5e3372d
@@ -63,19 +62,22 @@ Change Return Type	void to Attributes in method public put(key String, value boo
 Change Return Type	void to Attributes in method public put(attribute Attribute) : Attributes from class org.jsoup.nodes.Attributes
 Change Variable Type	children : List<Node> to children : ArrayList<Node> in method public childNodesCopy() : List<Node> from class org.jsoup.nodes.Node
 Add Variable Modifier	final in variable children : ArrayList<Node> in method public childNodesCopy() : List<Node> from class org.jsoup.nodes.Node
+Replace Attribute With Variable	childNodes : List<Node> to childNodes : List<Node> in method public unwrap() : Node from class org.jsoup.nodes.Node
+Replace Attribute With Variable	childNodes : List<Node> to childNodes : List<Node> in method private reindexChildren(start int) : void from class org.jsoup.nodes.Node
 Add Variable Modifier	final in variable nodesToProcess : LinkedList<Node> in method public clone() : Node from class org.jsoup.nodes.Node
 Replace Attribute With Variable	childNodes : List<Node> to nodes : List<Node> in method public childNodesCopy() : List<Node> from class org.jsoup.nodes.Node
 Replace Attribute With Variable	childNodes : List<Node> to nodes : List<Node> in method protected addChildren(children Node...) : void from class org.jsoup.nodes.Node
 Replace Attribute With Variable	childNodes : List<Node> to nodes : List<Node> in method protected addChildren(index int, children Node...) : void from class org.jsoup.nodes.Node
+Replace Attribute With Variable	text : String to text : String in method public splitText(offset int) : TextNode from class org.jsoup.nodes.TextNode
 Extract Method	private getWholeDeclaration(accum Appendable, out Document.OutputSettings) : void extracted from package outerHtmlHead(accum Appendable, depth int, out Document.OutputSettings) : void in class org.jsoup.nodes.XmlDeclaration
 Extract Superclass	org.jsoup.nodes.LeafNode from classes [org.jsoup.nodes.Comment, org.jsoup.nodes.DataNode, org.jsoup.nodes.DocumentType, org.jsoup.nodes.TextNode, org.jsoup.nodes.XmlDeclaration]
 Extract Subclass	org.jsoup.nodes.LeafNode from class org.jsoup.nodes.Node
+Change Attribute Access Modifier	package to private in attribute private attributes : Attributes from class org.jsoup.nodes.Element
+Change Attribute Access Modifier	package to private in attribute private baseUri : String from class org.jsoup.nodes.Element
 Push Down Attribute	private EMPTY_NODES : List<Node> from class org.jsoup.nodes.Node to private EMPTY_NODES : List<Node> from class org.jsoup.nodes.Element
 Push Down Attribute	package childNodes : List<Node> from class org.jsoup.nodes.Node to package childNodes : List<Node> from class org.jsoup.nodes.Element
 Push Down Attribute	package attributes : Attributes from class org.jsoup.nodes.Node to private attributes : Attributes from class org.jsoup.nodes.Element
 Push Down Attribute	package baseUri : String from class org.jsoup.nodes.Node to private baseUri : String from class org.jsoup.nodes.Element
-Change Attribute Access Modifier	package to private in attribute private attributes : Attributes from class org.jsoup.nodes.Element
-Change Attribute Access Modifier	package to private in attribute private baseUri : String from class org.jsoup.nodes.Element
 Pull Up Method	public attributes() : Attributes from class org.jsoup.nodes.TextNode to public attributes() : Attributes from class org.jsoup.nodes.LeafNode
 Add Method Modifier	final in method public attributes() : Attributes from class org.jsoup.nodes.LeafNode
 Add Method Modifier	final in method public attributes() : Attributes from class org.jsoup.nodes.LeafNode
@@ -98,20 +100,15 @@ Add Method Annotation	@Override in method public baseUri() : String from class o
 Push Down Method	public childNodeSize() : int from class org.jsoup.nodes.Node to public childNodeSize() : int from class org.jsoup.nodes.LeafNode
 Add Method Annotation	@Override in method public childNodeSize() : int from class org.jsoup.nodes.LeafNode
 Remove Method Modifier	final in method public childNodeSize() : int from class org.jsoup.nodes.Node
-Rename Parameter	baseUri : String to name : String in method public XmlDeclaration(name String, isProcessingInstruction boolean) from class org.jsoup.nodes.XmlDeclaration
-Change Method Access Modifier	protected to public in method public XmlDeclaration(name String, isProcessingInstruction boolean) from class org.jsoup.nodes.XmlDeclaration
-Push Down Method	protected Node(baseUri String, attributes Attributes) from class org.jsoup.nodes.Node to public XmlDeclaration(name String, isProcessingInstruction boolean) from class org.jsoup.nodes.XmlDeclaration
-Extract And Move Method	protected doSetBaseUri(baseUri String) : void extracted from public setBaseUri(baseUri String) : void in class org.jsoup.nodes.Node & moved to class org.jsoup.nodes.Element
 jsoup, Refactorings at ea1fb65e9ff8eee82c4e379dc3236d09a5ab02e1
 Change Attribute Access Modifier	private to package in attribute package padding : String[] from class org.jsoup.helper.StringUtil
 Extract Method	protected html(key String, val String, accum Appendable, out Document.OutputSettings) : void extracted from protected html(accum Appendable, out Document.OutputSettings) : void in class org.jsoup.nodes.Attribute
 Extract Method	protected isDataAttribute(key String) : boolean extracted from protected isDataAttribute() : boolean in class org.jsoup.nodes.Attribute
-Extract Method	protected shouldCollapseAttribute(key String, val String, out Document.OutputSettings) : boolean extracted from protected shouldCollapseAttribute(out Document.OutputSettings) : boolean in class org.jsoup.nodes.Attribute
 Rename Parameter	value : String to val : String in method public setValue(val String) : String from class org.jsoup.nodes.Attribute
-Parameterize Attribute	value : String to val : String in method protected shouldCollapseAttribute(key String, val String, out Document.OutputSettings) : boolean from class org.jsoup.nodes.Attribute
 Rename Attribute	value : String to val : String in class org.jsoup.nodes.Attribute
 Add Class Modifier	static in class org.jsoup.nodes.Attributes.Dataset
 Inline Variable	attr : Attribute in method public put(key String, value String) : String from class org.jsoup.nodes.Attributes.Dataset
+Extract Method	package indexOfKey(key String) : int extracted from public get(key String) : String in class org.jsoup.nodes.Attributes
 Extract Attribute	private size : int in class org.jsoup.nodes.Attributes
 Change Variable Type	list : List<Attribute> to list : ArrayList<Attribute> in method public asList() : List<Attribute> from class org.jsoup.nodes.Attributes
 Add Parameter Modifier	final in parameter accum : Appendable in method package html(accum Appendable, out Document.OutputSettings) : void from class org.jsoup.nodes.Attributes
@@ -143,6 +140,7 @@ Add Parameter	input : InputStream in method package parseInputStream(input Input
 Add Thrown Exception Type	IOException in method package parseInputStream(input InputStream, charsetName String, baseUri String, parser Parser) : Document from class org.jsoup.helper.DataUtil
 Extract Method	private prepareByteData() : void extracted from public body() : String in class org.jsoup.helper.HttpConnection.Response
 Extract Method	private prepareByteData() : void extracted from public bodyAsBytes() : byte[] in class org.jsoup.helper.HttpConnection.Response
+Replace Variable With Attribute	bodyStream : InputStream to bodyStream : InputStream in method package execute(req Connection.Request, previousResponse Response) : Response from class org.jsoup.helper.HttpConnection.Response
 Extract Variable	urlS : String in method package encodeUrl(u URL) : URL from class org.jsoup.helper.HttpConnection
 Change Method Access Modifier	private to package in method package encodeUrl(u URL) : URL from class org.jsoup.helper.HttpConnection
 Extract Method	package rangeEquals(charBuf char[], start int, count int, cached String) : boolean extracted from package rangeEquals(start int, count int, cached String) : boolean in class org.jsoup.parser.CharacterReader
@@ -439,7 +437,6 @@ Add Parameter	out : Document.OutputSettings in method package OuterHtmlVisitor(a
 Add Parameter	out : Document.OutputSettings in method package outerHtmlHead(accum StringBuilder, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.TextNode
 Add Parameter	out : Document.OutputSettings in method package outerHtmlTail(accum StringBuilder, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.TextNode
 Add Parameter	out : Document.OutputSettings in method package outerHtmlTail(accum StringBuilder, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.XmlDeclaration
-Extract And Move Method	public outputSettings() : OutputSettings extracted from private readInputStream(inStream InputStream, charsetName String) : String in class org.jsoup.DataUtil & moved to class org.jsoup.nodes.Document
 Add Parameter	out : Document.OutputSettings in method package outerHtmlHead(accum StringBuilder, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.Comment
 Add Parameter	out : Document.OutputSettings in method package abstract outerHtmlHead(accum StringBuilder, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.Node
 Add Parameter	out : Document.OutputSettings in method package abstract outerHtmlTail(accum StringBuilder, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.Node
@@ -457,4 +454,10 @@ Add Parameter	baseUri : String in method private readInputStream(inStream InputS
 Add Parameter	out : Document.OutputSettings in method protected html(accum StringBuilder, out Document.OutputSettings) : void from class org.jsoup.nodes.Attribute
 Add Parameter	out : Document.OutputSettings in method package html(accum StringBuilder, out Document.OutputSettings) : void from class org.jsoup.nodes.Attributes
 Add Parameter	out : Document.OutputSettings in method package outerHtmlTail(accum StringBuilder, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.Comment
-Add Parameter	out : Document.OutputSettings in method package outerHtmlHead(accum StringBuilder, depth int, out Document.OutputSettings) : voi
+Add Parameter	out : Document.OutputSettings in method package outerHtmlHead(accum StringBuilder, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.DataNode
+Add Parameter	out : Document.OutputSettings in method package outerHtmlTail(accum StringBuilder, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.DataNode
+Remove Class Modifier	static in class org.jsoup.nodes.Document.OutputSettings
+Add Parameter	out : Document.OutputSettings in method package outerHtmlHead(accum StringBuilder, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.Element
+Add Parameter	out : Document.OutputSettings in method package outerHtmlTail(accum StringBuilder, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.Element
+Change Class Access Modifier	package to public in class org.jsoup.nodes.Entities
+Add Parameter	out : Document.OutputSettings in method package OuterHtmlVisitor(accum StringBuilder, out Document.OutputSettings) from class org.jsoup.n
