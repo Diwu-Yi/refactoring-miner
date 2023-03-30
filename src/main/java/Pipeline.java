@@ -62,47 +62,47 @@ public class Pipeline {
             e.printStackTrace();
         }
 
-        for (String key: relevantProjectWithRic.keySet()) {
-            //API 2: Report all refactoring changes in commits between 2 commits (ric & rfc in this case)
-//        miner.detectBetweenCommits(repo,
-//                "d23fc99a99ac44f2a4352899e2a6d12d26a74503", "c716d1de3fe1bde6a330629939c45745e9e65e95",
-//                new RefactoringHandler() {
+//        for (String key: relevantProjectWithRic.keySet()) {
+//            //API 2: Report all refactoring changes in commits between 2 commits (ric & rfc in this case)
+////        miner.detectBetweenCommits(repo,
+////                "d23fc99a99ac44f2a4352899e2a6d12d26a74503", "c716d1de3fe1bde6a330629939c45745e9e65e95",
+////                new RefactoringHandler() {
+////                    @Override
+////                    public void handle(String commitId, List<Refactoring> refactorings) {
+////                        System.out.println("Refactorings at " + commitId);
+////                        for (Refactoring ref : refactorings) {
+////                            System.out.println(ref.toString());
+////                        }
+////                    }
+////                });
+//
+//            //API 1: Report refactoring changes in one single commit (ric)
+//            repo = gitService.openRepository(key);
+//            System.out.println(key);
+//            List<String> rics = relevantProjectWithRic.get(key);
+//            FileWriter myWriter = new FileWriter("/Users/diwuyi/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/refactoring-miner/src/refactoring.txt");
+//            for (String ric : rics) {
+//                miner.detectAtCommit(repo, ric, new RefactoringHandler() {
 //                    @Override
 //                    public void handle(String commitId, List<Refactoring> refactorings) {
 //                        System.out.println("Refactorings at " + commitId);
+//                        try {
+//                            myWriter.write(key + ", "+"Refactorings at " + commitId + "\n");
+//                        } catch (IOException e) {
+//                            throw new RuntimeException(e);
+//                        }
 //                        for (Refactoring ref : refactorings) {
 //                            System.out.println(ref.toString());
+//                            try {
+//                                myWriter.write(ref.toString() + "\n");
+//                            } catch (IOException e) {
+//                                throw new RuntimeException(e);
+//                            }
 //                        }
 //                    }
 //                });
-
-            //API 1: Report refactoring changes in one single commit (ric)
-            repo = gitService.openRepository(key);
-            System.out.println(key);
-            List<String> rics = relevantProjectWithRic.get(key);
-            FileWriter myWriter = new FileWriter("/Users/diwuyi/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/refactoring-miner/src/refactoring.txt");
-            for (String ric : rics) {
-                miner.detectAtCommit(repo, ric, new RefactoringHandler() {
-                    @Override
-                    public void handle(String commitId, List<Refactoring> refactorings) {
-                        System.out.println("Refactorings at " + commitId);
-                        try {
-                            myWriter.write(key + ", "+"Refactorings at " + commitId + "\n");
-                        } catch (IOException e) {
-                            throw new RuntimeException(e);
-                        }
-                        for (Refactoring ref : refactorings) {
-                            System.out.println(ref.toString());
-                            try {
-                                myWriter.write(ref.toString() + "\n");
-                            } catch (IOException e) {
-                                throw new RuntimeException(e);
-                            }
-                        }
-                    }
-                });
-            }
-        }
+//            }
+//        }
 
         //Step 3: Construct of Call Graph with SootUp library --> code
         // for handling of cases where the method containing the refactoring change is not directly testable
@@ -111,7 +111,7 @@ public class Pipeline {
         System.out.println(System.getProperty("java.home"));
         AnalysisInputLocation<JavaSootClass> inputLocation =
                 new JavaClassPathAnalysisInputLocation(
-                        "/Users/diwuyi/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/refactoring-miner/src/main/resources");
+                        "/Users/diwuyi/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/evosuite-plus-plus/shell/src/test/resources/jsoup-1.11.3-SNAPSHOT.jar");
 
         JavaLanguage language = new JavaLanguage(8);
 
@@ -129,20 +129,22 @@ public class Pipeline {
         ClassType classTypeA = project.getIdentifierFactory().getClassType("A");
         ClassType classTypeB = project.getIdentifierFactory().getClassType("B");
 
-        ClassType classType1 = project.getIdentifierFactory().getClassType("Jsoup");
-        ClassType classType2 = project.getIdentifierFactory().getClassType("org.jsoup.nodes.Document");
-        ReferenceType type1 = project.getIdentifierFactory().getClassType("java.lang.String");
-        ArrayList<String> params = new ArrayList<>(3);
-        params.add("java.nio.file.Files");
-        params.add("java.lang.String");
-        params.add("java.lang.String");
+        ClassType classDeclarationType = project.getIdentifierFactory().getClassType("org.jsoup.Jsoup");
+        ClassType returnType = project.getIdentifierFactory().getClassType("org.jsoup.nodes.Document");
+        ClassType type1 = project.getIdentifierFactory().getClassType("java.io.File");
+        ClassType type2 = project.getIdentifierFactory().getClassType("java.lang.String");
+        ClassType type3 = project.getIdentifierFactory().getClassType("java.lang.String");
+        ArrayList<ClassType> params = new ArrayList<>(3);
+        params.add(type1);
+        params.add(type2);
+        params.add(type3);
         MethodSignature entryMethodSignature =
                 JavaIdentifierFactory.getInstance()
                         .getMethodSignature(
-                                classTypeA,
+                                classDeclarationType,
                                 JavaIdentifierFactory.getInstance()
                                         .getMethodSubSignature(
-                                                "calc", VoidType.getInstance(), Collections.singletonList(classTypeA)));
+                                                "parse", returnType, params));
         CallGraphAlgorithm cha = new ClassHierarchyAnalysisAlgorithm(view, typeHierarchy);
 
         CallGraph cg = cha.initialize(Collections.singletonList(entryMethodSignature));
