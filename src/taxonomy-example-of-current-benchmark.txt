@@ -1,0 +1,40 @@
+For Refactor Change Type: Inline Method the example is: Inline Method private select() : Elements inlined to public select(evaluator Evaluator, root Element) : Elements in class org.jsoup.select.Selector
+For Refactor Change Type: Move Attribute the example is: Move Attribute private root : Element from class org.jsoup.select.Selector to private root : Element from class org.jsoup.select.Collector.FirstFinder
+For Refactor Change Type: Change Attribute Access Modifier the example is: Change Attribute Access Modifier private to package in attribute package padding : String[] from class org.jsoup.helper.StringUtil
+For Refactor Change Type: Extract Method the example is: Extract Method protected html(key String, val String, accum Appendable, out Document.OutputSettings) : void extracted from protected html(accum Appendable, out Document.OutputSettings) : void in class org.jsoup.nodes.Attribute
+For Refactor Change Type: Rename Parameter the example is: Rename Parameter value : String to val : String in method public setValue(val String) : String from class org.jsoup.nodes.Attribute
+For Refactor Change Type: Rename Attribute the example is: Rename Attribute value : String to val : String in class org.jsoup.nodes.Attribute
+For Refactor Change Type: Add Class Modifier the example is: Add Class Modifier static in class org.jsoup.nodes.Attributes.Dataset
+For Refactor Change Type: Inline Variable the example is: Inline Variable attr : Attribute in method public put(key String, value String) : String from class org.jsoup.nodes.Attributes.Dataset
+For Refactor Change Type: Extract Attribute the example is: Extract Attribute private size : int in class org.jsoup.nodes.Attributes
+For Refactor Change Type: Change Variable Type the example is: Change Variable Type list : List<Attribute> to list : ArrayList<Attribute> in method public asList() : List<Attribute> from class org.jsoup.nodes.Attributes
+For Refactor Change Type: Add Parameter the example is: Add Parameter Modifier final in parameter accum : Appendable in method package html(accum Appendable, out Document.OutputSettings) : void from class org.jsoup.nodes.Attributes
+For Refactor Change Type: Add Method Modifier the example is: Add Method Modifier final in method package html(accum Appendable, out Document.OutputSettings) : void from class org.jsoup.nodes.Attributes
+For Refactor Change Type: Change Attribute Type the example is: Change Attribute Type encoder : ThreadLocal<CharsetEncoder> to encoder : CharsetEncoder in class org.jsoup.nodes.Document.OutputSettings
+For Refactor Change Type: Remove Attribute Modifier the example is: Remove Attribute Modifier final in attribute private encoder : ThreadLocal<CharsetEncoder> from class org.jsoup.nodes.Document.OutputSettings
+For Refactor Change Type: Change Class Access Modifier the example is: Change Class Access Modifier private to package in class org.jsoup.nodes.Entities.CoreCharset
+For Refactor Change Type: Change Method Access Modifier the example is: Change Method Access Modifier private to package in method package byName(name String) : CoreCharset from class org.jsoup.nodes.Entities.CoreCharset
+For Refactor Change Type: Extract Variable the example is: Extract Variable dataset : Map<String,String> in method public html() : void from class org.jsoup.nodes.AttributesTest
+For Refactor Change Type: Rename Method the example is: Rename Method public emptyOnNoKey() : void renamed to public canStartWithEq() : void in class org.jsoup.parser.AttributeParseTest
+For Refactor Change Type: Extract Class the example is: Extract Class org.jsoup.parser.TreeBuilder from class org.jsoup.parser.Parser
+For Refactor Change Type: Move And Rename Method the example is: Move And Rename Method private last() : Element from class org.jsoup.parser.Parser to package currentElement() : Element from class org.jsoup.parser.TreeBuilder
+For Refactor Change Type: Parameterize Variable the example is: Parameterize Variable charset : String to cs : String in method private validateCharset(cs String) : String from class org.jsoup.helper.DataUtil
+For Refactor Change Type: Move Class the example is: Move Class org.jsoup.nodes.Node.NodeList moved to org.jsoup.nodes.Element.NodeList
+For Refactor Change Type: Change Return Type the example is: Change Return Type void to Attributes in method public put(key String, value String) : Attributes from class org.jsoup.nodes.Attributes
+For Refactor Change Type: Add Variable Modifier the example is: Add Variable Modifier final in variable children : ArrayList<Node> in method public childNodesCopy() : List<Node> from class org.jsoup.nodes.Node
+For Refactor Change Type: Replace Attribute the example is: Replace Attribute With Variable childNodes : List<Node> to childNodes : List<Node> in method public unwrap() : Node from class org.jsoup.nodes.Node
+For Refactor Change Type: Extract Superclass the example is: Extract Superclass org.jsoup.nodes.LeafNode from classes [org.jsoup.nodes.Comment, org.jsoup.nodes.DataNode, org.jsoup.nodes.DocumentType, org.jsoup.nodes.TextNode, org.jsoup.nodes.XmlDeclaration]
+For Refactor Change Type: Extract Subclass the example is: Extract Subclass org.jsoup.nodes.LeafNode from class org.jsoup.nodes.Node
+For Refactor Change Type: Push Down Attribute the example is: Push Down Attribute private EMPTY_NODES : List<Node> from class org.jsoup.nodes.Node to private EMPTY_NODES : List<Node> from class org.jsoup.nodes.Element
+For Refactor Change Type: Pull Up Method the example is: Pull Up Method public attributes() : Attributes from class org.jsoup.nodes.TextNode to public attributes() : Attributes from class org.jsoup.nodes.LeafNode
+For Refactor Change Type: Push Down Method the example is: Push Down Method public attributes() : Attributes from class org.jsoup.nodes.Node to public attributes() : Attributes from class org.jsoup.nodes.LeafNode
+For Refactor Change Type: Add Method Annotation the example is: Add Method Annotation @Override in method public attributes() : Attributes from class org.jsoup.nodes.LeafNode
+For Refactor Change Type: Remove Method Modifier the example is: Remove Method Modifier final in method public childNodeSize() : int from class org.jsoup.nodes.Node
+For Refactor Change Type: Remove Parameter the example is: Remove Parameter byteData : ByteBuffer in method package parseByteData(byteData ByteBuffer, charsetName String, baseUri String, parser Parser) : Document from class org.jsoup.helper.DataUtil
+For Refactor Change Type: Add Thrown Exception Type the example is: Add Thrown Exception Type IOException in method package parseInputStream(input InputStream, charsetName String, baseUri String, parser Parser) : Document from class org.jsoup.helper.DataUtil
+For Refactor Change Type: Replace Variable With Attribute the example is: Replace Variable With Attribute bodyStream : InputStream to bodyStream : InputStream in method package execute(req Connection.Request, previousResponse Response) : Response from class org.jsoup.helper.HttpConnection.Response
+For Refactor Change Type: Change Parameter Type the example is: Change Parameter Type input : String to input : Reader in method protected initialiseParse(input Reader, baseUri String, errors ParseErrorList, settings ParseSettings) : void from class org.jsoup.parser.HtmlTreeBuilder
+For Refactor Change Type: Rename Variable the example is: Rename Variable elements : List<Element> to children : List<Element> in method private childElementsList() : List<Element> from class org.jsoup.nodes.Element
+For Refactor Change Type: Add Attribute Modifier the example is: Add Attribute Modifier final in attribute private reader : CharacterReader from class org.jsoup.parser.Tokeniser
+For Refactor Change Type: Encapsulate Attribute the example is: Encapsulate Attribute protected errors : List<ParseError> from class org.jsoup.parser.TreeBuilder
+For Refactor Change Type: Remove Class Modifier the example is: Remove Class Modifier static in class org.jsoup.nodes.Document.OutputSettings

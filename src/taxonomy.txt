@@ -1,0 +1,93 @@
+Extract Method
+Rename Class
+Move Attribute
+Move And Rename Attribute
+Replace Attribute
+Rename Method
+Inline Method
+Move Method
+Move And Rename Method
+Pull Up Method
+Move Class
+Move And Rename Class
+Move Source Folder
+Pull Up Attribute
+Push Down Attribute
+Push Down Method
+Extract Interface
+Extract Superclass
+Extract Subclass
+Extract Class
+Extract And Move Method
+Move And Inline Method
+Rename Package
+Move Package
+Extract Variable
+Extract Attribute
+Inline Variable
+Inline Attribute
+Rename Variable
+Rename Parameter
+Rename Attribute
+Merge Variable
+Merge Parameter
+Merge Attribute
+Split Variable
+Split Parameter
+Split Attribute
+Replace Variable With Attribute
+Parameterize Variable
+Localize Parameter
+Parameterize Attribute
+Change Return Type
+Change Variable Type
+Change Parameter Type
+Change Attribute Type
+Add Method Annotation
+Remove Method Annotation
+Modify Method Annotation
+Add Attribute Annotation
+Remove Attribute Annotation
+Modify Attribute Annotation
+Add Class Annotation
+Remove Class Annotation
+Modify Class Annotation
+Add Parameter Annotation
+Remove Parameter Annotation
+Modify Parameter Annotation
+Add Parameter
+Remove Parameter
+Reorder Parameter
+Add Variable Annotation
+Remove Variable Annotation
+Add Thrown Exception Type
+Remove Thrown Exception Type
+Change Thrown Exception Type
+Change Method Access Modifier
+Change Attribute Access Modifier
+Encapsulate Attribute
+Add Method Modifier
+Remove Method Modifier
+Add Attribute Modifier
+Remove Attribute Modifier
+Add Variable Modifier
+Remove Variable Modifier
+Change Class Access Modifier
+Add Class Modifier
+Remove Class Modifier
+Split Package
+Merge Package
+Change Type Declaration Kind
+Collapse Hierarchy
+Replace Loop With Pipeline
+Replace Pipeline With Loop
+Replace Anonymous With Lambda
+Merge Class
+Split Class
+Split Conditional
+Invert Condition
+Merge Conditional
+Merge Catch
+Merge Method
+Split Method
+Move Code

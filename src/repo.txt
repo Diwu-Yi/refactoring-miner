@@ -1,0 +1,2 @@
+jhy/jsoup, https://github.com/jhy/jsoup.git
+alibaba/fastjson, https://github.com/alibaba/fastjson.git
