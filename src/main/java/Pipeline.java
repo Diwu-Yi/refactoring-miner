@@ -29,6 +29,14 @@ import java.util.*;
  */
 public class Pipeline {
 
+    public static String extractTargetClass(String refactoringType, String refactoringLine) {
+        switch (refactoringType) {
+            case "Add Thrown Exception Type":
+                return "";
+        }
+        return "something went wrong";
+    }
+
     // Assembly of pipeline steps to mine regression bugs based on refactoring changes on the benchmark of Res4j
     public static void main(String[] args) throws Exception {
 
@@ -55,65 +63,79 @@ public class Pipeline {
         GitService gitService = new GitServiceImpl();
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
 
-        Repository repo = null;
+        String repoFile = "/Users/diwuyi/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/refactoring-miner/src/repo.txt";
+        File file1 = new File(repoFile);
+        BufferedReader repoReader = new BufferedReader(new FileReader(file1));
+        String currRepo;
+        Set<String> repoUnderInvestigation = new HashSet<>();
+        while ((currRepo = repoReader.readLine()) != null) {
+            if (!currRepo.isEmpty()) {
+                repoUnderInvestigation.add(currRepo.trim());
+            }
+        }
+        repoReader.close();
 
-        try {
-            repo = gitService.cloneIfNotExists(
-                            "jhy/jsoup",
-                            "https://github.com/jhy/jsoup.git");
-        } catch (Exception e) {
-            e.printStackTrace();
+        for (String aRepo: repoUnderInvestigation) {
+            String folder = aRepo.split("/")[0];
+            Repository repo;
+
+            try {
+                repo = gitService.cloneIfNotExists(
+                        folder,
+                        "https://github.com/"+ aRepo + ".git");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            for (String key: relevantProjectWithRic.keySet()) {
+
+                /*
+                //API 2: Report all refactoring changes in commits between 2 commits (ric & rfc in this case)
+                miner.detectBetweenCommits(repo,
+                    "d23fc99a99ac44f2a4352899e2a6d12d26a74503", "c716d1de3fe1bde6a330629939c45745e9e65e95",
+                    new RefactoringHandler() {
+                        @Override
+                        public void handle(String commitId, List<Refactoring> refactorings) {
+                            System.out.println("Refactorings at " + commitId);
+                            for (Refactoring ref : refactorings) {
+                                System.out.println(ref.toString());
+                            }
+                        }
+                    });
+                */
+
+                //API 1: Report refactoring changes in one single commit (ric)
+                repo = gitService.openRepository(key);
+                System.out.println(key);
+                List<String> rics = relevantProjectWithRic.get(key);
+                FileWriter myWriter = new FileWriter("/Users/diwuyi/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/refactoring-miner/src/refactoring.txt");
+                for (String ric : rics) {
+                    miner.detectAtCommit(repo, ric, new RefactoringHandler() {
+                        @Override
+                        public void handle(String commitId, List<Refactoring> refactorings) {
+                            System.out.println("Refactorings at " + commitId);
+                            try {
+                                myWriter.write(key + ", "+"Refactorings at " + commitId + "\n");
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
+                            for (Refactoring ref : refactorings) {
+                                System.out.println(ref.toString());
+                                try {
+                                    myWriter.write(ref.toString() + "\n");
+                                } catch (IOException e) {
+                                    throw new RuntimeException(e);
+                                }
+                            }
+                        }
+                    });
+                }
+                myWriter.close();
+            }
         }
 
-//        for (String key: relevantProjectWithRic.keySet()) {
-//
-//            /*
-//            //API 2: Report all refactoring changes in commits between 2 commits (ric & rfc in this case)
-//        miner.detectBetweenCommits(repo,
-//                "d23fc99a99ac44f2a4352899e2a6d12d26a74503", "c716d1de3fe1bde6a330629939c45745e9e65e95",
-//                new RefactoringHandler() {
-//                    @Override
-//                    public void handle(String commitId, List<Refactoring> refactorings) {
-//                        System.out.println("Refactorings at " + commitId);
-//                        for (Refactoring ref : refactorings) {
-//                            System.out.println(ref.toString());
-//                        }
-//                    }
-//                });
-//            */
-//
-//            //API 1: Report refactoring changes in one single commit (ric)
-//            repo = gitService.openRepository(key);
-//            System.out.println(key);
-//            List<String> rics = relevantProjectWithRic.get(key);
-//            FileWriter myWriter = new FileWriter("/Users/diwuyi/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/refactoring-miner/src/refactoring.txt");
-//            for (String ric : rics) {
-//                miner.detectAtCommit(repo, ric, new RefactoringHandler() {
-//                    @Override
-//                    public void handle(String commitId, List<Refactoring> refactorings) {
-//                        System.out.println("Refactorings at " + commitId);
-//                        try {
-//                            myWriter.write(key + ", "+"Refactorings at " + commitId + "\n");
-//                        } catch (IOException e) {
-//                            throw new RuntimeException(e);
-//                        }
-//                        for (Refactoring ref : refactorings) {
-//                            System.out.println(ref.toString());
-//                            try {
-//                                myWriter.write(ref.toString() + "\n");
-//                            } catch (IOException e) {
-//                                throw new RuntimeException(e);
-//                            }
-//                        }
-//                    }
-//                });
-//            }
-//            myWriter.close();
-//        }
-
         // Step 2.5: for each refactoring under one commit, extract out the target class and the target method if
-        // applicable
-        //String refactoringStorage = "/Users/diwuyi/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/refactoring-miner/src/refactoring.txt";
+        // applicable (taxonomy preprocess)
         String taxonomyStorage = "/Users/diwuyi/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/refactoring-miner/src/taxonomy.txt";
         File taxonomy = new File(taxonomyStorage);
         BufferedReader taxonomyLoader = new BufferedReader(new FileReader(taxonomy));
@@ -152,52 +174,76 @@ public class Pipeline {
         }
         refactoringScanner.close();
         exampleWriter.close();
+
+        // Alternative step 3: extraction of target class with corresponding commit sha
+
+        BufferedReader scanner = new BufferedReader(new FileReader(refactorings));
+        String refLine;
+        String target = "/Users/diwuyi/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/refactoring-miner/src/targetClass.txt";
+        FileWriter targetWriter = new FileWriter(target);
+        String currSha = "";
+        List<String> classes = new ArrayList<>();
+        while ((refLine = scanner.readLine()) != null) {
+            if (refLine.contains(", Refactorings at ")) {
+                if(!Objects.equals(currSha, "")) {
+                    targetWriter.write(currSha);
+                    targetWriter.write(", ");
+                    targetWriter.write(classes.toString());
+                    targetWriter.write("\n");
+                    classes = new ArrayList<>();
+                }
+                currSha = refLine.split("Refactorings at ")[1].trim();
+                continue;
+            }
+            classes.add(refLine.split(" class ")[1].trim());
+        }
+        scanner.close();
+        targetWriter.close();
+
         //Step 3: Construct of Call Graph with SootUp library --> code
         // for handling of cases where the method containing the refactoring change is not directly testable
         // for example, if the method is a private method
-//        System.out.println("start construction of call graph");
-//        System.out.println(System.getProperty("java.home"));
-//        AnalysisInputLocation<JavaSootClass> inputLocation =
-//                new JavaClassPathAnalysisInputLocation(
-//                        "/Users/diwuyi/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/evosuite-plus-plus/shell/src/test/resources/jsoup-1.11.3-SNAPSHOT.jar");
-//
-//        JavaLanguage language = new JavaLanguage(8);
-//
-//        JavaProject project =
-//                JavaProject.builder(language)
-//                        .addInputLocation(inputLocation)
-//                        .addInputLocation(
-//                                new JavaClassPathAnalysisInputLocation(
-//                                        "/Library/Java/JavaVirtualMachines/jdk1.8.0_333.jdk/Contents/Home/jre/lib/rt.jar"))
-//                        .build();
-//
-//        JavaView view = project.createFullView();
-//
-//        ViewTypeHierarchy typeHierarchy = new ViewTypeHierarchy(view);
-//        ClassType classTypeA = project.getIdentifierFactory().getClassType("A");
-//        ClassType classTypeB = project.getIdentifierFactory().getClassType("B");
-//
-//        ClassType classDeclarationType = project.getIdentifierFactory().getClassType("org.jsoup.Jsoup");
-//        ClassType returnType = project.getIdentifierFactory().getClassType("org.jsoup.nodes.Document");
-//        ClassType type1 = project.getIdentifierFactory().getClassType("java.io.File");
-//        ClassType type2 = project.getIdentifierFactory().getClassType("java.lang.String");
-//        ClassType type3 = project.getIdentifierFactory().getClassType("java.lang.String");
-//        ArrayList<ClassType> params = new ArrayList<>(3);
-//        params.add(type1);
-//        params.add(type2);
-//        params.add(type3);
-//        MethodSignature entryMethodSignature =
-//                JavaIdentifierFactory.getInstance()
-//                        .getMethodSignature(
-//                                classDeclarationType,
-//                                JavaIdentifierFactory.getInstance()
-//                                        .getMethodSubSignature(
-//                                                "parse", returnType, params));
-//        CallGraphAlgorithm cha = new ClassHierarchyAnalysisAlgorithm(view, typeHierarchy);
-//
-//        CallGraph cg = cha.initialize(Collections.singletonList(entryMethodSignature));
-//
-//        cg.callsFrom(entryMethodSignature).forEach(System.out::println);
+        System.out.println("start construction of call graph");
+        System.out.println(System.getProperty("java.home"));
+        AnalysisInputLocation<JavaSootClass> inputLocation =
+                new JavaClassPathAnalysisInputLocation(
+                        "/Users/diwuyi/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/evosuite-plus-plus/shell/src/test/resources/jsoup-1.11.3-SNAPSHOT.jar");
+
+        JavaLanguage language = new JavaLanguage(8);
+
+        JavaProject project =
+                JavaProject.builder(language)
+                        .addInputLocation(inputLocation)
+                        .addInputLocation(
+                                new JavaClassPathAnalysisInputLocation(
+                                        "/Library/Java/JavaVirtualMachines/jdk1.8.0_333.jdk/Contents/Home/jre/lib/rt.jar"))
+                        .build();
+
+        JavaView view = project.createFullView();
+
+        ViewTypeHierarchy typeHierarchy = new ViewTypeHierarchy(view);
+
+        ClassType classDeclarationType = project.getIdentifierFactory().getClassType("org.jsoup.Jsoup");
+        ClassType returnType = project.getIdentifierFactory().getClassType("org.jsoup.nodes.Document");
+        ClassType type1 = project.getIdentifierFactory().getClassType("java.io.File");
+        ClassType type2 = project.getIdentifierFactory().getClassType("java.lang.String");
+        ClassType type3 = project.getIdentifierFactory().getClassType("java.lang.String");
+        ArrayList<ClassType> params = new ArrayList<>(3);
+        params.add(type1);
+        params.add(type2);
+        params.add(type3);
+        MethodSignature entryMethodSignature =
+                JavaIdentifierFactory.getInstance()
+                        .getMethodSignature(
+                                classDeclarationType,
+                                JavaIdentifierFactory.getInstance()
+                                        .getMethodSubSignature(
+                                                "parse", returnType, params));
+        CallGraphAlgorithm cha = new ClassHierarchyAnalysisAlgorithm(view, typeHierarchy);
+
+        CallGraph cg = cha.initialize(Collections.singletonList(entryMethodSignature));
+
+        cg.callsFrom(entryMethodSignature).forEach(System.out::println);
 
         //Step 3.5 refactoring miner 报出来的 refactor 是否包含target method (引起 bug 的修改)
 
@@ -208,17 +254,7 @@ public class Pipeline {
 //        System.out.println("Working Directory = " + System.getProperty("user.dir"));
 //        String[] arguments = new String[] {"/bin/bash", "-c", "java -jar evosuite-1.0.6.jar -regressionSuite -projectCP jsoup-1.13.1-SNAPSHOT_correct.jar -Dregressioncp=\"jsoup-1.11.3-SNAPSHOT.jar\" -class org.jsoup.parser.CharacterReader"};
 //        // 调evosuite 的 api 接口
-//
-//        Process process = new ProcessBuilder(arguments).start();
-//        BufferedReader procReader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-//        String ln = "";
-//        while ((ln = procReader.readLine()) != null) {
-//            System.out.println(ln + "\n");
-//        }
-//        process.waitFor();
-//        Runtime.getRuntime().exec("/bin/bash -c java -jar evosuite-1.0.6.jar -Dtools_jar_location=/Library/Java/JavaVirtualMachines/jdk1.8.0_333.jdk/Contents/Home/lib/tools.jar -regressionSuite -projectCP jsoup-1.13.1-SNAPSHOT_correct.jar -Dregressioncp=\"jsoup-1.11.3-SNAPSHOT.jar\" -class org.jsoup.parser.CharacterReader");
-//        //process.waitFor();
-//        System.out.println("Execution of differential testing is done");
+
 
         // Step 4: the differential testing step is performed in the evosuite-plus-plus repository
         // This pipeline module ends here and performs the task up to the generation of call graphs
