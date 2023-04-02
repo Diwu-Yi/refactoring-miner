@@ -13,8 +13,6 @@ import sootup.core.inputlocation.AnalysisInputLocation;
 import sootup.core.signatures.MethodSignature;
 import sootup.core.typehierarchy.ViewTypeHierarchy;
 import sootup.core.types.ClassType;
-import sootup.core.types.ReferenceType;
-import sootup.core.types.VoidType;
 import sootup.java.bytecode.inputlocation.JavaClassPathAnalysisInputLocation;
 import sootup.java.core.JavaIdentifierFactory;
 import sootup.java.core.JavaProject;
@@ -82,11 +80,11 @@ public class Pipeline {
             try {
                 repo = gitService.cloneIfNotExists(
                         folder,
-                        "https://github.com/"+ aRepo + ".git");
+                        "https://github.com/" + aRepo + ".git");
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
+        }
             for (String key: relevantProjectWithRic.keySet()) {
 
                 /*
@@ -105,7 +103,13 @@ public class Pipeline {
                 */
 
                 //API 1: Report refactoring changes in one single commit (ric)
-                repo = gitService.openRepository(key);
+                // when developers code new features, they are not sure if the change will cause regression bugs
+                // whether it is worthwhile to generate regression test case for particular change , eg. change of a method
+                // a class, and soon on -->
+                // measure the accuracy, whether the approach recommend regression (1)
+                // RQ2 whether refactoring miner gives good result, on ric versus any commit
+                // RQ3
+                Repository repo = gitService.openRepository(key);
                 System.out.println(key);
                 List<String> rics = relevantProjectWithRic.get(key);
                 FileWriter myWriter = new FileWriter("/Users/diwuyi/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/refactoring-miner/src/refactoring.txt");
@@ -132,7 +136,7 @@ public class Pipeline {
                 }
                 myWriter.close();
             }
-        }
+
 
         // Step 2.5: for each refactoring under one commit, extract out the target class and the target method if
         // applicable (taxonomy preprocess)
@@ -195,7 +199,9 @@ public class Pipeline {
                 currSha = refLine.split("Refactorings at ")[1].trim();
                 continue;
             }
-            classes.add(refLine.split(" class ")[1].trim());
+            if (refLine.split(" class ").length > 1) {
+                classes.add(refLine.split(" class ")[1].trim());
+            }
         }
         scanner.close();
         targetWriter.close();

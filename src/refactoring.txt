@@ -460,4 +460,16 @@ Remove Class Modifier	static in class org.jsoup.nodes.Document.OutputSettings
 Add Parameter	out : Document.OutputSettings in method package outerHtmlHead(accum StringBuilder, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.Element
 Add Parameter	out : Document.OutputSettings in method package outerHtmlTail(accum StringBuilder, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.Element
 Change Class Access Modifier	package to public in class org.jsoup.nodes.Entities
-Add Parameter	out : Document.OutputSettings in method package OuterHtmlVisitor(accum StringBuilder, out Document.OutputSettings) from class org.jsoup.n
+Add Parameter	out : Document.OutputSettings in method package OuterHtmlVisitor(accum StringBuilder, out Document.OutputSettings) from class org.jsoup.nodes.Node.OuterHtmlVisitor
+Add Parameter	out : Document.OutputSettings in method package outerHtmlHead(accum StringBuilder, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.TextNode
+Add Parameter	out : Document.OutputSettings in method package outerHtmlTail(accum StringBuilder, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.TextNode
+Add Parameter	out : Document.OutputSettings in method package outerHtmlTail(accum StringBuilder, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.XmlDeclaration
+Add Parameter	out : Document.OutputSettings in method package outerHtmlHead(accum StringBuilder, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.Comment
+Add Parameter	out : Document.OutputSettings in method package abstract outerHtmlHead(accum StringBuilder, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.Node
+Add Parameter	out : Document.OutputSettings in method package abstract outerHtmlTail(accum StringBuilder, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.Node
+Add Parameter	out : Document.OutputSettings in method package outerHtmlHead(accum StringBuilder, depth int, out Document.OutputSettings) : void from class org.jsoup.nodes.XmlDeclaration
+jsoup, Refactorings at 0081d162cca8ad23b500b53799195fec644f261b
+jsoup, Refactorings at e97f564d2450702d2b74ff35ecc5ad5c1e57fc0d
+Extract Method	private addChildToParent(child Element) : Element extracted from private parseStartTag() : void in class org.jsoup.parser.Parser
+Rename Variable	emptyTag : boolean to validAncestor : boolean in method private addChildToParent(child Element) : Element from class org.jsoup.parser.Parser
+jsoup, Refactorings at df272b77c2cf89e9cbe2512bbddf8a3bc28a704b
