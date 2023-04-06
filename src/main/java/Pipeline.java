@@ -254,13 +254,10 @@ public class Pipeline {
         //Step 3.5 refactoring miner 报出来的 refactor 是否包含target method (引起 bug 的修改)
 
         //Step 4: Differential Testing with evosuite
-        // Experiment : target method identification -->
+        // Experiment : target method identification --> see above
         // Differential test case 报了一个错 , 看跟 ric 是不是也是一样的 bug
         // 覆盖率：同时走过 fixing 的地方，
-//        System.out.println("Working Directory = " + System.getProperty("user.dir"));
-//        String[] arguments = new String[] {"/bin/bash", "-c", "java -jar evosuite-1.0.6.jar -regressionSuite -projectCP jsoup-1.13.1-SNAPSHOT_correct.jar -Dregressioncp=\"jsoup-1.11.3-SNAPSHOT.jar\" -class org.jsoup.parser.CharacterReader"};
-//        // 调evosuite 的 api 接口
-
+        // 调evosuite 的 api 接口, 暂无， future todo
 
         // Step 4: the differential testing step is performed in the evosuite-plus-plus repository
         // This pipeline module ends here and performs the task up to the generation of call graphs
