@@ -1,3 +1,466 @@
+fastjson, Refactorings at 52652252e7095ecb11bfe8baddd2a087c04fa14e
+fastjson, Refactorings at 010691b365090a312d096dde96059d4fd2cb90ea
+fastjson, Refactorings at 52652252e7095ecb11bfe8baddd2a087c04fa14e
+fastjson, Refactorings at e4562183cf45c0c5f77c446350da6b89ccf49687
+Extract Variable	thisClass : Class<?> in method protected TypeReference(actualTypeArguments Type...) from class com.alibaba.fastjson.TypeReference
+fastjson, Refactorings at 8bdcdab078afe5edc116eea70ec4a8219bc450e6
+fastjson, Refactorings at 18a99f2d449321393f57d50e2fbf35ca5748fae5
+fastjson, Refactorings at d0ddf9cbbe6837ad27c289a6bad243c36b7f145e
+Inline Variable	propertyValue : Object in method public apply(path JSONPath, rootObject Object, currentObject Object, item Object) : boolean from class com.alibaba.fastjson.JSONPath.NotNullSegement
+Add Parameter	function : boolean in method public ValueSegment(propertyName String, function boolean, value Object, eq boolean) from class com.alibaba.fastjson.JSONPath.ValueSegment
+Add Parameter	function : boolean in method public IntBetweenSegement(propertyName String, function boolean, startValue long, endValue long, not boolean) from class com.alibaba.fastjson.JSONPath.IntBetweenSegement
+Add Parameter	function : boolean in method public MatchSegement(propertyName String, function boolean, startsWithValue String, endsWithValue String, containsValues String[], not boolean) from class com.alibaba.fastjson.JSONPath.MatchSegement
+Extract Superclass	com.alibaba.fastjson.JSONPath.PropertyFilter from classes [com.alibaba.fastjson.JSONPath.NotNullSegement, com.alibaba.fastjson.JSONPath.NullSegement, com.alibaba.fastjson.JSONPath.ValueSegment, com.alibaba.fastjson.JSONPath.IntInSegement, com.alibaba.fastjson.JSONPath.IntBetweenSegement, com.alibaba.fastjson.JSONPath.IntObjInSegement, com.alibaba.fastjson.JSONPath.StringInSegement, com.alibaba.fastjson.JSONPath.IntOpSegement, com.alibaba.fastjson.JSONPath.DoubleOpSegement, com.alibaba.fastjson.JSONPath.RefOpSegement, com.alibaba.fastjson.JSONPath.MatchSegement, com.alibaba.fastjson.JSONPath.RlikeSegement, com.alibaba.fastjson.JSONPath.StringOpSegement, com.alibaba.fastjson.JSONPath.RegMatchSegement]
+Pull Up Attribute	private propertyName : String from class com.alibaba.fastjson.JSONPath.NotNullSegement to protected propertyName : String from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Change Attribute Access Modifier	private to protected in attribute protected propertyName : String from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Change Attribute Access Modifier	private to protected in attribute protected propertyName : String from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Change Attribute Access Modifier	private to protected in attribute protected propertyName : String from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Change Attribute Access Modifier	private to protected in attribute protected propertyName : String from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Change Attribute Access Modifier	private to protected in attribute protected propertyName : String from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Change Attribute Access Modifier	private to protected in attribute protected propertyName : String from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Change Attribute Access Modifier	private to protected in attribute protected propertyName : String from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Change Attribute Access Modifier	private to protected in attribute protected propertyName : String from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Change Attribute Access Modifier	private to protected in attribute protected propertyName : String from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Change Attribute Access Modifier	private to protected in attribute protected propertyName : String from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Change Attribute Access Modifier	private to protected in attribute protected propertyName : String from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Change Attribute Access Modifier	private to protected in attribute protected propertyName : String from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Change Attribute Access Modifier	private to protected in attribute protected propertyName : String from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Change Attribute Access Modifier	private to protected in attribute protected propertyName : String from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Pull Up Attribute	private propertyNameHash : long from class com.alibaba.fastjson.JSONPath.NotNullSegement to protected propertyNameHash : long from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Change Attribute Access Modifier	private to protected in attribute protected propertyNameHash : long from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Change Attribute Access Modifier	private to protected in attribute protected propertyNameHash : long from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Change Attribute Access Modifier	private to protected in attribute protected propertyNameHash : long from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Change Attribute Access Modifier	private to protected in attribute protected propertyNameHash : long from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Change Attribute Access Modifier	private to protected in attribute protected propertyNameHash : long from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Change Attribute Access Modifier	private to protected in attribute protected propertyNameHash : long from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Change Attribute Access Modifier	private to protected in attribute protected propertyNameHash : long from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Change Attribute Access Modifier	private to protected in attribute protected propertyNameHash : long from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Change Attribute Access Modifier	private to protected in attribute protected propertyNameHash : long from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Change Attribute Access Modifier	private to protected in attribute protected propertyNameHash : long from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Change Attribute Access Modifier	private to protected in attribute protected propertyNameHash : long from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Change Attribute Access Modifier	private to protected in attribute protected propertyNameHash : long from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Change Attribute Access Modifier	private to protected in attribute protected propertyNameHash : long from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Change Attribute Access Modifier	private to protected in attribute protected propertyNameHash : long from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Pull Up Attribute	private propertyName : String from class com.alibaba.fastjson.JSONPath.NullSegement to protected propertyName : String from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Pull Up Attribute	private propertyNameHash : long from class com.alibaba.fastjson.JSONPath.NullSegement to protected propertyNameHash : long from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Pull Up Attribute	private propertyName : String from class com.alibaba.fastjson.JSONPath.ValueSegment to protected propertyName : String from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Pull Up Attribute	private propertyNameHash : long from class com.alibaba.fastjson.JSONPath.ValueSegment to protected propertyNameHash : long from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Pull Up Attribute	private propertyName : String from class com.alibaba.fastjson.JSONPath.IntInSegement to protected propertyName : String from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Pull Up Attribute	private propertyNameHash : long from class com.alibaba.fastjson.JSONPath.IntInSegement to protected propertyNameHash : long from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Pull Up Attribute	private propertyName : String from class com.alibaba.fastjson.JSONPath.IntBetweenSegement to protected propertyName : String from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Pull Up Attribute	private propertyNameHash : long from class com.alibaba.fastjson.JSONPath.IntBetweenSegement to protected propertyNameHash : long from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Pull Up Attribute	private propertyName : String from class com.alibaba.fastjson.JSONPath.IntObjInSegement to protected propertyName : String from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Pull Up Attribute	private propertyNameHash : long from class com.alibaba.fastjson.JSONPath.IntObjInSegement to protected propertyNameHash : long from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Pull Up Attribute	private propertyName : String from class com.alibaba.fastjson.JSONPath.StringInSegement to protected propertyName : String from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Pull Up Attribute	private propertyNameHash : long from class com.alibaba.fastjson.JSONPath.StringInSegement to protected propertyNameHash : long from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Pull Up Attribute	private propertyName : String from class com.alibaba.fastjson.JSONPath.IntOpSegement to protected propertyName : String from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Pull Up Attribute	private propertyNameHash : long from class com.alibaba.fastjson.JSONPath.IntOpSegement to protected propertyNameHash : long from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Pull Up Attribute	private propertyName : String from class com.alibaba.fastjson.JSONPath.DoubleOpSegement to protected propertyName : String from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Pull Up Attribute	private propertyNameHash : long from class com.alibaba.fastjson.JSONPath.DoubleOpSegement to protected propertyNameHash : long from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Pull Up Attribute	private propertyName : String from class com.alibaba.fastjson.JSONPath.RefOpSegement to protected propertyName : String from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Pull Up Attribute	private propertyNameHash : long from class com.alibaba.fastjson.JSONPath.RefOpSegement to protected propertyNameHash : long from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Pull Up Attribute	private propertyName : String from class com.alibaba.fastjson.JSONPath.MatchSegement to protected propertyName : String from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Pull Up Attribute	private propertyNameHash : long from class com.alibaba.fastjson.JSONPath.MatchSegement to protected propertyNameHash : long from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Pull Up Attribute	private propertyName : String from class com.alibaba.fastjson.JSONPath.RlikeSegement to protected propertyName : String from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Pull Up Attribute	private propertyNameHash : long from class com.alibaba.fastjson.JSONPath.RlikeSegement to protected propertyNameHash : long from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Pull Up Attribute	private propertyName : String from class com.alibaba.fastjson.JSONPath.StringOpSegement to protected propertyName : String from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Pull Up Attribute	private propertyNameHash : long from class com.alibaba.fastjson.JSONPath.StringOpSegement to protected propertyNameHash : long from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Pull Up Attribute	private propertyName : String from class com.alibaba.fastjson.JSONPath.RegMatchSegement to protected propertyName : String from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Pull Up Attribute	private propertyNameHash : long from class com.alibaba.fastjson.JSONPath.RegMatchSegement to protected propertyNameHash : long from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Rename Parameter	not : boolean to function : boolean in method protected PropertyFilter(propertyName String, function boolean) from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Rename Parameter	not : boolean to function : boolean in method protected PropertyFilter(propertyName String, function boolean) from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Rename Parameter	not : boolean to function : boolean in method protected PropertyFilter(propertyName String, function boolean) from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Remove Parameter	values : long[] in method public IntInSegement(propertyName String, values long[], not boolean) from class com.alibaba.fastjson.JSONPath.IntInSegement
+Change Method Access Modifier	public to protected in method protected PropertyFilter(propertyName String, function boolean) from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Change Method Access Modifier	public to protected in method protected PropertyFilter(propertyName String, function boolean) from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Change Method Access Modifier	public to protected in method protected PropertyFilter(propertyName String, function boolean) from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Change Method Access Modifier	public to protected in method protected PropertyFilter(propertyName String, function boolean) from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Change Method Access Modifier	public to protected in method protected PropertyFilter(propertyName String, function boolean) from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Change Method Access Modifier	public to protected in method protected PropertyFilter(propertyName String, function boolean) from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Change Method Access Modifier	public to protected in method protected PropertyFilter(propertyName String, function boolean) from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Change Method Access Modifier	public to protected in method protected PropertyFilter(propertyName String, function boolean) from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Pull Up Method	public IntInSegement(propertyName String, values long[], not boolean) from class com.alibaba.fastjson.JSONPath.IntInSegement to protected PropertyFilter(propertyName String, function boolean) from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Remove Parameter	values : Long[] in method public IntObjInSegement(propertyName String, values Long[], not boolean) from class com.alibaba.fastjson.JSONPath.IntObjInSegement
+Pull Up Method	public IntObjInSegement(propertyName String, values Long[], not boolean) from class com.alibaba.fastjson.JSONPath.IntObjInSegement to protected PropertyFilter(propertyName String, function boolean) from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Remove Parameter	values : String[] in method public StringInSegement(propertyName String, values String[], not boolean) from class com.alibaba.fastjson.JSONPath.StringInSegement
+Pull Up Method	public StringInSegement(propertyName String, values String[], not boolean) from class com.alibaba.fastjson.JSONPath.StringInSegement to protected PropertyFilter(propertyName String, function boolean) from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Add Parameter	function : boolean in method protected PropertyFilter(propertyName String, function boolean) from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Add Parameter	function : boolean in method protected PropertyFilter(propertyName String, function boolean) from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Add Parameter	function : boolean in method protected PropertyFilter(propertyName String, function boolean) from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Add Parameter	function : boolean in method protected PropertyFilter(propertyName String, function boolean) from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Add Parameter	function : boolean in method protected PropertyFilter(propertyName String, function boolean) from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Remove Parameter	value : long in method public IntOpSegement(propertyName String, value long, op Operator) from class com.alibaba.fastjson.JSONPath.IntOpSegement
+Remove Parameter	op : Operator in method public IntOpSegement(propertyName String, value long, op Operator) from class com.alibaba.fastjson.JSONPath.IntOpSegement
+Pull Up Method	public IntOpSegement(propertyName String, value long, op Operator) from class com.alibaba.fastjson.JSONPath.IntOpSegement to protected PropertyFilter(propertyName String, function boolean) from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Remove Parameter	value : double in method public DoubleOpSegement(propertyName String, value double, op Operator) from class com.alibaba.fastjson.JSONPath.DoubleOpSegement
+Remove Parameter	op : Operator in method public DoubleOpSegement(propertyName String, value double, op Operator) from class com.alibaba.fastjson.JSONPath.DoubleOpSegement
+Pull Up Method	public DoubleOpSegement(propertyName String, value double, op Operator) from class com.alibaba.fastjson.JSONPath.DoubleOpSegement to protected PropertyFilter(propertyName String, function boolean) from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Remove Parameter	refSgement : Segment in method public RefOpSegement(propertyName String, refSgement Segment, op Operator) from class com.alibaba.fastjson.JSONPath.RefOpSegement
+Remove Parameter	op : Operator in method public RefOpSegement(propertyName String, refSgement Segment, op Operator) from class com.alibaba.fastjson.JSONPath.RefOpSegement
+Pull Up Method	public RefOpSegement(propertyName String, refSgement Segment, op Operator) from class com.alibaba.fastjson.JSONPath.RefOpSegement to protected PropertyFilter(propertyName String, function boolean) from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Remove Parameter	value : String in method public StringOpSegement(propertyName String, value String, op Operator) from class com.alibaba.fastjson.JSONPath.StringOpSegement
+Remove Parameter	op : Operator in method public StringOpSegement(propertyName String, value String, op Operator) from class com.alibaba.fastjson.JSONPath.StringOpSegement
+Pull Up Method	public StringOpSegement(propertyName String, value String, op Operator) from class com.alibaba.fastjson.JSONPath.StringOpSegement to protected PropertyFilter(propertyName String, function boolean) from class com.alibaba.fastjson.JSONPath.PropertyFilter
+Remove Parameter	pattern : Pattern in method public RegMatchSegement(propertyName String, pattern Pattern, op Operator) from class com.alibaba.fastjson.JSONPath.RegMatchSegement
+Remove Parameter	op : Operator in method public RegMatchSegement(propertyName String, pattern Pattern, op Operator) from class com.alibaba.fastjson.JSONPath.RegMatchSegement
+Pull Up Method	public RegMatchSegement(propertyName String, pattern Pattern, op Operator) from class com.alibaba.fastjson.JSONPath.RegMatchSegement to protected PropertyFilter(propertyName String, function boolean) from class com.alibaba.fastjson.JSONPath.PropertyFilter
+fastjson, Refactorings at 1d4d2472ba350aa5bc6107d6650cb42897f258b1
+Add Method Annotation	@SuppressWarnings({"rawtypes","unchecked"}) in method public setValue(object Object, value Object) : void from class com.alibaba.fastjson.parser.deserializer.FieldDeserializer
+fastjson, Refactorings at d77d469a821373f6b4ac8bc52306e35fd41b0a34
+Extract Variable	path : String in method public writeReference(object Object) : void from class com.alibaba.fastjson.serializer.JSONSerializer
+fastjson, Refactorings at 7b416faa1015ce04505e88d1f9b0575bcf13657f
+Extract Variable	itemValue : Object in method public cast(obj Object, type ParameterizedType, mapping ParserConfig) : T from class com.alibaba.fastjson.util.TypeUtils
+fastjson, Refactorings at 67d54ae4f14418e3f9b7df7339b62e093bb0fdfa
+fastjson, Refactorings at 2f1127017be74efe89a16eb08d83dd629728faa2
+fastjson, Refactorings at 6e53cca3c60182d91db31c1a8a89e58c3fc4195d
+fastjson, Refactorings at 6e53cca3c60182d91db31c1a8a89e58c3fc4195d
+fastjson, Refactorings at 21c2f4b2f963c044e4adafef4ddd966661526af9
+Add Attribute Modifier	volatile in attribute private hashArray : long[] from class com.alibaba.fastjson.serializer.JavaBeanSerializer
+Add Attribute Modifier	volatile in attribute private hashArrayMapping : short[] from class com.alibaba.fastjson.serializer.JavaBeanSerializer
+Add Parameter	throwFieldNotFoundException : boolean in method public getFieldValue(object Object, key String, keyHash long, throwFieldNotFoundException boolean) : Object from class com.alibaba.fastjson.serializer.JavaBeanSerializer
+fastjson, Refactorings at 8d74f9e5a034888610ca3199807e2eec64178210
+Extract Method	protected setTime(h0 char, h1 char, m0 char, m1 char, s0 char, s1 char) : void extracted from public scanISO8601DateIfMatch(strict boolean) : boolean in class com.alibaba.fastjson.parser.JSONScanner
+Extract Method	protected setTimeZone(timeZoneFlag char, t0 char, t1 char) : void extracted from public scanISO8601DateIfMatch(strict boolean) : boolean in class com.alibaba.fastjson.parser.JSONScanner
+fastjson, Refactorings at 21c2f4b2f963c044e4adafef4ddd966661526af9
+Add Attribute Modifier	volatile in attribute private hashArray : long[] from class com.alibaba.fastjson.serializer.JavaBeanSerializer
+Add Attribute Modifier	volatile in attribute private hashArrayMapping : short[] from class com.alibaba.fastjson.serializer.JavaBeanSerializer
+Add Parameter	throwFieldNotFoundException : boolean in method public getFieldValue(object Object, key String, keyHash long, throwFieldNotFoundException boolean) : Object from class com.alibaba.fastjson.serializer.JavaBeanSerializer
+fastjson, Refactorings at 7ba142b66750a998694ea9a40a24daa8de7fccfa
+fastjson, Refactorings at dc06b690e00cf5a984711e254149c3037b413a99
+fastjson, Refactorings at 33eaec097f6cf7c23c7cf8dc08f9ca7b21f9f54c
+Encapsulate Attribute	private map : Map<String,Object> from class com.alibaba.fastjson.JSONObject
+Extract Variable	map : Map in method public parseObject(object Map, fieldName Object) : Object from class com.alibaba.fastjson.parser.DefaultJSONParser
+fastjson, Refactorings at 1d860af51a28a4b1f5fb2d9aefaf03f4422b5141
+fastjson, Refactorings at 1d860af51a28a4b1f5fb2d9aefaf03f4422b5141
+fastjson, Refactorings at 7b416faa1015ce04505e88d1f9b0575bcf13657f
+Extract Variable	itemValue : Object in method public cast(obj Object, type ParameterizedType, mapping ParserConfig) : T from class com.alibaba.fastjson.util.TypeUtils
+fastjson, Refactorings at 7b416faa1015ce04505e88d1f9b0575bcf13657f
+Extract Variable	itemValue : Object in method public cast(obj Object, type ParameterizedType, mapping ParserConfig) : T from class com.alibaba.fastjson.util.TypeUtils
+fastjson, Refactorings at 7b416faa1015ce04505e88d1f9b0575bcf13657f
+Extract Variable	itemValue : Object in method public cast(obj Object, type ParameterizedType, mapping ParserConfig) : T from class com.alibaba.fastjson.util.TypeUtils
+fastjson, Refactorings at 7b416faa1015ce04505e88d1f9b0575bcf13657f
+Extract Variable	itemValue : Object in method public cast(obj Object, type ParameterizedType, mapping ParserConfig) : T from class com.alibaba.fastjson.util.TypeUtils
+fastjson, Refactorings at 178fc2df6677c70cd1bd390ed59cf846260fa40a
+Extract Variable	propName : String in method package parseArrayAccess(acceptBracket boolean) : Segement from class com.alibaba.fastjson.JSONPath.JSONPathParser
+fastjson, Refactorings at 12fd92fb1c41e5b9aa6ec4455d8802911e179052
+Rename Method	public getId() : int renamed to public getMessageId() : int in class com.alibaba.json.bvt.parser.deser.SmartMatchTest.VO
+Rename Method	public setId(id int) : void renamed to public setMessageId(messageId int) : void in class com.alibaba.json.bvt.parser.deser.SmartMatchTest.VO
+Rename Parameter	id : int to messageId : int in method public setMessageId(messageId int) : void from class com.alibaba.json.bvt.parser.deser.SmartMatchTest.VO
+Rename Method	public getId() : int renamed to public getMessageId() : int in class com.alibaba.json.bvt.parser.deser.SmartMatchTest.VO2
+Rename Method	public setId(id int) : void renamed to public setMessageId(messageId int) : void in class com.alibaba.json.bvt.parser.deser.SmartMatchTest.VO2
+Rename Parameter	id : int to messageId : int in method public setMessageId(messageId int) : void from class com.alibaba.json.bvt.parser.deser.SmartMatchTest.VO2
+Move Attribute	private id : int from class com.alibaba.json.bvt.parser.deser.SmartMatchTest.VO to private id : int from class com.alibaba.json.bvt.parser.deser.SmartMatchTest2.VO
+Move Attribute	private id : int from class com.alibaba.json.bvt.parser.deser.SmartMatchTest.VO to private id : int from class com.alibaba.json.bvt.parser.deser.SmartMatchTest2.VO2
+Move Attribute	private id : int from class com.alibaba.json.bvt.parser.deser.SmartMatchTest.VO2 to private id : int from class com.alibaba.json.bvt.parser.deser.SmartMatchTest2.VO
+Move Attribute	private id : int from class com.alibaba.json.bvt.parser.deser.SmartMatchTest.VO2 to private id : int from class com.alibaba.json.bvt.parser.deser.SmartMatchTest2.VO2
+fastjson, Refactorings at 76da49cce6107ff399427ee12cbb7379744a70f2
+fastjson, Refactorings at 50b3af50de60e8251e6065e3e226007b5bb41f74
+Extract Variable	mask : int in initializer JSON from class com.alibaba.fastjson.JSON
+Inline Variable	mask : int in initializer JSON from class com.alibaba.fastjson.JSON
+fastjson, Refactorings at ef6c08a304ba53d376d8dcde9c4eff2476e27b40
+Extract Variable	exp : boolean in method public scanFieldDouble(fieldName char[]) : double from class com.alibaba.fastjson.parser.JSONLexerBase
+Modify Class Annotation	@JSONType(serialzeFeatures = SerializerFeature.BeanToArray, parseFeatures = Feature.SupportArrayToBean, orders = {"metric","timestamp","value","tags","tsuid","granularity","aggregator"}, asm = false) to @JSONType(serialzeFeatures = SerializerFeature.BeanToArray, parseFeatures = Feature.SupportArrayToBean, orders = {"metric","timestamp","value","tags","tsuid","granularity","aggregator"}, asm = true) in class com.alibaba.json.bvtVO.IncomingDataPoint
+fastjson, Refactorings at ef6c08a304ba53d376d8dcde9c4eff2476e27b40
+Extract Variable	exp : boolean in method public scanFieldDouble(fieldName char[]) : double from class com.alibaba.fastjson.parser.JSONLexerBase
+Modify Class Annotation	@JSONType(serialzeFeatures = SerializerFeature.BeanToArray, parseFeatures = Feature.SupportArrayToBean, orders = {"metric","timestamp","value","tags","tsuid","granularity","aggregator"}, asm = false) to @JSONType(serialzeFeatures = SerializerFeature.BeanToArray, parseFeatures = Feature.SupportArrayToBean, orders = {"metric","timestamp","value","tags","tsuid","granularity","aggregator"}, asm = true) in class com.alibaba.json.bvtVO.IncomingDataPoint
+fastjson, Refactorings at 37bd050e90535b0d58940eb2c406de4faee159f7
+Change Variable Type	intValue : int to shortValue : short in method public deserialze(parser DefaultJSONParser, clazz Type, fieldName Object) : T from class com.alibaba.fastjson.parser.deserializer.NumberDeserializer
+Change Variable Type	intValue : int to byteValue : byte in method public deserialze(parser DefaultJSONParser, clazz Type, fieldName Object) : T from class com.alibaba.fastjson.parser.deserializer.NumberDeserializer
+Change Variable Type	val : Number to val : BigDecimal in method public deserialze(parser DefaultJSONParser, clazz Type, fieldName Object) : T from class com.alibaba.fastjson.parser.deserializer.NumberDeserializer
+Change Variable Type	val : Number to val : BigDecimal in method public deserialze(parser DefaultJSONParser, clazz Type, fieldName Object) : T from class com.alibaba.fastjson.parser.deserializer.NumberDeserializer
+Rename Variable	intValue : int to shortValue : short in method public deserialze(parser DefaultJSONParser, clazz Type, fieldName Object) : T from class com.alibaba.fastjson.parser.deserializer.NumberDeserializer
+Rename Variable	intValue : int to byteValue : byte in method public deserialze(parser DefaultJSONParser, clazz Type, fieldName Object) : T from class com.alibaba.fastjson.parser.deserializer.NumberDeserializer
+Change Variable Type	number : Number to number : BigDecimal in method public deserialze(parser DefaultJSONParser, clazz Type, fieldName Object) : T from class com.alibaba.fastjson.serializer.IntegerCodec
+Change Variable Type	number : Number to number : BigDecimal in method public deserialze(parser DefaultJSONParser, clazz Type, fieldName Object) : T from class com.alibaba.fastjson.serializer.LongCodec
+fastjson, Refactorings at 6594789438cea10cecb9799a32138d2eddb4cba4
+Rename Method	private encodeTo(out OutputStream, encoder CharsetEncoder, chars char[], off int, len int) : int renamed to private encodeToUTF8(out OutputStream) : int in class com.alibaba.fastjson.serializer.SerializeWriter
+Remove Parameter	encoder : CharsetEncoder in method private encodeTo(out OutputStream, encoder CharsetEncoder, chars char[], off int, len int) : int from class com.alibaba.fastjson.serializer.SerializeWriter
+Remove Parameter	chars : char[] in method private encodeTo(out OutputStream, encoder CharsetEncoder, chars char[], off int, len int) : int from class com.alibaba.fastjson.serializer.SerializeWriter
+Remove Parameter	off : int in method private encodeTo(out OutputStream, encoder CharsetEncoder, chars char[], off int, len int) : int from class com.alibaba.fastjson.serializer.SerializeWriter
+Remove Parameter	len : int in method private encodeTo(out OutputStream, encoder CharsetEncoder, chars char[], off int, len int) : int from class com.alibaba.fastjson.serializer.SerializeWriter
+Remove Method Modifier	static in method private encodeTo(out OutputStream, encoder CharsetEncoder, chars char[], off int, len int) : int from class com.alibaba.fastjson.serializer.SerializeWriter
+fastjson, Refactorings at 34342bec4f11298c9a52997ad066c19e47726e1e
+Inline Variable	path : String in method public writeReference(object Object) : void from class com.alibaba.fastjson.serializer.JSONSerializer
+fastjson, Refactorings at 57aff945aae44d0adb86467133b3e3dc19044d5e
+fastjson, Refactorings at ef6c08a304ba53d376d8dcde9c4eff2476e27b40
+Extract Variable	exp : boolean in method public scanFieldDouble(fieldName char[]) : double from class com.alibaba.fastjson.parser.JSONLexerBase
+Modify Class Annotation	@JSONType(serialzeFeatures = SerializerFeature.BeanToArray, parseFeatures = Feature.SupportArrayToBean, orders = {"metric","timestamp","value","tags","tsuid","granularity","aggregator"}, asm = false) to @JSONType(serialzeFeatures = SerializerFeature.BeanToArray, parseFeatures = Feature.SupportArrayToBean, orders = {"metric","timestamp","value","tags","tsuid","granularity","aggregator"}, asm = true) in class com.alibaba.json.bvtVO.IncomingDataPoint
+fastjson, Refactorings at ef6c08a304ba53d376d8dcde9c4eff2476e27b40
+Extract Variable	exp : boolean in method public scanFieldDouble(fieldName char[]) : double from class com.alibaba.fastjson.parser.JSONLexerBase
+Modify Class Annotation	@JSONType(serialzeFeatures = SerializerFeature.BeanToArray, parseFeatures = Feature.SupportArrayToBean, orders = {"metric","timestamp","value","tags","tsuid","granularity","aggregator"}, asm = false) to @JSONType(serialzeFeatures = SerializerFeature.BeanToArray, parseFeatures = Feature.SupportArrayToBean, orders = {"metric","timestamp","value","tags","tsuid","granularity","aggregator"}, asm = true) in class com.alibaba.json.bvtVO.IncomingDataPoint
+fastjson, Refactorings at cdb820925ce2e3e1cbd9646c214d998d0b98a7fd
+Extract Variable	text : String in method public test_for_bug() : void from class com.alibaba.json.test.bvt.bug.Bug_101_for_rongganlin_case2
+fastjson, Refactorings at 0c4f90d55d1aff4d011accd1cfefb59033551100
+fastjson, Refactorings at 91e9164ce5217f3f1710882898cac511e1aae458
+fastjson, Refactorings at 020aefbaadf8cee2916bcfd552bdf66ec6b6e830
+Extract Class	com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter.Spring4TypeResolvableHelper from class com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter
+Move Method	private resolveVariable(typeVariable TypeVariable<?>, contextType ResolvableType) : ResolvableType from class com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter to private resolveVariable(typeVariable TypeVariable<?>, contextType ResolvableType) : ResolvableType from class com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter.Spring4TypeResolvableHelper
+Add Method Modifier	static in method private resolveVariable(typeVariable TypeVariable<?>, contextType ResolvableType) : ResolvableType from class com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter.Spring4TypeResolvableHelper
+fastjson, Refactorings at b1222868654e6d508374110ae35e48613acc45ea
+Extract And Move Method	public fnv_64_lower(key String) : long extracted from public smartMatch(key String, setFlags int[]) : FieldDeserializer in class com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer & moved to class com.alibaba.fastjson.util.TypeUtils
+fastjson, Refactorings at 246767658d5b3832e479394aa4ea5310023f6144
+fastjson, Refactorings at 181d423fbb50dd157209d11ac872c73d0e224bd8
+Extract Variable	mask : int in initializer JSON from class com.alibaba.fastjson.JSON
+Inline Variable	mask : int in initializer JSON from class com.alibaba.fastjson.JSON
+Change Attribute Access Modifier	private to package in attribute package time1 : LocalDateTime from class com.alibaba.json.bvt.issue_1400.Issue1493.TestBean
+Change Attribute Access Modifier	private to package in attribute package time2 : LocalDateTime from class com.alibaba.json.bvt.issue_1400.Issue1493.TestBean
+Extract Variable	stime2 : String in method public test_for_issue() : void from class com.alibaba.json.bvt.issue_1400.Issue1493
+fastjson, Refactorings at 8d74f9e5a034888610ca3199807e2eec64178210
+Extract Method	protected setTime(h0 char, h1 char, m0 char, m1 char, s0 char, s1 char) : void extracted from public scanISO8601DateIfMatch(strict boolean) : boolean in class com.alibaba.fastjson.parser.JSONScanner
+Extract Method	protected setTimeZone(timeZoneFlag char, t0 char, t1 char) : void extracted from public scanISO8601DateIfMatch(strict boolean) : boolean in class com.alibaba.fastjson.parser.JSONScanner
+fastjson, Refactorings at ce3c5465bdbb55bce36f9acd02704fb9c04207c8
+Extract Variable	calendar : Calendar in method protected cast(parser DefaultJSONParser, clazz Type, fieldName Object, val Object) : T from class com.alibaba.fastjson.parser.deserializer.DateDeserializer
+fastjson, Refactorings at 29b669a6704ccac7f1d7f4163005abcc3500b161
+Change Variable Type	intVal : int to intVal : long in method public scanFloat(seperator char) : float from class com.alibaba.fastjson.parser.JSONLexerBase
+Add Variable Modifier	final in variable negative : boolean in method public scanFieldInt(fieldName char[]) : int from class com.alibaba.fastjson.parser.JSONScanner
+fastjson, Refactorings at 02e9deba3f6e4356a89d54d86adac379fd5de8f4
+fastjson, Refactorings at 8d74f9e5a034888610ca3199807e2eec64178210
+Extract Method	protected setTime(h0 char, h1 char, m0 char, m1 char, s0 char, s1 char) : void extracted from public scanISO8601DateIfMatch(strict boolean) : boolean in class com.alibaba.fastjson.parser.JSONScanner
+Extract Method	protected setTimeZone(timeZoneFlag char, t0 char, t1 char) : void extracted from public scanISO8601DateIfMatch(strict boolean) : boolean in class com.alibaba.fastjson.parser.JSONScanner
+fastjson, Refactorings at 29b669a6704ccac7f1d7f4163005abcc3500b161
+Change Variable Type	intVal : int to intVal : long in method public scanFloat(seperator char) : float from class com.alibaba.fastjson.parser.JSONLexerBase
+Add Variable Modifier	final in variable negative : boolean in method public scanFieldInt(fieldName char[]) : int from class com.alibaba.fastjson.parser.JSONScanner
+fastjson, Refactorings at 37088117491811f060c518fcd0761cd5a195d8fa
+Extract Variable	mask : int in initializer JSON from class com.alibaba.fastjson.JSON
+Inline Variable	mask : int in initializer JSON from class com.alibaba.fastjson.JSON
+Extract Variable	text : String in method public test_special_browsecue() : void from class com.alibaba.json.bvt.StringFieldTest_special_3
+fastjson, Refactorings at 7effec024677594f33c449bd3a62b20e1a77469b
+Extract Method	private strangeCodeForJackson(obj Object) : Object extracted from protected writeInternal(obj Object, outputMessage HttpOutputMessage) : void in class com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter
+Extract Method	private readType(type Type, inputMessage HttpInputMessage) : Object extracted from public read(type Type, contextClass Class<?>, inputMessage HttpInputMessage) : Object in class com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter
+Extract Variable	globalFilters : SerializeFilter[] in method protected writeInternal(object Object, outputMessage HttpOutputMessage) : void from class com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter
+Rename Variable	writeAsToString : boolean to isJsonp : boolean in method protected writeInternal(object Object, outputMessage HttpOutputMessage) : void from class com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter
+Rename Parameter	obj : Object to object : Object in method protected writeInternal(object Object, outputMessage HttpOutputMessage) : void from class com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter
+Add Method Annotation	@Override in method public canRead(type Type, contextClass Class<?>, mediaType MediaType) : boolean from class com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter
+Rename Parameter	contextClass : Class<?> to clazz : Class<?> in method public canWrite(type Type, clazz Class<?>, mediaType MediaType) : boolean from class com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter
+Rename Parameter	t : Object to o : Object in method public write(o Object, type Type, contentType MediaType, outputMessage HttpOutputMessage) : void from class com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter
+Add Class Annotation	@Deprecated in class com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter4
+Rename Parameter	paramClass : Class<?> to clazz : Class<?> in method protected supports(clazz Class<?>) : boolean from class com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter4
+Add Method Annotation	@Override in method public read(type Type, contextClass Class<?>, inputMessage HttpInputMessage) : Object from class com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter4
+Add Class Annotation	@Order in class com.alibaba.fastjson.support.spring.FastJsonViewResponseBodyAdvice
+Add Class Annotation	@Deprecated in class com.alibaba.fastjson.support.spring.FastJsonpHttpMessageConverter4
+Rename Parameter	paramClass : Class<?> to clazz : Class<?> in method protected supports(clazz Class<?>) : boolean from class com.alibaba.fastjson.support.spring.FastJsonpHttpMessageConverter4
+Add Method Annotation	@Override in method public read(type Type, contextClass Class<?>, inputMessage HttpInputMessage) : Object from class com.alibaba.fastjson.support.spring.FastJsonpHttpMessageConverter4
+Add Class Annotation	@Deprecated in class com.alibaba.fastjson.support.spring.FastJsonpResponseBodyAdvice
+Add Class Annotation	@Order(Integer.MIN_VALUE) in class com.alibaba.fastjson.support.spring.FastJsonpResponseBodyAdvice
+Add Class Annotation	@Deprecated in class com.alibaba.fastjson.support.spring.MappingFastJsonValue
+Extract Variable	fastJsonConfig : FastJsonConfig in method public test_1() : void from class com.alibaba.json.bvt.support.jaxrs.FastJsonProviderTest
+Move Attribute	private JSONP_FUNCTION_PREFIX_BYTES : byte[] from class com.alibaba.fastjson.support.spring.FastJsonpHttpMessageConverter4 to private JSONP_FUNCTION_PREFIX_BYTES : byte[] from class com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter
+Move Attribute	private JSONP_FUNCTION_SUFFIX_BYTES : byte[] from class com.alibaba.fastjson.support.spring.FastJsonpHttpMessageConverter4 to private JSONP_FUNCTION_SUFFIX_BYTES : byte[] from class com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter
+Move Method	protected writePrefix(out ByteArrayOutputStream, object Object) : int from class com.alibaba.fastjson.support.spring.FastJsonpHttpMessageConverter4 to protected writePrefix(out ByteArrayOutputStream, object Object) : int from class com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter
+Move Method	protected writeSuffix(out ByteArrayOutputStream, object Object) : int from class com.alibaba.fastjson.support.spring.FastJsonpHttpMessageConverter4 to protected writeSuffix(out ByteArrayOutputStream, object Object) : int from class com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter
+fastjson, Refactorings at 771af47385330bf0505b47527698d055d883ddf5
+Extract Method	private getArgument(typeArgs Type[], typeVariables TypeVariable[], arguments Type[]) : boolean extracted from public getFieldType(clazz Class<?>, type Type, fieldType Type) : Type in class com.alibaba.fastjson.util.FieldInfo
+Rename Variable	feildTypeArguement : Type to typeArg : Type in method private getArgument(typeArgs Type[], typeVariables TypeVariable[], arguments Type[]) : boolean from class com.alibaba.fastjson.util.FieldInfo
+Rename Variable	actualTypes : Type[] to p_typeArg_args : Type[] in method private getArgument(typeArgs Type[], typeVariables TypeVariable[], arguments Type[]) : boolean from class com.alibaba.fastjson.util.FieldInfo
+Change Variable Type	gd : GenericDeclaration to gd : Class<?> in method private getInheritGenericType(clazz Class<?>, type Type, tv TypeVariable<?>) : Type from class com.alibaba.fastjson.util.FieldInfo
+Rename Variable	type : Type to actualType : Type in method private getInheritGenericType(clazz Class<?>, type Type, tv TypeVariable<?>) : Type from class com.alibaba.fastjson.util.FieldInfo
+Rename Variable	superGenericType : Type to superType : Type in method private getInheritGenericType(clazz Class<?>, type Type, tv TypeVariable<?>) : Type from class com.alibaba.fastjson.util.FieldInfo
+Rename Variable	tvs : TypeVariable<?>[] to typeVariables : TypeVariable<?>[] in method private getInheritGenericType(clazz Class<?>, type Type, tv TypeVariable<?>) : Type from class com.alibaba.fastjson.util.FieldInfo
+Rename Variable	types : Type[] to arguments : Type[] in method private getInheritGenericType(clazz Class<?>, type Type, tv TypeVariable<?>) : Type from class com.alibaba.fastjson.util.FieldInfo
+Add Parameter	type : Type in method private getInheritGenericType(clazz Class<?>, type Type, tv TypeVariable<?>) : Type from class com.alibaba.fastjson.util.FieldInfo
+Change Method Access Modifier	public to private in method private getInheritGenericType(clazz Class<?>, type Type, tv TypeVariable<?>) : Type from class com.alibaba.fastjson.util.FieldInfo
+fastjson, Refactorings at 771af47385330bf0505b47527698d055d883ddf5
+Extract Method	private getArgument(typeArgs Type[], typeVariables TypeVariable[], arguments Type[]) : boolean extracted from public getFieldType(clazz Class<?>, type Type, fieldType Type) : Type in class com.alibaba.fastjson.util.FieldInfo
+Rename Variable	feildTypeArguement : Type to typeArg : Type in method private getArgument(typeArgs Type[], typeVariables TypeVariable[], arguments Type[]) : boolean from class com.alibaba.fastjson.util.FieldInfo
+Rename Variable	actualTypes : Type[] to p_typeArg_args : Type[] in method private getArgument(typeArgs Type[], typeVariables TypeVariable[], arguments Type[]) : boolean from class com.alibaba.fastjson.util.FieldInfo
+Change Variable Type	gd : GenericDeclaration to gd : Class<?> in method private getInheritGenericType(clazz Class<?>, type Type, tv TypeVariable<?>) : Type from class com.alibaba.fastjson.util.FieldInfo
+Rename Variable	type : Type to actualType : Type in method private getInheritGenericType(clazz Class<?>, type Type, tv TypeVariable<?>) : Type from class com.alibaba.fastjson.util.FieldInfo
+Rename Variable	superGenericType : Type to superType : Type in method private getInheritGenericType(clazz Class<?>, type Type, tv TypeVariable<?>) : Type from class com.alibaba.fastjson.util.FieldInfo
+Rename Variable	tvs : TypeVariable<?>[] to typeVariables : TypeVariable<?>[] in method private getInheritGenericType(clazz Class<?>, type Type, tv TypeVariable<?>) : Type from class com.alibaba.fastjson.util.FieldInfo
+Rename Variable	types : Type[] to arguments : Type[] in method private getInheritGenericType(clazz Class<?>, type Type, tv TypeVariable<?>) : Type from class com.alibaba.fastjson.util.FieldInfo
+Add Parameter	type : Type in method private getInheritGenericType(clazz Class<?>, type Type, tv TypeVariable<?>) : Type from class com.alibaba.fastjson.util.FieldInfo
+Change Method Access Modifier	public to private in method private getInheritGenericType(clazz Class<?>, type Type, tv TypeVariable<?>) : Type from class com.alibaba.fastjson.util.FieldInfo
+fastjson, Refactorings at 771af47385330bf0505b47527698d055d883ddf5
+Extract Method	private getArgument(typeArgs Type[], typeVariables TypeVariable[], arguments Type[]) : boolean extracted from public getFieldType(clazz Class<?>, type Type, fieldType Type) : Type in class com.alibaba.fastjson.util.FieldInfo
+Rename Variable	feildTypeArguement : Type to typeArg : Type in method private getArgument(typeArgs Type[], typeVariables TypeVariable[], arguments Type[]) : boolean from class com.alibaba.fastjson.util.FieldInfo
+Rename Variable	actualTypes : Type[] to p_typeArg_args : Type[] in method private getArgument(typeArgs Type[], typeVariables TypeVariable[], arguments Type[]) : boolean from class com.alibaba.fastjson.util.FieldInfo
+Change Variable Type	gd : GenericDeclaration to gd : Class<?> in method private getInheritGenericType(clazz Class<?>, type Type, tv TypeVariable<?>) : Type from class com.alibaba.fastjson.util.FieldInfo
+Rename Variable	type : Type to actualType : Type in method private getInheritGenericType(clazz Class<?>, type Type, tv TypeVariable<?>) : Type from class com.alibaba.fastjson.util.FieldInfo
+Rename Variable	superGenericType : Type to superType : Type in method private getInheritGenericType(clazz Class<?>, type Type, tv TypeVariable<?>) : Type from class com.alibaba.fastjson.util.FieldInfo
+Rename Variable	tvs : TypeVariable<?>[] to typeVariables : TypeVariable<?>[] in method private getInheritGenericType(clazz Class<?>, type Type, tv TypeVariable<?>) : Type from class com.alibaba.fastjson.util.FieldInfo
+Rename Variable	types : Type[] to arguments : Type[] in method private getInheritGenericType(clazz Class<?>, type Type, tv TypeVariable<?>) : Type from class com.alibaba.fastjson.util.FieldInfo
+Add Parameter	type : Type in method private getInheritGenericType(clazz Class<?>, type Type, tv TypeVariable<?>) : Type from class com.alibaba.fastjson.util.FieldInfo
+Change Method Access Modifier	public to private in method private getInheritGenericType(clazz Class<?>, type Type, tv TypeVariable<?>) : Type from class com.alibaba.fastjson.util.FieldInfo
+fastjson, Refactorings at ce055537903a4f9e2c62116a0f76c2d93b287584
+fastjson, Refactorings at ce055537903a4f9e2c62116a0f76c2d93b287584
+fastjson, Refactorings at cdb820925ce2e3e1cbd9646c214d998d0b98a7fd
+Extract Variable	text : String in method public test_for_bug() : void from class com.alibaba.json.test.bvt.bug.Bug_101_for_rongganlin_case2
+fastjson, Refactorings at 56272ce478a1542972598a0d6ad699436139dfbb
+Change Attribute Access Modifier	private to public in attribute public beanInfo : JavaBeanInfo from class com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer
+Add Attribute Modifier	final in attribute public beanInfo : JavaBeanInfo from class com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer
+fastjson, Refactorings at cdb820925ce2e3e1cbd9646c214d998d0b98a7fd
+Extract Variable	text : String in method public test_for_bug() : void from class com.alibaba.json.test.bvt.bug.Bug_101_for_rongganlin_case2
+fastjson, Refactorings at 2541a486971999d80270e5cd4c336f3feb57a187
+Add Parameter	format : String in method public deserialze(parser DefaultJSONParser, type Type, fieldName Object, format String, feature int) : T from class com.alibaba.fastjson.parser.deserializer.Jdk8DateCodec
+Add Parameter	feature : int in method public deserialze(parser DefaultJSONParser, type Type, fieldName Object, format String, feature int) : T from class com.alibaba.fastjson.parser.deserializer.Jdk8DateCodec
+Change Method Access Modifier	package to public in method public BeanContext(beanClass Class<?>, fieldInfo FieldInfo) from class com.alibaba.fastjson.serializer.BeanContext
+Replace Variable With Attribute	format : String to format : String in method public getFormat() : String from class com.alibaba.fastjson.util.FieldInfo
+Extract Superclass	com.alibaba.fastjson.parser.deserializer.ContextObjectDeserializer from classes [com.alibaba.fastjson.parser.deserializer.Jdk8DateCodec]
+fastjson, Refactorings at e4562183cf45c0c5f77c446350da6b89ccf49687
+Extract Variable	thisClass : Class<?> in method protected TypeReference(actualTypeArguments Type...) from class com.alibaba.fastjson.TypeReference
+fastjson, Refactorings at e4562183cf45c0c5f77c446350da6b89ccf49687
+Extract Variable	thisClass : Class<?> in method protected TypeReference(actualTypeArguments Type...) from class com.alibaba.fastjson.TypeReference
+fastjson, Refactorings at cdb820925ce2e3e1cbd9646c214d998d0b98a7fd
+Extract Variable	text : String in method public test_for_bug() : void from class com.alibaba.json.test.bvt.bug.Bug_101_for_rongganlin_case2
+fastjson, Refactorings at f9138d227ab4538bcf7df6f74a2fcb81fe504733
+Change Method Access Modifier	public to protected in method protected parseRest(parser DefaultJSONParser, type Type, fieldName Object, instance Object) : Object from class com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer
+Move Method	public parseRest(parser DefaultJSONParser, type Type, fieldName Object, instance Object) : Object from class com.alibaba.fastjson.parser.deserializer.ASMJavaBeanDeserializer to protected parseRest(parser DefaultJSONParser, type Type, fieldName Object, instance Object) : Object from class com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer
+fastjson, Refactorings at dba0e92448284de00159f8933842d2f10bc13259
+fastjson, Refactorings at cdb820925ce2e3e1cbd9646c214d998d0b98a7fd
+Extract Variable	text : String in method public test_for_bug() : void from class com.alibaba.json.test.bvt.bug.Bug_101_for_rongganlin_case2
+fastjson, Refactorings at 30e081e7402024c5b113e8523521784a1841c920
+Extract Variable	ch : char in method private writeStringWithDoubleQuote(text String, seperator char, checkSpecial boolean) : void from class com.alibaba.fastjson.serializer.SerializeWriter
+fastjson, Refactorings at b15b193dada750a818a34211ee3990d6ac7b56c7
+Inline Method	private _loadCreatorParameters(context Context, mw MethodVisitor) : void inlined to package _deserialze(cw ClassWriter, context Context) : void in class com.alibaba.fastjson.parser.deserializer.ASMDeserializerFactory
+Inline Method	private _loadCreatorParameters(context Context, mw MethodVisitor) : void inlined to package _deserialze(cw ClassWriter, context Context) : void in class com.alibaba.fastjson.parser.deserializer.ASMDeserializerFactory
+Merge Conditional	[if(fieldClass == int.class), if(fieldClass == byte.class), if(fieldClass == short.class)] to if(fieldClass == boolean.class || fieldClass == byte.class || fieldClass == short.class || fieldClass == int.class) in method package _deserialze(cw ClassWriter, context Context) : void from class com.alibaba.fastjson.parser.deserializer.ASMDeserializerFactory
+Merge Conditional	[if(fieldClass == short.class), if(fieldClass == boolean.class), if(fieldClass == byte.class), if(fieldClass == int.class)] to if(fieldClass == boolean.class || fieldClass == byte.class || fieldClass == short.class || fieldClass == int.class) in method package _deserialze(cw ClassWriter, context Context) : void from class com.alibaba.fastjson.parser.deserializer.ASMDeserializerFactory
+Extract Method	public deserialze(parser DefaultJSONParser, type Type, fieldName Object, object Object) : T extracted from public deserialze(parser DefaultJSONParser, type Type, fieldName Object) : T in class com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer
+Remove Method Annotation	@SuppressWarnings("unchecked") in method public deserialze(parser DefaultJSONParser, type Type, fieldName Object) : T from class com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer
+Rename Method	public test_null() : void renamed to public test_null_0() : void in class com.alibaba.json.bvt.parser.deser.ArrayListTypeDeserializerTest
+Move Method	public test_4() : void from class com.alibaba.json.bvt.parser.JSONScannerTest_scanFieldBoolean to public test_4() : void from class com.alibaba.json.bvt.parser.JSONScannerTest_scanFieldBoolean_unquote
+Move And Rename Method	public test_error_1() : void from class com.alibaba.json.bvt.parser.JSONScannerTest_scanFieldString to public f_test_error_1() : void from class com.alibaba.json.bvt.parser.JSONScannerTest_scanFieldString_error
+Move Method	public test_error_2() : void from class com.alibaba.json.bvt.parser.JSONScannerTest_scanFieldString to public test_error_2() : void from class com.alibaba.json.bvt.parser.JSONScannerTest_scanFieldString_error
+Move Method	public test_error_3() : void from class com.alibaba.json.bvt.parser.JSONScannerTest_scanFieldString to public test_error_3() : void from class com.alibaba.json.bvt.parser.JSONScannerTest_scanFieldString_error
+Change Variable Type	ex : JSONException to ex : Exception in method public test_error_2() : void from class com.alibaba.json.bvt.parser.JSONScannerTest_scanFieldString_error
+Remove Thrown Exception Type	Exception in method public test_error_0() : void from class com.alibaba.json.bvt.serializer.ParserConfigTest
+Move And Rename Method	public test_error_0() : void from class com.alibaba.json.bvt.serializer.ParserConfigTest to public test_error_2() : void from class com.alibaba.json.bvt.parser.JSONScannerTest_scanFieldString_error
+fastjson, Refactorings at cdb820925ce2e3e1cbd9646c214d998d0b98a7fd
+Extract Variable	text : String in method public test_for_bug() : void from class com.alibaba.json.test.bvt.bug.Bug_101_for_rongganlin_case2
+fastjson, Refactorings at 01d010d303aa0d0173662d47261ce10ce14fd872
+fastjson, Refactorings at cdb820925ce2e3e1cbd9646c214d998d0b98a7fd
+Extract Variable	text : String in method public test_for_bug() : void from class com.alibaba.json.test.bvt.bug.Bug_101_for_rongganlin_case2
+fastjson, Refactorings at 3b752614d466c5ecab0890788d9e6e7f13da2943
+Extract Method	private write(out SerializeWriter, object TemporalAccessor, format String) : void extracted from public write(serializer JSONSerializer, object Object, context BeanContext) : void in class com.alibaba.fastjson.parser.deserializer.Jdk8DateCodec
+fastjson, Refactorings at 922838f16df3954e9eedffda7536d420e54472b6
+Extract And Move Method	public get(javaObject Object) : Object extracted from public toJSON(javaObject Object, mapping ParserConfig) : Object in class com.alibaba.fastjson.JSON & moved to class com.alibaba.fastjson.util.FieldInfo
+fastjson, Refactorings at 3bd528016c73f57af8d78646efe224b14aa56fe5
+fastjson, Refactorings at 495824fc55d76329216e49df99093d61791ab05a
+Rename Method	protected quickNextToken_(context Context, mw MethodVisitor, token int) : void renamed to private _quickNextToken(context Context, mw MethodVisitor, token int) : void in class com.alibaba.fastjson.parser.deserializer.ASMDeserializerFactory
+Rename Method	protected quickNextTokenComma_(context Context, mw MethodVisitor) : void renamed to private _quickNextTokenComma(context Context, mw MethodVisitor) : void in class com.alibaba.fastjson.parser.deserializer.ASMDeserializerFactory
+Change Method Access Modifier	package to private in method private _setFlag(mw MethodVisitor, context Context, i int) : void from class com.alibaba.fastjson.parser.deserializer.ASMDeserializerFactory
+Change Method Access Modifier	package to private in method private _isFlag(mw MethodVisitor, context Context, i int, label Label) : void from class com.alibaba.fastjson.parser.deserializer.ASMDeserializerFactory
+Change Method Access Modifier	package to private in method private _deserialzeArrayMapping(cw ClassWriter, context Context) : void from class com.alibaba.fastjson.parser.deserializer.ASMDeserializerFactory
+Change Method Access Modifier	package to private in method private _deserialze(cw ClassWriter, context Context) : void from class com.alibaba.fastjson.parser.deserializer.ASMDeserializerFactory
+Change Method Access Modifier	protected to private in method private _quickNextToken(context Context, mw MethodVisitor, token int) : void from class com.alibaba.fastjson.parser.deserializer.ASMDeserializerFactory
+Change Method Access Modifier	protected to private in method private _quickNextTokenComma(context Context, mw MethodVisitor) : void from class com.alibaba.fastjson.parser.deserializer.ASMDeserializerFactory
+Extract Method	private _getFieldSer(context Context, mw MethodVisitor, fieldInfo FieldInfo) : void extracted from private _list(clazz Class<?>, mw MethodVisitor, property FieldInfo, context Context) : void in class com.alibaba.fastjson.serializer.ASMSerializerFactory
+Extract Method	private _getFieldSer(context Context, mw MethodVisitor, fieldInfo FieldInfo) : void extracted from private _list(clazz Class<?>, mw MethodVisitor, property FieldInfo, context Context) : void in class com.alibaba.fastjson.serializer.ASMSerializerFactory
+Extract Method	private _getListFieldItemSer(context Context, mw MethodVisitor, fieldInfo FieldInfo, itemType Class<?>) : void extracted from private _list(clazz Class<?>, mw MethodVisitor, property FieldInfo, context Context) : void in class com.alibaba.fastjson.serializer.ASMSerializerFactory
+Extract Variable	methodName : String in method public createJavaBeanSerializer(clazz Class<?>, aliasMap Map<String,String>) : ObjectSerializer from class com.alibaba.fastjson.serializer.ASMSerializerFactory
+Rename Variable	property : FieldInfo to fieldInfo : FieldInfo in method private generateWriteAsArray(clazz Class<?>, mw MethodVisitor, getters List<FieldInfo>, context Context) : void from class com.alibaba.fastjson.serializer.ASMSerializerFactory
+Rename Variable	propertyClass : Class<?> to fieldClass : Class<?> in method private generateWriteAsArray(clazz Class<?>, mw MethodVisitor, getters List<FieldInfo>, context Context) : void from class com.alibaba.fastjson.serializer.ASMSerializerFactory
+Extract Variable	writeAsArrayMethodName : String in method private generateWriteMethod(clazz Class<?>, mw MethodVisitor, getters List<FieldInfo>, context Context) : void from class com.alibaba.fastjson.serializer.ASMSerializerFactory
+Rename Variable	_not_null : Label to notNull_ : Label in method private _writeObject(mw MethodVisitor, fieldInfo FieldInfo, context Context, _end Label) : void from class com.alibaba.fastjson.serializer.ASMSerializerFactory
+fastjson, Refactorings at 739adc51e6b9134a69fe2bb39ccb26f981be41f9
+Inline Variable	filters : List<PropertyPreFilter> in method public applyName(object Object, key String) : boolean from class com.alibaba.fastjson.serializer.JSONSerializer
+Add Parameter	javaBeanDeser : SerializeFilterable in method public applyName(javaBeanDeser SerializeFilterable, object Object, key String) : boolean from class com.alibaba.fastjson.serializer.JSONSerializer
+Add Parameter	javaBeanDeser : SerializeFilterable in method public apply(javaBeanDeser SerializeFilterable, object Object, key String, propertyValue Object) : boolean from class com.alibaba.fastjson.serializer.JSONSerializer
+fastjson, Refactorings at b5629a05819a5e09560da170e23e446a96e3b810
+Rename Variable	start : int to startIndex : int in method public scanFieldStringArray(fieldName char[], type Class<?>) : Collection<String> from class com.alibaba.fastjson.parser.JSONScanner
+Rename Variable	strVal : String to stringVal : String in method public scanFieldStringArray(fieldName char[], type Class<?>) : Collection<String> from class com.alibaba.fastjson.parser.JSONScanner
+fastjson, Refactorings at c71dd0b58d8db5bae835c84b1d80e8823908b17b
+Change Attribute Access Modifier	private to protected in attribute protected values : Enum[] from class com.alibaba.fastjson.parser.deserializer.EnumDeserializer
+Change Variable Type	value : Enum<?> to value : Object in method public deserialzeArrayMapping(parser DefaultJSONParser, type Type, fieldName Object, object Object) : T from class com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer
+fastjson, Refactorings at 29f6dd1121f59e29150b349e701b18794a554405
+Change Attribute Access Modifier	protected to public in attribute public input : Object from class com.alibaba.fastjson.parser.DefaultJSONParser
+Change Attribute Access Modifier	protected to public in attribute public symbolTable : SymbolTable from class com.alibaba.fastjson.parser.DefaultJSONParser
+Change Attribute Access Modifier	protected to public in attribute public lexer : JSONLexer from class com.alibaba.fastjson.parser.DefaultJSONParser
+Change Attribute Access Modifier	private to public in attribute public resolveStatus : int from class com.alibaba.fastjson.parser.DefaultJSONParser
+Change Attribute Access Modifier	private to public in attribute public mask : int from class com.alibaba.fastjson.parser.Feature
+Extract Variable	token : int in method public deserialze(parser DefaultJSONParser, type Type, fieldName Object, object Object) : T from class com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer
+Change Variable Type	buf : StringBuilder to buf : StringBuffer in method public deserialze(parser DefaultJSONParser, type Type, fieldName Object, object Object) : T from class com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer
+Change Variable Type	lexer : JSONLexer to lexer : JSONLexerBase in method public deserialze(parser DefaultJSONParser, type Type, fieldName Object, object Object) : T from class com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer
+Modify Method Annotation	@SuppressWarnings("unchecked") to @SuppressWarnings({"unchecked","rawtypes"}) in method public deserialze(parser DefaultJSONParser, type Type, fieldName Object, object Object) : T from class com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer
+Change Attribute Access Modifier	private to public in attribute public parserFeatures : int from class com.alibaba.fastjson.util.DeserializeBeanInfo
+fastjson, Refactorings at 29f6dd1121f59e29150b349e701b18794a554405
+Change Attribute Access Modifier	protected to public in attribute public input : Object from class com.alibaba.fastjson.parser.DefaultJSONParser
+Change Attribute Access Modifier	protected to public in attribute public symbolTable : SymbolTable from class com.alibaba.fastjson.parser.DefaultJSONParser
+Change Attribute Access Modifier	protected to public in attribute public lexer : JSONLexer from class com.alibaba.fastjson.parser.DefaultJSONParser
+Change Attribute Access Modifier	private to public in attribute public resolveStatus : int from class com.alibaba.fastjson.parser.DefaultJSONParser
+Change Attribute Access Modifier	private to public in attribute public mask : int from class com.alibaba.fastjson.parser.Feature
+Extract Variable	token : int in method public deserialze(parser DefaultJSONParser, type Type, fieldName Object, object Object) : T from class com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer
+Change Variable Type	buf : StringBuilder to buf : StringBuffer in method public deserialze(parser DefaultJSONParser, type Type, fieldName Object, object Object) : T from class com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer
+Change Variable Type	lexer : JSONLexer to lexer : JSONLexerBase in method public deserialze(parser DefaultJSONParser, type Type, fieldName Object, object Object) : T from class com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer
+Modify Method Annotation	@SuppressWarnings("unchecked") to @SuppressWarnings({"unchecked","rawtypes"}) in method public deserialze(parser DefaultJSONParser, type Type, fieldName Object, object Object) : T from class com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer
+Change Attribute Access Modifier	private to public in attribute public parserFeatures : int from class com.alibaba.fastjson.util.DeserializeBeanInfo
+fastjson, Refactorings at b58c45bbc64b4c55268717bba2051f9a5be98358
+fastjson, Refactorings at b58c45bbc64b4c55268717bba2051f9a5be98358
+fastjson, Refactorings at cdb820925ce2e3e1cbd9646c214d998d0b98a7fd
+Extract Variable	text : String in method public test_for_bug() : void from class com.alibaba.json.test.bvt.bug.Bug_101_for_rongganlin_case2
+fastjson, Refactorings at cdb820925ce2e3e1cbd9646c214d998d0b98a7fd
+Extract Variable	text : String in method public test_for_bug() : void from class com.alibaba.json.test.bvt.bug.Bug_101_for_rongganlin_case2
+fastjson, Refactorings at 0c88e4961730aa81bffcaf8f480193095a114937
+fastjson, Refactorings at 0c88e4961730aa81bffcaf8f480193095a114937
+fastjson, Refactorings at 62803c6b94b5e7b767288c3424e7749ffb49eb20
+Rename Method	public test_a() : void renamed to public test_list() : void in class com.alibaba.json.bvt.parser.deser.DefaultObjectDeserializerTest12
+Move And Rename Method	public test_null() : void from class com.alibaba.json.bvt.ClassFieldTest to public test_error() : void from class com.alibaba.json.bvt.parser.deser.DateParseTest9
+fastjson, Refactorings at cdb820925ce2e3e1cbd9646c214d998d0b98a7fd
+Extract Variable	text : String in method public test_for_bug() : void from class com.alibaba.json.test.bvt.bug.Bug_101_for_rongganlin_case2
+fastjson, Refactorings at 37fa9d8987c7c1142e65babc3bd7d55de674472c
+fastjson, Refactorings at b15b193dada750a818a34211ee3990d6ac7b56c7
+Inline Method	private _loadCreatorParameters(context Context, mw MethodVisitor) : void inlined to package _deserialze(cw ClassWriter, context Context) : void in class com.alibaba.fastjson.parser.deserializer.ASMDeserializerFactory
+Inline Method	private _loadCreatorParameters(context Context, mw MethodVisitor) : void inlined to package _deserialze(cw ClassWriter, context Context) : void in class com.alibaba.fastjson.parser.deserializer.ASMDeserializerFactory
+Merge Conditional	[if(fieldClass == int.class), if(fieldClass == byte.class), if(fieldClass == short.class)] to if(fieldClass == boolean.class || fieldClass == byte.class || fieldClass == short.class || fieldClass == int.class) in method package _deserialze(cw ClassWriter, context Context) : void from class com.alibaba.fastjson.parser.deserializer.ASMDeserializerFactory
+Merge Conditional	[if(fieldClass == short.class), if(fieldClass == boolean.class), if(fieldClass == byte.class), if(fieldClass == int.class)] to if(fieldClass == boolean.class || fieldClass == byte.class || fieldClass == short.class || fieldClass == int.class) in method package _deserialze(cw ClassWriter, context Context) : void from class com.alibaba.fastjson.parser.deserializer.ASMDeserializerFactory
+Extract Method	public deserialze(parser DefaultJSONParser, type Type, fieldName Object, object Object) : T extracted from public deserialze(parser DefaultJSONParser, type Type, fieldName Object) : T in class com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer
+Remove Method Annotation	@SuppressWarnings("unchecked") in method public deserialze(parser DefaultJSONParser, type Type, fieldName Object) : T from class com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer
+Rename Method	public test_null() : void renamed to public test_null_0() : void in class com.alibaba.json.bvt.parser.deser.ArrayListTypeDeserializerTest
+Move Method	public test_4() : void from class com.alibaba.json.bvt.parser.JSONScannerTest_scanFieldBoolean to public test_4() : void from class com.alibaba.json.bvt.parser.JSONScannerTest_scanFieldBoolean_unquote
+Move And Rename Method	public test_error_1() : void from class com.alibaba.json.bvt.parser.JSONScannerTest_scanFieldString to public f_test_error_1() : void from class com.alibaba.json.bvt.parser.JSONScannerTest_scanFieldString_error
+Move Method	public test_error_2() : void from class com.alibaba.json.bvt.parser.JSONScannerTest_scanFieldString to public test_error_2() : void from class com.alibaba.json.bvt.parser.JSONScannerTest_scanFieldString_error
+Move Method	public test_error_3() : void from class com.alibaba.json.bvt.parser.JSONScannerTest_scanFieldString to public test_error_3() : void from class com.alibaba.json.bvt.parser.JSONScannerTest_scanFieldString_error
+Change Variable Type	ex : JSONException to ex : Exception in method public test_error_2() : void from class com.alibaba.json.bvt.parser.JSONScannerTest_scanFieldString_error
+Remove Thrown Exception Type	Exception in method public test_error_0() : void from class com.alibaba.json.bvt.serializer.ParserConfigTest
+Move And Rename Method	public test_error_0() : void from class com.alibaba.json.bvt.serializer.ParserConfigTest to public test_error_2() : void from class com.alibaba.json.bvt.parser.JSONScannerTest_scanFieldString_error
+fastjson, Refactorings at 76da49cce6107ff399427ee12cbb7379744a70f2
+fastjson, Refactorings at 44b945b2ba2a72dc36ecae3ad68c01f0bd353b5f
+Remove Method Modifier	final in method public scanType(type String) : int from class com.alibaba.fastjson.parser.JSONLexer
+Remove Method Modifier	final in method public scanFieldSymbol(fieldName char[], symbolTable SymbolTable) : String from class com.alibaba.fastjson.parser.JSONLexer
+Add Method Modifier	final in method protected arrayCopy(srcPos int, dest char[], destPos int, length int) : void from class com.alibaba.fastjson.parser.JSONScanner
+fastjson, Refactorings at b1632dc171b80d3146bb27ae8a4eb79a50b0b77a
+fastjson, Refactorings at 3d09404541279798a14a090ec4d24ba596b33b1f
+fastjson, Refactorings at 105ff2098182ab62a31ae001549f767f9a15634c
+fastjson, Refactorings at 105ff2098182ab62a31ae001549f767f9a15634c
+fastjson, Refactorings at 74141bd7edd0da0956ef1efd9702e76e2a36a6fd
+Remove Method Annotation	@Override in method public parseField(parser DefaultJSONParser, object Object, objectType Type, fieldValues Map<String,Object>) : void from class com.alibaba.fastjson.parser.deserializer.ListResolveFieldDeserializer
+Change Variable Type	parser : DefaultExtJSONParser to parser : DefaultJSONParser in method public test_date_0() : void from class com.alibaba.json.bvt.parser.DateParserTest
+Change Variable Type	parser : DefaultExtJSONParser to parser : DefaultJSONParser in method public test_date_1() : void from class com.alibaba.json.bvt.parser.DateParserTest
+Change Variable Type	parser : DefaultExtJSONParser to parser : DefaultJSONParser in method public test_date_2() : void from class com.alibaba.json.bvt.parser.DateParserTest
+Change Variable Type	parser : DefaultExtJSONParser to parser : DefaultJSONParser in method public test_date_4() : void from class com.alibaba.json.bvt.parser.DateParserTest
+Change Variable Type	parser : DefaultExtJSONParser to parser : DefaultJSONParser in method public test_date_error_0() : void from class com.alibaba.json.bvt.parser.DateParserTest
+Remove Method Annotation	@Override in method public getFastMatchToken() : int from class com.alibaba.fastjson.parser.deserializer.ListResolveFieldDeserializer
+Pull Up Method	public getFastMatchToken() : int from class com.alibaba.fastjson.parser.deserializer.ListResolveFieldDeserializer to public getFastMatchToken() : int from class com.alibaba.fastjson.parser.deserializer.FieldDeserializer
+Remove Method Annotation	@Override in method public getFastMatchToken() : int from class com.alibaba.fastjson.parser.deserializer.MapResolveFieldDeserializer
+Pull Up Method	public getFastMatchToken() : int from class com.alibaba.fastjson.parser.deserializer.MapResolveFieldDeserializer to public getFastMatchToken() : int from class com.alibaba.fastjson.parser.deserializer.FieldDeserializer
+fastjson, Refactorings at f56369e3bb39c501e9ef969a93c253f6701c8648
+Change Attribute Type	specicalFlags_doubleQuotes : boolean[] to specicalFlags_doubleQuotes : byte[] in class com.alibaba.fastjson.parser.CharTypes
+Change Attribute Type	specicalFlags_singleQuotes : boolean[] to specicalFlags_singleQuotes : byte[] in class com.alibaba.fastjson.parser.CharTypes
+Change Variable Type	specicalFlags_doubleQuotes : boolean[] to specicalFlags_doubleQuotes : byte[] in method private writeKeyWithDoubleQuoteIfHasSpecial(text String) : void from class com.alibaba.fastjson.serializer.SerializeWriter
+Change Variable Type	specicalFlags_singleQuotes : boolean[] to specicalFlags_singleQuotes : byte[] in method private writeKeyWithSingleQuoteIfHasSpecial(text String) : void from class com.alibaba.fastjson.serializer.SerializeWriter
+Move Method	public isSpecial_doubleQuotes(ch char) : boolean from class com.alibaba.fastjson.parser.CharTypes to public isSpecial_doubleQuotes(ch char) : boolean from class com.alibaba.json.bvt.CharTypesTest
+fastjson, Refactorings at 63e685d4df52a0b8e0242d19f7bfbe40dce98711
+fastjson, Refactorings at e9c05c373af0da203a61a2b886104d9e64a51f18
+Extract Method	private getField0(clazz Class<?>, fieldName String) : Field extracted from public getField(clazz Class<?>, fieldName String) : Field in class com.alibaba.fastjson.parser.ParserConfig
+Extract Variable	propertyName : String in method public computeGetters(clazz Class<?>, aliasMap Map<String,String>, sorted boolean) : List<FieldInfo> from class com.alibaba.fastjson.util.TypeUtils
+fastjson, Refactorings at b15b193dada750a818a34211ee3990d6ac7b56c7
+Inline Method	private _loadCreatorParameters(context Context, mw MethodVisitor) : void inlined to package _deserialze(cw ClassWriter, context Context) : void in class com.alibaba.fastjson.parser.deserializer.ASMDeserializerFactory
+Inline Method	private _loadCreatorParameters(context Context, mw MethodVisitor) : void inlined to package _deserialze(cw ClassWriter, context Context) : void in class com.alibaba.fastjson.parser.deserializer.ASMDeserializerFactory
+Merge Conditional	[if(fieldClass == int.class), if(fieldClass == byte.class), if(fieldClass == short.class)] to if(fieldClass == boolean.class || fieldClass == byte.class || fieldClass == short.class || fieldClass == int.class) in method package _deserialze(cw ClassWriter, context Context) : void from class com.alibaba.fastjson.parser.deserializer.ASMDeserializerFactory
+Merge Conditional	[if(fieldClass == short.class), if(fieldClass == boolean.class), if(fieldClass == byte.class), if(fieldClass == int.class)] to if(fieldClass == boolean.class || fieldClass == byte.class || fieldClass == short.class || fieldClass == int.class) in method package _deserialze(cw ClassWriter, context Context) : void from class com.alibaba.fastjson.parser.deserializer.ASMDeserializerFactory
+Extract Method	public deserialze(parser DefaultJSONParser, type Type, fieldName Object, object Object) : T extracted from public deserialze(parser DefaultJSONParser, type Type, fieldName Object) : T in class com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer
+Remove Method Annotation	@SuppressWarnings("unchecked") in method public deserialze(parser DefaultJSONParser, type Type, fieldName Object) : T from class com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer
+Rename Method	public test_null() : void renamed to public test_null_0() : void in class com.alibaba.json.bvt.parser.deser.ArrayListTypeDeserializerTest
+Move Method	public test_4() : void from class com.alibaba.json.bvt.parser.JSONScannerTest_scanFieldBoolean to public test_4() : void from class com.alibaba.json.bvt.parser.JSONScannerTest_scanFieldBoolean_unquote
+Move And Rename Method	public test_error_1() : void from class com.alibaba.json.bvt.parser.JSONScannerTest_scanFieldString to public f_test_error_1() : void from class com.alibaba.json.bvt.parser.JSONScannerTest_scanFieldString_error
+Move Method	public test_error_2() : void from class com.alibaba.json.bvt.parser.JSONScannerTest_scanFieldString to public test_error_2() : void from class com.alibaba.json.bvt.parser.JSONScannerTest_scanFieldString_error
+Move Method	public test_error_3() : void from class com.alibaba.json.bvt.parser.JSONScannerTest_scanFieldString to public test_error_3() : void from class com.alibaba.json.bvt.parser.JSONScannerTest_scanFieldString_error
+Change Variable Type	ex : JSONException to ex : Exception in method public test_error_2() : void from class com.alibaba.json.bvt.parser.JSONScannerTest_scanFieldString_error
+Remove Thrown Exception Type	Exception in method public test_error_0() : void from class com.alibaba.json.bvt.serializer.ParserConfigTest
+Move And Rename Method	public test_error_0() : void from class com.alibaba.json.bvt.serializer.ParserConfigTest to public test_error_2() : void from class com.alibaba.json.bvt.parser.JSONScannerTest_scanFieldString_error
+fastjson, Refactorings at 1ac787a0a6cb8ee72bd2621121cf1af6aea3f630
+jsoup, Refactorings at b92b4f6b9b3256e97bfb6a0732bf113b6da53a4c
+Extract Variable	read : int in method private bufferUp() : void from class org.jsoup.parser.CharacterReader
 jsoup, Refactorings at fcab98cdd311deb3dd4fd63fef2bc6c4c397f186
 jsoup, Refactorings at a97672ad240f679f0071e046a119edb6d7dcbb1c
 Inline Method	private select() : Elements inlined to public select(evaluator Evaluator, root Element) : Elements in class org.jsoup.select.Selector

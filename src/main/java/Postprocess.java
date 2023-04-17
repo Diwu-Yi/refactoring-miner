@@ -10,10 +10,10 @@ public class Postprocess {
     public static void main(String[] args) {
 
         System.out.println(new File(".").getAbsolutePath());
-        File revDir = new File("/Users/diwuyi/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/refactoring-miner/jsoup");
+        File revDir = new File("/Users/diwuyi/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/refactoring-miner/jhy/jsoup");
 
-        try (Git git = Git.open(new File("jsoup"))) {
-            git.checkout().setName("e97f564d2450702d2b74ff35ecc5ad5c1e57fc0d").call();
+        try (Git git = Git.open(new File("/Users/diwuyi/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/refactoring-miner/jhy/jsoup"))) {
+            git.checkout().setName("b92b4f6b9b3256e97bfb6a0732bf113b6da53a4c").call();
         } catch (Exception e) {
             e.printStackTrace();
         }

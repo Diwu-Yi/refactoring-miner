@@ -5,7 +5,9 @@ import org.refactoringminer.api.Refactoring;
 import org.refactoringminer.api.RefactoringHandler;
 import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
 import org.refactoringminer.util.GitServiceImpl;
+
 import java.util.Collections;
+
 import sootup.callgraph.CallGraph;
 import sootup.callgraph.CallGraphAlgorithm;
 import sootup.callgraph.ClassHierarchyAnalysisAlgorithm;
@@ -19,6 +21,7 @@ import sootup.java.core.JavaProject;
 import sootup.java.core.JavaSootClass;
 import sootup.java.core.language.JavaLanguage;
 import sootup.java.core.views.JavaView;
+
 import java.io.*;
 import java.util.*;
 
@@ -26,13 +29,275 @@ import java.util.*;
  * Integrate steps required to run regression testing with evosuite-plus-plus.
  */
 public class Pipeline {
-
-    public static String extractTargetClass(String refactoringType, String refactoringLine) {
+    public static List<String> extractTargetClass(String refactoringType, String refactoringLine) {
+        ArrayList<String> result = new ArrayList<>(2);
+        String[] tempLineHolder;
         switch (refactoringType) {
-            case "Add Thrown Exception Type":
-                return "";
+            case ("Extract Method"):
+                result.add(refactoringLine.split(" in class ")[1].trim());
+                return result;
+            case ("Rename Class"):
+                return result;
+            case ("Move Attribute"):
+                tempLineHolder = refactoringLine.split(" from class ");
+                result.add(tempLineHolder[2].trim());
+                result.add(tempLineHolder[1].split(" to ")[0].trim());
+                return result;
+            case ("Move And Rename Attribute"):
+                return result;
+            case ("Replace Attribute"):
+                result.add(refactoringLine.split(" from class ")[1].trim());
+                return result;
+            case ("Rename Method"):
+                result.add(refactoringLine.split(" in class ")[1].trim());
+                return result;
+            case ("Inline Method"):
+                result.add(refactoringLine.split(" in class ")[1].trim());
+                return result;
+            case ("Move Method"):
+                tempLineHolder = refactoringLine.split(" from class");
+                result.add(tempLineHolder[2].trim());
+                result.add(tempLineHolder[1].split(" to ")[0].trim());
+                return result;
+            case ("Move And Rename Method"):
+                tempLineHolder = refactoringLine.split(" from class ");
+                result.add(tempLineHolder[2].trim());
+                result.add(tempLineHolder[1].split(" to ")[0].trim());
+                return result;
+            case ("Pull Up Method"):
+                tempLineHolder = refactoringLine.split(" from class ");
+                result.add(tempLineHolder[2].trim());
+                result.add(tempLineHolder[1].split(" to ")[0].trim());
+                return result;
+            case ("Move Class"):
+                tempLineHolder = refactoringLine.split(" moved to ");
+                result.add(tempLineHolder[1].trim());
+                result.add(tempLineHolder[0].split("Move Class ")[0]);
+                return result;
+            case ("Move And Rename Class"):
+                return result;
+            case ("Move Source Folder"):
+                return result;
+            case ("Pull Up Attribute"):
+                tempLineHolder = refactoringLine.split(" from class ");
+                result.add(tempLineHolder[2].trim());
+                result.add(tempLineHolder[1].split(" to ")[0].trim());
+            case ("Push Down Attribute"):
+                tempLineHolder = refactoringLine.split(" from class ");
+                result.add(tempLineHolder[2].trim());
+                result.add(tempLineHolder[1].split(" to ")[0].trim());
+                return result;
+            case ("Push Down Method"):
+                tempLineHolder = refactoringLine.split(" from class ");
+                result.add(tempLineHolder[2].trim());
+                result.add(tempLineHolder[1].split(" to ")[0].trim());
+                return result;
+            case ("Extract Interface"):
+                return result;
+            case ("Extract Superclass"):
+                tempLineHolder = refactoringLine.split(" from classes ");
+                String[] temp2 = tempLineHolder[1].replace("[", "").replace("]", "").split(", ");
+                Collections.addAll(result, temp2);
+                result.add(tempLineHolder[0].split("Extract Superclass ")[0].trim());
+                return result;
+            case ("Extract Subclass"):
+                tempLineHolder = refactoringLine.split(" from class ");
+                result.add(tempLineHolder[1].trim());
+                result.add(tempLineHolder[0].split("Extract Subclass ")[0].trim());
+                return result;
+            case ("Extract Class"):
+                tempLineHolder = refactoringLine.split(" from class ");
+                result.add(tempLineHolder[1].trim());
+                result.add(tempLineHolder[0].split("Extract Class ")[0].trim());
+                return result;
+            case ("Extract And Move Method"):
+                tempLineHolder = refactoringLine.split(" in class ");
+                result.add(tempLineHolder[1].split(" & moved to class ")[0].trim());
+                result.add(tempLineHolder[1].split(" & moved to class ")[1].trim());
+                return result;
+            case ("Move And Inline Method"):
+                return result;
+            case ("Rename Package"):
+                return result;
+            case ("Move Package"):
+                return result;
+            case ("Extract Variable"):
+                tempLineHolder = refactoringLine.split(" from class ");
+                result.add(tempLineHolder[1].trim());
+                return result;
+            case ("Extract Attribute"):
+                result.add(refactoringLine.split(" in class ")[1].trim());
+                return result;
+            case ("Inline Variable"):
+                result.add(refactoringLine.split(" from class ")[1].trim());
+                return result;
+            case ("Inline Attribute"):
+                return result;
+            case ("Rename Variable"):
+                result.add(refactoringLine.split(" from class ")[1].trim());
+                return result;
+            case ("Rename Parameter"):
+                result.add(refactoringLine.split(" from class ")[1].trim());
+                return result;
+            case ("Rename Attribute"):
+                result.add(refactoringLine.split(" in class ")[1].trim());
+                return result;
+            case ("Merge Variable"):
+                return result;
+            case ("Merge Parameter"):
+                return result;
+            case ("Merge Attribute"):
+                return result;
+            case ("Split Variable"):
+                return result;
+            case ("Split Parameter"):
+                return result;
+            case ("Split Attribute"):
+                return result;
+            case ("Replace Variable With Attribute"):
+                result.add(refactoringLine.split(" from class ")[1].trim());
+                return result;
+            case ("Parameterize Variable"):
+                result.add(refactoringLine.split(" from class ")[1].trim());
+                return result;
+            case ("Localize Parameter"):
+                return result;
+            case ("Parameterize Attribute"):
+                return result;
+            case ("Remove Method Annotation"):
+                tempLineHolder = refactoringLine.split(" from class");
+                result.add(tempLineHolder[1].trim());
+                return result;
+            case ("Change Return Type"):
+                result.add(refactoringLine.split(" from class ")[1].trim());
+                return result;
+            case ("Change Variable Type"):
+                result.add(refactoringLine.split(" from class ")[1].trim());
+                return result;
+            case ("Change Parameter Type"):
+                result.add(refactoringLine.split(" from class ")[1].trim());
+                return result;
+            case ("Change Attribute Type"):
+                result.add(refactoringLine.split(" in class ")[1].trim());
+                return result;
+            case ("Add Method Annotation"):
+                result.add(refactoringLine.split(" from class ")[1].trim());
+                return result;
+            case ("Modify Method Annotation"):
+                result.add(refactoringLine.split(" from class ")[1].trim());
+                return result;
+            case ("Add Attribute Annotation"):
+                return result;
+            case ("Remove Attribute Annotation"):
+                return result;
+            case ("Modify Attribute Annotation"):
+                return result;
+            case ("Add Class Annotation"):
+                result.add(refactoringLine.split(" in class ")[1].trim());
+                return result;
+            case ("Remove Class Annotation"):
+                return result;
+            case ("Modify Class Annotation"):
+                result.add(refactoringLine.split(" in class ")[1].trim());
+                return result;
+            case ("Add Parameter Annotation"):
+                return result;
+            case ("Remove Parameter Annotation"):
+                return result;
+            case ("Modify Parameter Annotation"):
+                return result;
+            case ("Add Parameter"):
+                result.add(refactoringLine.split(" from class ")[1].trim());
+                return result;
+            case ("Remove Parameter"):
+                result.add(refactoringLine.split(" from class ")[1].trim());
+                return result;
+            case ("Reorder Parameter"):
+                return result;
+            case ("Add Variable Annotation"):
+                return result;
+            case ("Remove Variable Annotation"):
+                return result;
+            case ("Add Thrown Exception Type"):
+                result.add(refactoringLine.split(" from class ")[1].trim());
+                return result;
+            case ("Remove Thrown Exception Type"):
+                result.add(refactoringLine.split(" from class ")[1].trim());
+                return result;
+            case ("Change Thrown Exception Type"):
+                return result;
+            case ("Change Method Access Modifier"):
+                result.add(refactoringLine.split(" from class ")[1].trim());
+                return result;
+            case ("Change Attribute Access Modifier"):
+                result.add(refactoringLine.split(" from class ")[1].trim());
+                return result;
+            case ("Encapsulate Attribute"):
+                result.add(refactoringLine.split(" from class ")[1].trim());
+                return result;
+            case ("Add Method Modifier"):
+                result.add(refactoringLine.split(" from class ")[1].trim());
+                return result;
+            case ("Remove Method Modifier"):
+                result.add(refactoringLine.split(" from class ")[1].trim());
+                return result;
+            case ("Add Attribute Modifier"):
+                result.add(refactoringLine.split(" from class ")[1].trim());
+                return result;
+            case ("Remove Attribute Modifier"):
+                result.add(refactoringLine.split(" from class ")[1].trim());
+                return result;
+            case ("Add Variable Modifier"):
+                result.add(refactoringLine.split(" from class ")[1].trim());
+                return result;
+            case ("Remove Variable Modifier"):
+                return result;
+            case ("Change Class Access Modifier"):
+                result.add(refactoringLine.split(" in class ")[1].trim());
+                return result;
+            case ("Add Class Modifier"):
+                result.add(refactoringLine.split(" in class ")[1].trim());
+                return result;
+            case ("Remove Class Modifier"):
+                result.add(refactoringLine.split(" in class ")[1].trim());
+                return result;
+            case ("Split Package"):
+                return result;
+            case ("Merge Package"):
+                return result;
+            case ("Change Type Declaration Kind"):
+                return result;
+            case ("Collapse Hierarchy"):
+                return result;
+            case ("Replace Loop With Pipeline"):
+                return result;
+            case ("Replace Pipeline With Loop"):
+                return result;
+            case ("Replace Anonymous With Lambda"):
+                return result;
+            case ("Merge Class"):
+                return result;
+            case ("Split Class"):
+                return result;
+            case ("Split Conditional"):
+                return result;
+            case ("Invert Condition"):
+                return result;
+            case ("Merge Conditional"):
+                result.add(refactoringLine.split(" from class ")[1].trim());
+                return result;
+            case ("Merge Catch"):
+                return result;
+            case ("Merge Method"):
+                return result;
+            case ("Split Method"):
+                return result;
+            case ("Move Code"):
+                return result;
+            default:
+                System.out.println("reached default branch, something went wrong");
+                return result;
         }
-        return "something went wrong";
     }
 
     // Assembly of pipeline steps to mine regression bugs based on refactoring changes on the benchmark of Res4j
@@ -58,8 +323,6 @@ public class Pipeline {
         bufferedReader.close();
 
         //Step 2: Applying Refactoring Miner for all ric commits to identify refactoring changes
-        GitService gitService = new GitServiceImpl();
-        GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
 
         String repoFile = "/Users/diwuyi/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/refactoring-miner/src/repo.txt";
         File file1 = new File(repoFile);
@@ -72,71 +335,84 @@ public class Pipeline {
             }
         }
         repoReader.close();
+        //check if all repos from the benchmark dataset are present in this repo's root dir
+        // if not, clone it from github
+        GitService gitService = new GitServiceImpl();
 
-        for (String aRepo: repoUnderInvestigation) {
-            String folder = aRepo.split("/")[0];
-            Repository repo;
+        for (String aRepo : repoUnderInvestigation) {
 
             try {
-                repo = gitService.cloneIfNotExists(
-                        folder,
+                gitService.cloneIfNotExists(
+                        aRepo,
                         "https://github.com/" + aRepo + ".git");
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
-            for (String key: relevantProjectWithRic.keySet()) {
+        // now, apply refactoring miner
+        FileWriter myWriter = new FileWriter("/Users/diwuyi/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/refactoring-miner/src/refactoring.txt");
 
-                /*
-                //API 2: Report all refactoring changes in commits between 2 commits (ric & rfc in this case)
-                miner.detectBetweenCommits(repo,
-                    "d23fc99a99ac44f2a4352899e2a6d12d26a74503", "c716d1de3fe1bde6a330629939c45745e9e65e95",
-                    new RefactoringHandler() {
-                        @Override
-                        public void handle(String commitId, List<Refactoring> refactorings) {
-                            System.out.println("Refactorings at " + commitId);
-                            for (Refactoring ref : refactorings) {
-                                System.out.println(ref.toString());
-                            }
+        GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
+
+        for (String key : relevantProjectWithRic.keySet()) {
+            /*
+            //API 2: Report all refactoring changes in commits between 2 commits (ric & rfc in this case)
+            miner.detectBetweenCommits(repo,
+                "d23fc99a99ac44f2a4352899e2a6d12d26a74503", "c716d1de3fe1bde6a330629939c45745e9e65e95",
+                new RefactoringHandler() {
+                    @Override
+                    public void handle(String commitId, List<Refactoring> refactorings) {
+                        System.out.println("Refactorings at " + commitId);
+                        for (Refactoring ref : refactorings) {
+                            System.out.println(ref.toString());
                         }
-                    });
-                */
+                    }
+                });
+            */
+            //API 1: Report refactoring changes in one single commit (ric)
+            // when developers code new features, they are not sure if the change will cause regression bugs
+            // whether it is worthwhile to generate regression test case for particular change , eg. change of a method
+            // a class, and soon on -->
+            // measure the accuracy, whether the approach recommend regression (1)
+            // RQ2 whether refactoring miner gives good result, on ric versus any commit
+            // RQ3
+            String repoLocator = "";
+            for (String repoEntry: repoUnderInvestigation) {
+                if (repoEntry.contains(key)) {
+                    repoLocator = repoEntry;
+                    break;
+                }
+            }
+            Repository repo1 = gitService.cloneIfNotExists(
+                    repoLocator,
+                    "https://github.com/" + repoLocator + ".git");
+            System.out.println(key);
+            List<String> rics = relevantProjectWithRic.get(key);
 
-                //API 1: Report refactoring changes in one single commit (ric)
-                // when developers code new features, they are not sure if the change will cause regression bugs
-                // whether it is worthwhile to generate regression test case for particular change , eg. change of a method
-                // a class, and soon on -->
-                // measure the accuracy, whether the approach recommend regression (1)
-                // RQ2 whether refactoring miner gives good result, on ric versus any commit
-                // RQ3
-                Repository repo = gitService.openRepository(key);
-                System.out.println(key);
-                List<String> rics = relevantProjectWithRic.get(key);
-                FileWriter myWriter = new FileWriter("/Users/diwuyi/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/refactoring-miner/src/refactoring.txt");
-                for (String ric : rics) {
-                    miner.detectAtCommit(repo, ric, new RefactoringHandler() {
-                        @Override
-                        public void handle(String commitId, List<Refactoring> refactorings) {
-                            System.out.println("Refactorings at " + commitId);
+            for (String ric : rics) {
+                miner.detectAtCommit(repo1, ric, new RefactoringHandler() {
+                    @Override
+                    public void handle(String commitId, List<Refactoring> refactorings) {
+                        System.out.println("Refactorings at " + commitId);
+                        try {
+                            myWriter.write(key + ", " + "Refactorings at " + commitId + "\n");
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                        for (Refactoring ref : refactorings) {
+                            System.out.println(ref.toString());
                             try {
-                                myWriter.write(key + ", "+"Refactorings at " + commitId + "\n");
+                                myWriter.write(ref.toString() + "\n");
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
-                            for (Refactoring ref : refactorings) {
-                                System.out.println(ref.toString());
-                                try {
-                                    myWriter.write(ref.toString() + "\n");
-                                } catch (IOException e) {
-                                    throw new RuntimeException(e);
-                                }
-                            }
                         }
-                    });
-                }
-                myWriter.close();
+                    }
+                });
             }
+        }
 
+        myWriter.close();
 
         // Step 2.5: for each refactoring under one commit, extract out the target class and the target method if
         // applicable (taxonomy preprocess)
@@ -186,10 +462,14 @@ public class Pipeline {
         String target = "/Users/diwuyi/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/refactoring-miner/src/targetClass.txt";
         FileWriter targetWriter = new FileWriter(target);
         String currSha = "";
+        String currProj = "";
         List<String> classes = new ArrayList<>();
+        refactoringTypes.sort(Comparator.comparingInt(String::length).reversed());
         while ((refLine = scanner.readLine()) != null) {
             if (refLine.contains(", Refactorings at ")) {
-                if(!Objects.equals(currSha, "")) {
+                if (!Objects.equals(currSha, "")) {
+                    targetWriter.write(currProj);
+                    targetWriter.write(", ");
                     targetWriter.write(currSha);
                     targetWriter.write(", ");
                     targetWriter.write(classes.toString());
@@ -197,10 +477,16 @@ public class Pipeline {
                     classes = new ArrayList<>();
                 }
                 currSha = refLine.split("Refactorings at ")[1].trim();
+                currProj = refLine.split("Refactorings at ")[0].trim();
                 continue;
             }
-            if (refLine.split(" class ").length > 1) {
-                classes.add(refLine.split(" class ")[1].trim());
+            for (String type : refactoringTypes) {
+                if (refLine.contains(type)) {
+                    System.out.println(type);
+                    System.out.println(refLine);
+                    classes.addAll(extractTargetClass(type, refLine));
+                    break;
+                }
             }
         }
         scanner.close();
