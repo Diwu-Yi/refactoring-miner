@@ -20,7 +20,7 @@ public class ExampleAnalysisAndTest {
                 "jhy/jsoup",
                 "https://github.com/jhy/jsoup.git");
 
-        miner.detectAtCommit(repo, "b92b4f6b9b3256e97bfb6a0732bf113b6da53a4c", new RefactoringHandler() {
+        miner.detectAll(repo, "b92b4f6b9b3256e97bfb6a0732bf113b6da53a4c", new RefactoringHandler() {
             @Override
             public void handle(String commitId, List<Refactoring> refactorings) {
                 System.out.println("Refactorings at " + commitId);
